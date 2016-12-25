@@ -10,7 +10,7 @@ ALTER TABLE "COMPARE"
 ALTER TABLE "COMPARE"
    DROP CONSTRAINT FK_COMPARE_WORK_COMP_WORK;
 
-ALTER TABLE "USER"
+ALTER TABLE "USERS"
    DROP CONSTRAINT FK_USER_ROLE_USER_USER_TYP;
 
 ALTER TABLE "WORK"
@@ -26,7 +26,7 @@ DROP TABLE "SAMPLE" CASCADE CONSTRAINTS;
 
 DROP INDEX "ROLE_USERS_FK";
 
-DROP TABLE "USER" CASCADE CONSTRAINTS;
+DROP TABLE "USERS" CASCADE CONSTRAINTS;
 
 DROP TABLE "USER_TYPE" CASCADE CONSTRAINTS;
 
@@ -72,9 +72,9 @@ CREATE TABLE "SAMPLE"
 );
 
 /*==============================================================*/
-/* Table: "USER"                                                */
+/* Table: "USERS"                                                */
 /*==============================================================*/
-CREATE TABLE "USER" 
+CREATE TABLE "USERS" 
 (
    "EMAIL"              VARCHAR2(100)        NOT NULL,
    "TYPE"               VARCHAR2(100)        NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE "USER"
 /*==============================================================*/
 /* Index: "ROLE_USERS_FK"                                       */
 /*==============================================================*/
-CREATE INDEX "ROLE_USERS_FK" ON "USER" (
+CREATE INDEX "ROLE_USERS_FK" ON "USERS" (
    "TYPE" ASC
 );
 
@@ -125,11 +125,11 @@ ALTER TABLE "COMPARE"
    ADD CONSTRAINT FK_COMPARE_WORK_COMP_WORK FOREIGN KEY ("WORK_DATE")
       REFERENCES "WORK" ("WORK_DATE");
 
-ALTER TABLE "USER"
+ALTER TABLE "USERS"
    ADD CONSTRAINT FK_USER_ROLE_USER_USER_TYP FOREIGN KEY ("TYPE")
       REFERENCES "USER_TYPE" ("TYPE");
 
 ALTER TABLE "WORK"
    ADD CONSTRAINT FK_WORK_USER_WORK_USER FOREIGN KEY ("EMAIL")
-      REFERENCES "USER" ("EMAIL");
+      REFERENCES "USERS" ("EMAIL");
 

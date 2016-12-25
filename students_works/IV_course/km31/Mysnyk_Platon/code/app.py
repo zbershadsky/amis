@@ -1,13 +1,8 @@
 # app.py
 import datetime
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
 import functools
 import os
-import time
-from flask import (Flask, abort, flash, Markup, redirect, render_template,
-                   request, Response, session, url_for)
+from flask import (Flask, flash, redirect, render_template, request, session, url_for)
 from flask_sqlalchemy import SQLAlchemy
 
 APP_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -20,11 +15,6 @@ SQLALCHEMY_AUTOCOMMIT = False
 app = Flask(__name__)
 app.config.from_object(__name__)
 db = SQLAlchemy(app)
-
-# engine = create_engine(SQLALCHEMY_DATABASE_URI, convert_unicode=True)
-# db_session = scoped_session(sessionmaker(autocommit=False,
-#                                          autoflush=False,
-#                                          bind=engine))
 
 
 # Models
@@ -206,7 +196,6 @@ def check():
         samples = db.session.query(Sample).all()
         for sample in samples:
             similarity = jaccard_similarity(sample.text, text)
-            print(similarity)
             if similarity >= 0.5:
                 plagiat = similarity
                 work = Work(session['logged_in']['email'], text)

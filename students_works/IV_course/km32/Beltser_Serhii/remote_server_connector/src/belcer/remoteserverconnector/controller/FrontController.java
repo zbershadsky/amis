@@ -1,12 +1,14 @@
 package belcer.remoteserverconnector.controller;
 
-import belcer.remoteserverconnector.model.FtpConnection;
+import belcer.remoteserverconnector.model.entity.ConnectionProfile;
+import belcer.remoteserverconnector.model.entity.User;
 import belcer.remoteserverconnector.model.service.ConnectionsService;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableView;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,21 +16,26 @@ public class FrontController {
   @FXML
   private TextField connectionTitle;
   @FXML
-  public TextField connectionHost;
+  private TextField connectionHost;
   @FXML
-  public TextField connectionPort;
+  private TextField connectionPort;
   @FXML
-  public TextField connectionUser;
+  private TextField connectionUser;
   @FXML
-  public TextField connectionPass;
+  private TextField connectionPass;
   @FXML
-  public TextArea log;
-  @FXML
-  public TreeTableView localFileList;
-  @FXML
-  public TreeTableView remoteFileList;
+  private TextField connectionProtocol;
 
-  private Map<String, FtpConnection> connections = new HashMap<String, FtpConnection>();
+  @FXML
+  private TextArea log;
+  @FXML
+  private TreeTableView localFileList;
+  @FXML
+  private TreeTableView remoteFileList;
+
+  private User user;
+  //todo: not ConnectionProfile!
+  private Map<String, ConnectionProfile> connections = new HashMap<>();
   private ConnectionsService connectionsService;
 
   public void newConnection() {
@@ -38,21 +45,28 @@ public class FrontController {
   public void localPathChanged() {
 
   }
-  public void login() {
 
+  public void login() {
+    //todo
+    user = new User("test", "test", "test", new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()));
   }
+
   public void register() {
 
   }
+
   public void logout() {
 
   }
+
   public void closeConnection() {
 
   }
+
   public void updateLocalPath() {
 
   }
+
   public void updateRemotePath() {
 
   }
@@ -60,9 +74,12 @@ public class FrontController {
   private void addConnection() {
     String title = connectionTitle.getText();
     String host = connectionHost.getText();
-    int port = Integer.valueOf(connectionPort.getText());
-    String user = connectionUser.getText();
-    String pass = connectionPass.getText();
+    String port = connectionPort.getText();
+    String connUser = connectionUser.getText();
+    String connPass = connectionPass.getText();
+    String protocol = connectionProtocol.getText();
+    //todo: not ConnectionProfile!
+    connections.put(title, new ConnectionProfile(title, host, port, connUser, connPass, protocol, user));
 //    if (title != null && !(title = title.trim()).isEmpty() && connections)
   }
 }

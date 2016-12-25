@@ -140,7 +140,7 @@ def create_sample():
         sample = Sample(request.form.get('title'), request.form.get('text'))
         db.session.add(sample)
         db.session.commit()
-    return render_template('admin.html', user=session.get('logged_in'))
+    return redirect('/admin')
 
 
 @app.route('/delete-sample', methods=['GET'])
@@ -162,10 +162,10 @@ def delete_sample():
 @is_admin
 def create_user():
     if request.method == 'POST' and request.form.get('email') and request.form.get('password') and request.form.get('name'):
-        user = Sample(request.form.get('title'), request.form.get('text'))
-        db.session.add(sample)
+        user = Users(request.form.get('email'), request.form.get('password'), 'user', request.form.get('name') or 'Noname')
+        db.session.add(user)
         db.session.commit()
-    return render_template('admin.html', user=session.get('logged_in'))
+    return redirect('/admin')
 
 
 @app.route('/delete-user', methods=['GET'])
@@ -180,7 +180,6 @@ def delete_user():
             db.session.delete(user)
             db.session.commit()
     return redirect('/admin')
-
 
 
 @app.route('/logout/', methods=['GET', 'POST'])

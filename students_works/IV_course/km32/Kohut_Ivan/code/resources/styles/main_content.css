@@ -1,0 +1,45 @@
+#content .blocks {
+    display: inline-block;
+    margin: 0 44px;
+    text-align: center;
+}
+
+.link_decoration {
+    text-decoration: none;
+    font-size: 14px;
+    color: blue;
+}
+
+.invitation {
+    margin-left: 10px;
+}
+
+.basket_operation {
+    cursor: pointer;
+    background-color: #00A7E4;
+}
+
+#content {
+    position: relative;
+}
+
+#update_block {
+    position: absolute;
+    left: 623px;
+}
+
+#update_block a {
+    text-decoration: none;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}

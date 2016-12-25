@@ -1,0 +1,12 @@
+<Resource
+         name="jdbc/HRDB"
+         auth="Container"
+         type="javax.sql.DataSource"
+	 maxActive="100"
+	 maxIdle="30"
+	 maxWait="10000"
+         driverClassName="oracle.jdbc.OracleDriver"
+         url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+         username="johnkogut"
+         password="johnkogut"
+/>

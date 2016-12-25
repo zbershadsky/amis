@@ -1,0 +1,28 @@
+header {
+    padding-left: 20px;
+    margin: 10px 0;
+    border: 1px solid #334C9D;
+    border-radius: 8px;
+    position: relative;
+}
+
+#supermarket_image {
+    margin: 20px 0;
+}
+
+#header_text {
+    position: absolute;
+    top: 45px;
+    left: 314px;
+}
+
+#basket_block {
+    margin: 0 auto;
+    width: 75px;
+}
+
+#absolute_block_position {
+    position: absolute;
+    top: 112px;
+    left: 700px;
+}

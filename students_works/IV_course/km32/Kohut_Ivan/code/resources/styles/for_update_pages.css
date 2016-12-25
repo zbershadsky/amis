@@ -1,0 +1,68 @@
+#text_old_password, #text_new_password, #text_check_password, #update_password_submit, #text_old_email, #text_new_email,
+#update_email_submit, #text_old_phone, #text_new_phone, #update_phone_submit, #old_password, #new_password, #check_password,
+#old_email, #new_email, #old_phone, #new_phone {
+    position: absolute;
+}
+
+#old_password {
+    top: 0;
+    left: 188px;
+}
+
+#text_new_password {
+    top: 25px;
+    left: 0;
+}
+
+#new_password {
+    top: 25px;
+    left: 188px;
+}
+
+#text_check_password {
+    top: 50px;
+    left: 0;
+}
+
+#check_password {
+    top: 50px;
+    left: 188px;
+}
+
+#update_password_submit {
+    top: 100px;
+}
+
+#old_email {
+    top: 0;
+    left: 254px;
+}
+
+#text_new_email {
+    top: 25px;
+    left: 0;
+}
+
+#new_email {
+    top: 25px;
+    left: 254px;
+}
+
+#update_email_submit, #update_phone_submit {
+    top: 75px;
+}
+
+#old_phone {
+    top: 0;
+    left: 189px;
+}
+
+#text_new_phone {
+    top: 25px;
+    left: 0;
+}
+
+#new_phone {
+    top: 25px;
+    left: 189px;
+}

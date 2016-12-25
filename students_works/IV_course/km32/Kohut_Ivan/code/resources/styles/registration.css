@@ -1,0 +1,60 @@
+#reg_text_username, #reg_text_password, #reg_text_conf_password, #reg_text_email, #reg_text_phone_number,
+#reg_username, #reg_password, #reg_conf_password, #reg_email, #reg_phone_number, #reg_button {
+    position: absolute;
+}
+
+#form_registration {
+    position: relative;
+}
+
+#reg_text_username {
+
+}
+
+#reg_username {
+    left: 181px;
+}
+
+#reg_text_password {
+    top: 25px;
+}
+
+#reg_password {
+    top: 25px;
+    left: 181px;
+}
+
+#reg_text_conf_password {
+    top: 50px;
+}
+
+#reg_conf_password {
+    left: 181px;
+    top: 50px;
+}
+
+#reg_text_email {
+    top: 75px;
+}
+
+#reg_email {
+    top: 75px;
+    left: 181px;
+}
+
+#reg_text_phone_number {
+    top: 100px;
+}
+
+#reg_phone_number {
+    left: 181px;
+    top: 100px;
+}
+
+#reg_button {
+    top: 150px;
+}
+
+.error_color {
+    color: red;
+}

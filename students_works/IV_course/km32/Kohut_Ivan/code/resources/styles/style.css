@@ -1,0 +1,48 @@
+﻿@import url("header.css");
+@import url("main_content.css");
+@import url("login.css");
+@import url("registration.css");
+@import url("for_update_pages.css");
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#content {
+    /*background: #20B9F3;*/
+    border: 1px solid #334C9D;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 1000px;
+    font: 14px Verdana;
+}
+
+.back_color_white {
+    background-color: white;
+}
+
+.back_color_red {
+    background-color: red;
+    color: white;
+}
+
+.display_none {
+    display: none;
+}
+
+#back_button {
+    margin-left: 870px;
+}
+
+#delivery_link {
+    margin-left: 850px;
+}
+
+.align {
+    margin: 0 auto;
+}

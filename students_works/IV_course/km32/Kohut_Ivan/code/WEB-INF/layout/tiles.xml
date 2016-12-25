@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+   <definition name="base" template="/WEB-INF/layout/page.jsp">
+    <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+  </definition>
+
+  <definition name="home" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+  </definition>
+
+  <definition name="product" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/product.jsp" />
+  </definition>
+
+  <definition name="products_sections" extends="base">
+    <put-attribute name="body" value="/WEB-INF/views/section.jsp" />
+  </definition>
+
+    <definition name="product_description" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/product_description.jsp" />
+    </definition>
+
+    <definition name="login" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+    </definition>
+
+    <definition name="registration" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/registerForm.jsp" />
+    </definition>
+
+    <definition name="basket" extends="base">
+      <put-attribute name="body" value="/WEB-INF/views/basket.jsp" />
+    </definition>
+
+    <definition name="delivery" extends="base">
+      <put-attribute name="body" value="/WEB-INF/views/delivery.jsp" />
+    </definition>
+
+    <definition name="gratitude" extends="base">
+      <put-attribute name="body" value="/WEB-INF/views/gratitude.jsp" />
+     </definition>
+
+    <definition name="office" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/office.jsp" />
+    </definition>
+
+    <definition name="update_password" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/update/password.jsp" />
+    </definition>
+
+    <definition name="update_email" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/update/email.jsp" />
+    </definition>
+
+    <definition name="update_phone" extends="base">
+        <put-attribute name="body" value="/WEB-INF/views/update/phone.jsp" />
+    </definition>
+
+</tiles-definitions>

@@ -1,0 +1,35 @@
+#login_text_username, #login_text_password, #login_username, #login_password, #login_remember, #login_submit {
+    position: absolute;
+}
+
+.form {
+    position: relative;
+}
+
+#login_text_username {
+
+}
+
+#login_text_password {
+    top: 25px;
+    left: 0;
+}
+
+#login_username {
+    top: 0;
+    left: 135px;
+}
+
+#login_password {
+    top: 25px;
+    left: 135px;
+}
+
+#login_remember {
+    top: 55px;
+    left: 0;
+}
+
+#login_submit {
+    top: 100px;
+}

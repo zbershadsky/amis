@@ -1,0 +1,96 @@
+.main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-image:  url(images/fon1.jpg); /* Цвет фона и путь к файлу */
+    background-size: 100%;
+
+}
+.link_p{
+    color: #c4ffc0;
+}
+.div_from_user_page{
+    background: #c4ffc0;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    padding: 30px; /* Поля вокруг текста */
+}
+.name_p{
+    color: yellow;
+}
+.pText{
+ color: yellow;
+}
+
+.form-horizontal{
+    width: 300px; /* Ширина блока */
+    height: 500px;
+}
+.btn-default{
+    width: 300px; /* Ширина блока */
+    height: 110px;
+}
+
+#menu {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    background: #69c;
+}
+#menu ul {
+    padding:0;
+    margin:0;
+}
+#menu li{
+    display: inline;
+    list-style:none;
+    margin: 5px 10px;
+}
+#menu li a {
+    padding:5px 10px;
+    color:#fff;
+    text-decoration: none;
+}
+#menu li a:hover{
+    background: #36c;
+    color: #ff0;
+}
+.brderheder {
+    width: 100%; /* Ширина */
+    height: 50px;
+    border: 4px double black; /* Параметры границы */
+    background: rebeccapurple; /* Цвет фона */
+    padding: 10px; /* Поля вокруг текста */
+
+}
+
+.divScrol{
+    overflow-x: hidden; /* Убираем вертикальную полосу прокрутки */
+    height:100%;
+    top: 0px;
+    left: 0px;
+    right: 0%;
+    position:absolute;
+}
+.reg{
+
+}
+.center{
+    width: 100%; /* Ширина */
+    background: #fc0; /* Цвет фона */
+    padding: 20px; /* Поля */
+    -moz-box-sizing: border-box; /* Для Firefox */
+    -webkit-box-sizing: border-box; /* Для Safari и Chrome */
+    box-sizing: border-box; /* Для IE и Opera */
+}
+.body {
+    background: url(images/fon.jpg); /* Цвет фона и путь к файлу */
+    color: #fff; /* Цвет текста */
+}

@@ -1,0 +1,79 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:bpackage com.kpi.servlet;
+
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.*;
+
+/**
+ * Created by Ann on 24.12.2016.
+ */
+@WebServlet("/viewAllArts")
+public class ViewAllArts extends HttpServlet{
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String imageCode = null;
+        try {
+            Connection connection = ConnectDataBase.connect("java:/comp/env", "jdbc/HRDB").getConnection();
+            PreparedStatement statement = connection.prepareStatement("Select demo_blol From demo Where demo_id = ?",
+			ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            statement.setInt(1, 5);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            Blob b = resultSet.getBlob("demo_blol");
+            imageCode = "data:image/jpg;base64," + Base64.encode(b.getBytes(1,(int)b.length()));
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        req.setAttribute("imageCode", imageCode);
+        req.getRequestDispatcher("viewAllArts.jsp").forward(req, resp);
+    }
+}

@@ -1,0 +1,17 @@
+Insert into SYSTEM.COLLOQUIUM (COLLOQUIUMNAME,AUTHOR) values ('FirstCOl','Login');
+Insert into SYSTEM.COLLOQUIUM (COLLOQUIUMNAME,AUTHOR) values ('Second','Login');
+Insert into SYSTEM.LECTURERS (LOGIN,PASSWORD,EMAIL,NAME,SURNAME) values ('Login','A619D974658F3E749B2D88B215BAEA46','ololo@gmail.com','Ol','olo');
+Insert into SYSTEM.STUDENTANSWER (TASKNAME,AUTHOR,COLLOQUIUMNAME,ANSWER,MARK,LECTURER) values ('First','Student','FirstCOl','asdda','91','Login');
+Insert into SYSTEM.STUDENTANSWER (TASKNAME,AUTHOR,COLLOQUIUMNAME,ANSWER,MARK,LECTURER) values ('Second','Student','FirstCOl','asddas','36','Login');
+Insert into SYSTEM.STUDENTANSWER (TASKNAME,AUTHOR,COLLOQUIUMNAME,ANSWER,MARK,LECTURER) values ('Third','Student','FirstCOl','looool','61','Login');
+Insert into SYSTEM.STUDENTS (LOGIN,PASSWORD,EMAIL,NAME,SURNAME) values ('Student','A619D974658F3E749B2D88B215BAEA46','example@gmail.com','Myname','Surname');
+Insert into SYSTEM.TASK (TASKNAME,QUESTION,CORRECTANSWER,AUTHOR) values ('First','asdf','asdf','Login');
+Insert into SYSTEM.TASK (TASKNAME,QUESTION,CORRECTANSWER,AUTHOR) values ('Second','fddsa','afmm','Login');
+Insert into SYSTEM.TASK (TASKNAME,QUESTION,CORRECTANSWER,AUTHOR) values ('Third','ololol','aouaou','Login');
+Insert into SYSTEM.TASK (TASKNAME,QUESTION,CORRECTANSWER,AUTHOR) values ('Fourth','asd','fff','Login');
+Insert into SYSTEM.TASK (TASKNAME,QUESTION,CORRECTANSWER,AUTHOR) values ('Fifth','aaaa','vvvv','Login');
+Insert into SYSTEM.COLLOQUIUMTASKLIST (AUTHOR,COLLOQUIUMNAME,TASKNAME) values ('Login','FirstCOl','First');
+Insert into SYSTEM.COLLOQUIUMTASKLIST (AUTHOR,COLLOQUIUMNAME,TASKNAME) values ('Login','FirstCOl','Second');
+Insert into SYSTEM.COLLOQUIUMTASKLIST (AUTHOR,COLLOQUIUMNAME,TASKNAME) values ('Login','FirstCOl','Third');
+Insert into SYSTEM.COLLOQUIUMTASKLIST (AUTHOR,COLLOQUIUMNAME,TASKNAME) values ('Login','Second','Fifth');
+Insert into SYSTEM.COLLOQUIUMTASKLIST (AUTHOR,COLLOQUIUMNAME,TASKNAME) values ('Login','Second','Third');

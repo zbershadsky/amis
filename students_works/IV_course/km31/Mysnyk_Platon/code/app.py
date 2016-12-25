@@ -114,15 +114,6 @@ def login():
             flash('Incorrect email or password.', 'danger')
     return render_template('login.html')
 
-
-@app.route('/check', methods=['GET', 'POST'])
-@login_required
-def check():
-    if request.method == 'POST' and request.form.get('text'):
-        pass
-    return render_template('check.html', user=session.get('logged_in'))
-
-
 @app.route('/admin', methods=['GET', 'POST'])
 @login_required
 @is_admin
@@ -157,6 +148,7 @@ def delete_sample():
             db.session.commit()
     return redirect('/admin')
 
+
 @app.route('/create-user', methods=['POST'])
 @login_required
 @is_admin
@@ -186,6 +178,25 @@ def delete_user():
 def logout():
     session.clear()
     return redirect(url_for('login'))
+
+
+@app.route('/check', methods=['GET', 'POST'])
+@login_required
+def check():
+
+    if request.method == 'POST' and request.form.get('text'):
+        plagiat = 0
+
+        text = request.form.get('text')
+        samples = db.session.query(Sample).all()
+        for sample in samples:
+            similarity = jaccard_similarity(sample.text, text)
+            print(similarity)
+            if similarity >= 0.5:
+                plagiat = similarity
+                break
+        return render_template('check.html', user=session.get('logged_in'), plagiat=plagiat, text=text)
+    return render_template('check.html', user=session.get('logged_in'))
 
 
 def jaccard_similarity(doc1, doc2):

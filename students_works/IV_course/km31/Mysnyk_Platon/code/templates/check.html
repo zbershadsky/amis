@@ -80,8 +80,6 @@
             </div>
 
         </div>
-
-
         <!-- Basic Setup -->
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -89,15 +87,30 @@
 
             </div>
             <div class="panel-body">
-                <form class="form form-horizontalr">
+                {% if plagiat is defined and plagiat > 0 %}
+                <div class="col-md-12">
+                    <div class="alert alert-danger">
+                        Your text is {{plagiat*100}}% plagiary!
+                    </div>
+                </div>
+                {% endif %}
+                {% if plagiat is defined and plagiat == 0 %}
+                <div class="col-md-12">
+                    <div class="alert alert-success">
+                        Your text is excellent!
+                    </div>
+                </div>
+                {% endif %}
+
+                <form class="form form-horizontalr" method="POST">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea required rows="15" placeholder="Your text here!" class="form-control"></textarea>
+                            <textarea name="text" required rows="15" placeholder="Your text here!" class="form-control">{% if text is defined %}{{text}}{% endif %}</textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="btn btn-lg btn-success btn-block">Check for plagiary</a>
+                            <button type="submit" class="btn btn-lg btn-success btn-block">Check for plagiary</button>
                         </div>
                     </div>
 
@@ -129,229 +142,6 @@
 
         </footer>
     </div>
-
-    <div class="modal fade" id="modal-create-sample">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Create New Sample</h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Title</label>
-
-                                <input type="text" class="form-control" id="field-1" placeholder="Title">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="form-group no-margin">
-                                <label for="field-7" class="control-label">Text</label>
-
-                                <textarea class="form-control autogrow" id="field-7" placeholder="Sample text"></textarea>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Create</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="modal-edit-sample">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Edit Sample</h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Title</label>
-
-                                <input type="text" class="form-control" id="field-1" placeholder="Title">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="form-group no-margin">
-                                <label for="field-7" class="control-label">Text</label>
-
-                                <textarea class="form-control autogrow" id="field-7" placeholder="Sample text">Lorem ipsum</textarea>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-create-user">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Create User</h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Name</label>
-
-                                <input type="text" class="form-control" id="field-1" placeholder="John">
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <label for="field-2" class="control-label">Email</label>
-
-                                <input type="email" class="form-control" id="field-2" placeholder="Your email">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="form-group">
-                                <label for="field-3" class="control-label">Password</label>
-
-                                <input type="password" class="form-control" id="field-3" placeholder="">
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Create</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-edit-user">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Edit User</h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <label for="field-1" class="control-label">Name</label>
-
-                                <input type="text" class="form-control" id="field-1" placeholder="John">
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <label for="field-2" class="control-label">Email</label>
-
-                                <input type="email" class="form-control" id="field-2" placeholder="Your email">
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="form-group">
-                                <label for="field-3" class="control-label">Password</label>
-
-                                <input type="password" class="form-control" id="field-3" placeholder="">
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="form-group">
-                                <label for="field-3" class="control-label">Status ON/OFF</label>
-
-                                <input type="checkbox" checked="" class="iswitch-lg iswitch-info">
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 </div>
 
 <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>

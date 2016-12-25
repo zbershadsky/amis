@@ -1,0 +1,42 @@
+insert into member values('angelina@gmail.com','123456','Angelina','Jolie','04-Jun-75',null);	
+insert into member values('brad@gmail.com','123456','Brad','Pitt','18-Dec-63',null);	
+insert into member values('al@gmail.com','123456','Alfredo','Pacino','25-Apr-70',null);		
+insert into member values('steve@gmail.com','123456','Steve','Jobs','24-Feb-55',null);	
+insert into member values('bill@gmail.com','123456','Bill','Gates','28-Oct-55',null);		
+insert into member values('yyy@gmail.com','123456','Marina','Kostenko','16-Jan-96,admin);	
+
+
+
+insert into placesm values ('Київ',1,2500);
+insert into placesm values ('Харків',2,2100);
+insert into placesm values ('Одеса',3,2000);
+insert into placesm values ('Львів',4,1800);
+
+
+insert into goalsm values ('Агітація',1,2500);
+insert into goalsm values ('Протест',2,2100);
+insert into goalsm values ('Флешмоб',3,2000);
+insert into goalsm values ('Волонтерство',4,1);
+
+
+insert into peoplem values ('>1000',1,4500);
+insert into peoplem values ('1000-500',2,2100);
+insert into peoplem values ('500-100',3,1300);
+insert into peoplem values ('<100',4,1000);
+
+
+
+
+insert into post_comment values(1,'GREAT!','andre@gmil.com','25-Sep-15');
+insert into post_comment values(1,'GREAT!','brad@gmail.com','14-Sep-12');
+insert into post_comment values(3,'AWESOME!','brad@gmil.com','15-Sep-11');
+insert into post_comment values(5,'AWESOME!','brad@gmil.com','14-Sep-13');   
+insert into post_comment values(7,'AWESOME!','brad@gmil.com','14-Sep-13');
+insert into post_comment values(1,'AWESOME!','steve@gmil.com','14-Sep-13');
+
+insert into post values (1,'Aaaaaaaaaaaaaaaaa','steve@csci585.edu',2,'14-Sep-13');		
+insert into post values (3,'What was the happiest moment of your life?""
+""Any time I wake up and nothing hurts."""','steve@gmil.com',2,'14-Sep-13');	
+
+insert into allorderm  values('angelina@csci585.edu',8000);
+insert into allorderm  values('bred@csci585.edu',9000);

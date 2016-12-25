@@ -58,6 +58,19 @@ class Sample(db.Model):
         return '<Sample %r %r>' % (self.title, self.sample_date)
 
 
+class Compare(db.Model):
+    sample_date = db.Column(db.TIMESTAMP())
+    work_date = db.Column(db.TIMESTAMP())
+    compare_date = db.Column(db.TIMESTAMP(), primary_key=True)
+    result = db.Column(db.Numeric())
+
+    def __init__(self, work, sample, result):
+        self.result = result
+        self.work_date = work
+        self.sample_date = sample
+        self.compare_date = datetime.datetime.now()
+
+
 class Work(db.Model):
     work_date = db.Column(db.TIMESTAMP(), primary_key=True)
     email = db.Column(db.String(100))
@@ -70,6 +83,7 @@ class Work(db.Model):
 
     def __repr__(self):
         return '<Work %r %r>' % (self.title, self.work_date)
+
 
 def login_required(fn):
     @functools.wraps(fn)
@@ -113,6 +127,7 @@ def login():
         else:
             flash('Incorrect email or password.', 'danger')
     return render_template('login.html')
+
 
 @app.route('/admin', methods=['GET', 'POST'])
 @login_required
@@ -194,7 +209,14 @@ def check():
             print(similarity)
             if similarity >= 0.5:
                 plagiat = similarity
-                break
+                work = Work(session['logged_in']['email'], text)
+                db.session.add(work)
+                db.session.commit()
+                compare = Compare(work.work_date, sample.sample_date, similarity)
+                db.session.add(compare)
+                db.session.commit()
+            break
+
         return render_template('check.html', user=session.get('logged_in'), plagiat=plagiat, text=text)
     return render_template('check.html', user=session.get('logged_in'))
 

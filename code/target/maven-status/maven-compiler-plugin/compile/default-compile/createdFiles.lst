@@ -1,0 +1,12 @@
+fpm\entities\User.class
+fpm\servlets\Userpage.class
+fpm\servlets\Login.class
+fpm\servlets\Registration.class
+fpm\dao\table\UsersDAO.class
+fpm\servlets\Message.class
+fpm\dao\exceptions\NoSuchDatabaseException.class
+fpm\servlets\Sent.class
+fpm\dao\oracle\table\UsersOracleDAO.class
+fpm\servlets\Account.class
+fpm\dao\DAOFactory.class
+fpm\dao\oracle\OracleDAOFactory.class

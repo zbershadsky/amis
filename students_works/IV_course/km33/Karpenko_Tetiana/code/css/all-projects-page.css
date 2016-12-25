@@ -1,0 +1,10 @@
+.services-page .services-page-examples {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+    .services-page .services-page-examples {
+        margin-top: 40px;
+    }
+}

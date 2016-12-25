@@ -1,0 +1,17 @@
+echo "here"
+
+if((isset($_POST['auth_login'])&&$_POST['auth_login']!="")&&(isset($_POST['auth_pass'])&&$_POST['auth_pass']!="")){ 
+        echo "Hello World";
+        $subject = 'Обратный звонок'; //Загаловок сообщения
+        $message = '
+                <html>
+                    <head>
+                        <title>'.$subject.'</title>
+                    </head>
+                    <body>
+                        <p>Имя: '.$_POST['auth_login'].'</p>
+                        <p>Телефон: '.$_POST['auth_pass'].'</p>                        
+                    </body>
+                </html>'; //Текст нащего сообщения можно использовать HTML теги
+}
+?>

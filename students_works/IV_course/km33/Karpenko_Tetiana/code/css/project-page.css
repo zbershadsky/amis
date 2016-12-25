@@ -1,0 +1,143 @@
+.contacts {
+    margin-top: 50px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.portfolio-page {
+    padding-top: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+@media (max-width: 767px) {
+    .portfolio-page {
+        padding-top: 15%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .portfolio-page .img-full-width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 555px) {
+    .portfolio-page {
+        padding-top: 20%;
+    }
+}
+
+@media (max-width: 375px) {
+    .portfolio-page {
+        padding-top: 25%;
+    }
+}
+
+.portfolio-page .arrow-previous {
+    text-transform: uppercase;
+    margin-top: 25px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.portfolio-page .arrow-previous:hover,
+    .portfolio-page .arrow-previous :active,
+    .portfolio-page .arrow-previous :focus {
+    color: #00acee;
+}
+
+.portfolio-page .fa-angle-left {
+    margin-right: 5px;
+}
+
+.portfolio-page h2 {
+    font-size: 30px;
+    margin-bottom: 0;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .portfolio-page h2 {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 375px) {
+    .portfolio-page h2 {
+        font-size: 40px;
+    }
+}
+
+.portfolio-page hr {
+    float: left;
+    background: #2196f3;
+    width: 54px;
+}
+
+@media (max-width: 767px) {
+    .portfolio-page hr {
+        float: none;
+        width: 70px;
+    }
+}
+
+.portfolio-page p {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .portfolio-page p {
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+.portfolio-page .button-black:hover {
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .portfolio-page .button-black {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
+.portfolio-page .project-description-block {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+    .portfolio-page .project-description-block .reset-pad {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.portfolio-page .idea-block {
+    margin-bottom: 20px;
+}
+
+.portfolio-page .idea-block .img-shadow {
+    box-shadow: 0px 6px 14px 0px rgba(27, 27, 27, 0.2);
+}
+
+@media (max-width: 767px) {
+    .portfolio-page .idea-block {
+        margin-top: 50px;
+    }
+}
+
+.portfolio-page .idea-block img {
+    float: right;
+}
+
+@media (max-width: 767px) {
+    .portfolio-page .idea-block img {
+        float: none;
+    }
+}

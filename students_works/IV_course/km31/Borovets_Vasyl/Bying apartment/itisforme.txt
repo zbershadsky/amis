@@ -1,0 +1,63 @@
+
+create table apartment (
+  title varchar(50) not null,
+  cadastre_number varchar(20) not null,
+  city varchar(30) not null,
+  street varchar(40) not null,
+  house varchar(5) not null,
+  flat varchar(5) not null,
+  price int not null,
+  primary key (cadastre_number));
+  
+  
+ Create sequence emp_sequence start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+
+insert into apartment (title, cadastre_number, city, street, house, flat, price) 
+values('Cheap apartment in Odessa', '000001:00:000:0002', 
+'Kyiv','Shevchenko', '1A', '1', 20000);
+insert into apartment (title, cadastre_number, city, street, house, flat, price) 
+values('Cheap apartment in Lviv', '000001:00:000:0003', 
+'Kyiv','Shevchenko', '1A', '1', 20000);
+insert into apartment (title, cadastre_number, city, street, house, flat, price) 
+values('Cheap apartment in Charkiv', '000001:00:000:0004', 
+'Kyiv','Shevchenko', '1A', '1', 20000);
+insert into apartment (title, cadastre_number, city, street, house, flat, price) 
+values('Cheap apartment in Kyiv', '000001:00:000:0005', 
+'Kyiv','Shevchenko', '2A', '1', 20000);
+
+
+book_sequence
+
+insert into apartment (title, cadastre_number, city, street, house, flat, price) 
+	values('Cheap apartment in Odessa', '000001:00:000:0002', 'Kyiv','Shevchenko', '1A', '1', 20000);
+
+insert into bookmark (numb, login, cadastre_number) values (book_sequence.nextval,  'customer1', '000001:00:000:0003');
+
+insert into customer (login, name, email, password) values (
+    'customer2', 'Petrov Ivan', 'example1@mail.ru', 'password1');
+
+ALTER TABLE seller MODIFY password varchar(65);
+
+create view book as
+  select seller.name_s, seller.email, apartment.city, apartment.title,  apartment.street,
+          apartment.house, apartment.flat, apartment.price from
+            seller right join apartment on seller.login = apartment.login and
+            apartment.city is not null ;
+			
+create view addbook as
+SELECT bookmark.cadastre_number, customer.login, 
+      apartment.city, apartment.title,  apartment.street,
+          apartment.house, apartment.flat, apartment.price from
+          bookmark left join customer on bookmark.login=customer.login left join
+          apartment on bookmark.cadastre_number = apartment.cadastre_number;
+ALTER TABLE bookmark
+    modify FOREIGN KEY (CADASTRE_NUMBER) REFERENCES apartment(CADASTRE_NUMBER)
+    ON DELETE CASCADE;
+	
+	  CREATE VIEW screen_seller AS 
+  select apartment.title, customer.name_c,apartment.login from apartment left join
+      bookmark on bookmark.cadastre_number = apartment.cadastre_number inner
+      join customer on customer.login = bookmark.login;

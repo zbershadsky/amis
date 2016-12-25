@@ -1,0 +1,183 @@
+﻿<Window x:Class="Interviewer.Windows.SignUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interviewer"
+        xmlns:conv="clr-namespace:Interviewer.Converters"
+        xmlns:w="clr-namespace:Interviewer.Windows"
+        mc:Ignorable="d"
+        Title="SignUpWindow" Height="800" Width="600" Background="{StaticResource LightBackgroundBrush}" SnapsToDevicePixels="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" Grid.Row="1" Background="{StaticResource DarkBackgroundBrush}">
+            <!-- Register mode -->
+            <StackPanel Grid.Row="1" Margin="60,48,60,80">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Visibility" Value="Hidden"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Mode}" Value="{x:Static w:SignUpMode.Register}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <StackPanel Margin="0,0,0,40" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Already have the account?" Style="{StaticResource DarkCommonBox}"/>
+                    <Button BorderBrush="{x:Null}" Margin="0" Padding="7,0" Content="Sign in!" Click="buttonSignIn_Click"></Button>
+                </StackPanel>
+
+                <TextBox x:Name="textBoxUsername" local:Ext.Placeholder="Username" Text="{Binding User.Username, UpdateSourceTrigger=PropertyChanged}">
+                    <local:Ext.IsValid>
+                        <Binding Path="Text" RelativeSource="{RelativeSource Self}" Converter="{StaticResource textValidationConverter}">
+                            <Binding.ConverterParameter>
+                                <conv:TextValidationSettings NotEmpty="True" MinLength="5"/>
+                            </Binding.ConverterParameter>
+                        </Binding>
+                    </local:Ext.IsValid>
+                </TextBox>
+                <TextBlock Text="(min 5 characters)" Margin="0,-2,0,5" HorizontalAlignment="Center" Style="{StaticResource DarkCommonBox}"/>
+                <PasswordBox x:Name="passwordBox" local:Ext.Placeholder="Password"
+                     local:Pwd.Attach="True" local:Pwd.Password="{Binding User.Password, Mode=TwoWay}">
+                    <local:Ext.IsValid>
+                        <Binding Path="(local:Pwd.Password)" RelativeSource="{RelativeSource Self}" Converter="{StaticResource textValidationConverter}">
+                            <Binding.ConverterParameter>
+                                <conv:TextValidationSettings NotEmpty="True" MinLength="8"/>
+                            </Binding.ConverterParameter>
+                        </Binding>
+                    </local:Ext.IsValid>
+                </PasswordBox>
+                <TextBlock Text="(min 8 characters)" Margin="0,-2,0,5" HorizontalAlignment="Center" Style="{StaticResource DarkCommonBox}"/>
+                <PasswordBox x:Name="passwordBoxConfirm" local:Ext.Placeholder="Confirm password" local:Pwd.Attach="True">
+                    <local:Ext.IsValid>
+                        <MultiBinding Converter="{StaticResource matchConverter}">
+                            <Binding RelativeSource="{RelativeSource Self}" Path="(local:Pwd.Password)"/>
+                            <Binding ElementName="passwordBox" Path="(local:Pwd.Password)"/>
+                        </MultiBinding>
+                    </local:Ext.IsValid>
+                </PasswordBox>
+                <TextBox x:Name="textBoxEmail" local:Ext.Placeholder="Email" Text="{Binding User.Email, UpdateSourceTrigger=PropertyChanged}"
+                     local:Ext.IsValid="{Binding Text, RelativeSource={RelativeSource Self}, Converter={StaticResource emailValidationConverter}}"
+                     />
+                <TextBox x:Name="textBoxFirstName" local:Ext.Placeholder="First name" Text="{Binding User.FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="textBoxLastName" local:Ext.Placeholder="Last name" Text="{Binding User.LastName, UpdateSourceTrigger=PropertyChanged}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Style="{StaticResource DarkCommonBox}" IsChecked="{Binding User.IsAsker}" Content="Asker"/>
+                    <CheckBox Style="{StaticResource DarkCommonBox}" IsChecked="{Binding User.IsRespondent}" Content="Respondent" Grid.Column="1"/>
+                    <CheckBox Style="{StaticResource DarkCommonBox}" IsChecked="{Binding User.IsEditor}" Content="Editor" Grid.Column="2"/>
+                </Grid>
+                <Button Content="Sign up" Click="SignUp_Click">
+                    <Button.IsEnabled>
+                        <MultiBinding Converter="{StaticResource allTrueConverter}">
+                            <Binding ElementName="textBoxUsername" Path="(local:Ext.IsValid)"/>
+                            <Binding ElementName="passwordBox" Path="(local:Ext.IsValid)"/>
+                            <Binding ElementName="passwordBoxConfirm" Path="(local:Ext.IsValid)"/>
+                            <Binding ElementName="textBoxEmail" Path="(local:Ext.IsValid)"/>
+                        </MultiBinding>
+                    </Button.IsEnabled>
+                </Button>
+            </StackPanel>
+
+            <!-- Login mode -->
+            <StackPanel Grid.Row="1" Margin="60,48,60,80" VerticalAlignment="Center">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Visibility" Value="Hidden"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Mode}" Value="{x:Static w:SignUpMode.Login}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <StackPanel Margin="0,0,0,40" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Don't have the account?" Style="{StaticResource DarkCommonBox}"/>
+                    <Button BorderBrush="{x:Null}" Margin="0" Padding="7,0" Content="Sign up!" Click="buttonSignUp_Click"></Button>
+                </StackPanel>
+
+                <TextBox local:Ext.Placeholder="Username" Text="{Binding User.Username, UpdateSourceTrigger=PropertyChanged}"/>
+                <PasswordBox x:Name="passwordBoxSignIn" local:Ext.Placeholder="Password"
+                             local:Pwd.Attach="True" local:Pwd.Password="{Binding User.Password, Mode=TwoWay}"/>
+                <Button Content="Sign in" Click="SignIn_Click"/>
+            </StackPanel>
+
+            <!-- Modify mode -->
+            <StackPanel Grid.Row="1" Margin="60,48,60,80" VerticalAlignment="Center">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Visibility" Value="Hidden"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Mode}" Value="{x:Static w:SignUpMode.Modify}">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+
+                <TextBlock Text="{Binding User.Username}" HorizontalAlignment="Center" Style="{StaticResource DarkCommonBox}"/>
+                <PasswordBox x:Name="oldPasswordBox" local:Ext.Placeholder="Old password"
+                     local:Pwd.Attach="True" local:Pwd.Password="{Binding OldPassword, Mode=TwoWay}"/>
+                <PasswordBox x:Name="passwordBox2" local:Ext.Placeholder="New password"
+                     local:Pwd.Attach="True" local:Pwd.Password="{Binding User.Password, Mode=TwoWay}">
+                    <local:Ext.IsValid>
+                        <Binding Path="(local:Pwd.Password)" RelativeSource="{RelativeSource Self}" Converter="{StaticResource textValidationConverter}">
+                            <Binding.ConverterParameter>
+                                <conv:TextValidationSettings NotEmpty="False" MinLength="8"/>
+                            </Binding.ConverterParameter>
+                        </Binding>
+                    </local:Ext.IsValid>
+                </PasswordBox>
+                <TextBlock Text="(min 8 characters)" Margin="0,-2,0,5" HorizontalAlignment="Center" Style="{StaticResource DarkCommonBox}"/>
+                <PasswordBox x:Name="passwordBoxConfirm2" local:Ext.Placeholder="Confirm password" local:Pwd.Attach="True">
+                    <local:Ext.IsValid>
+                        <MultiBinding Converter="{StaticResource matchConverter}">
+                            <Binding RelativeSource="{RelativeSource Self}" Path="(local:Pwd.Password)"/>
+                            <Binding ElementName="passwordBox2" Path="(local:Pwd.Password)"/>
+                        </MultiBinding>
+                    </local:Ext.IsValid>
+                </PasswordBox>
+                <TextBox x:Name="textBoxEmail2" local:Ext.Placeholder="Email" Text="{Binding User.Email, UpdateSourceTrigger=PropertyChanged}"
+                     local:Ext.IsValid="{Binding Text, RelativeSource={RelativeSource Self}, Converter={StaticResource emailValidationConverter}}"
+                     />
+                <TextBox x:Name="textBoxFirstName2" local:Ext.Placeholder="First name" Text="{Binding User.FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="textBoxLastName2" local:Ext.Placeholder="Last name" Text="{Binding User.LastName, UpdateSourceTrigger=PropertyChanged}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Style="{StaticResource DarkCommonBox}" IsChecked="{Binding User.IsAsker}" Content="Asker"/>
+                    <CheckBox Style="{StaticResource DarkCommonBox}" IsChecked="{Binding User.IsRespondent}" Content="Respondent" Grid.Column="1"/>
+                    <CheckBox Style="{StaticResource DarkCommonBox}" IsChecked="{Binding User.IsEditor}" Content="Editor" Grid.Column="2"/>
+                </Grid>
+                <Button Content="Save" Click="Save_Click">
+                    <Button.IsEnabled>
+                        <MultiBinding Converter="{StaticResource allTrueConverter}">
+                            <Binding ElementName="passwordBox2" Path="(local:Ext.IsValid)"/>
+                            <Binding ElementName="passwordBoxConfirm2" Path="(local:Ext.IsValid)"/>
+                            <Binding ElementName="textBoxEmail2" Path="(local:Ext.IsValid)"/>
+                        </MultiBinding>
+                    </Button.IsEnabled>
+                </Button>
+            </StackPanel>
+        </Grid>
+        
+
+    </Grid>
+</Window>

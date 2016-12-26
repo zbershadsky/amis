@@ -1,248 +1,143 @@
 
---------------------------------------------------------
---  DDL for Table COLLOQUIUM
---------------------------------------------------------
+	--------------------------------------------------------
+	--  DDL for Table COLLOQUIUM
+	--------------------------------------------------------
 
-  CREATE TABLE "SYSTEM"."COLLOQUIUM" 
-   (	"COLLOQUIUMNAME" VARCHAR2(20 BYTE), 
-	"AUTHOR" VARCHAR2(20 BYTE)
-   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
-
---------------------------------------------------------
---  DDL for Index COLLOQUIUM_PK
---------------------------------------------------------
-
-  CREATE UNIQUE INDEX "SYSTEM"."COLLOQUIUM_PK" ON "SYSTEM"."COLLOQUIUM" ("COLLOQUIUMNAME", "AUTHOR") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
-
---------------------------------------------------------
---  DDL for Table LECTURERS
---------------------------------------------------------
-
-  CREATE TABLE "SYSTEM"."LECTURERS" 
-   (	"LOGIN" VARCHAR2(20 BYTE), 
-	"PASSWORD" VARCHAR2(32 BYTE), 
-	"EMAIL" VARCHAR2(20 BYTE), 
-	"NAME" VARCHAR2(20 BYTE), 
-	"SURNAME" VARCHAR2(20 BYTE)
-   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
+	  CREATE TABLE "COLLOQUIUM" 
+	   (	"COLLOQUIUMNAME" VARCHAR2(20 BYTE), 
+		"AUTHOR" VARCHAR2(20 BYTE)
+	   );
 
 
---------------------------------------------------------
---  DDL for Index LEC_PK
---------------------------------------------------------
+	--------------------------------------------------------
+	--  DDL for Table LECTURERS
+	--------------------------------------------------------
 
-  CREATE UNIQUE INDEX "SYSTEM"."LEC_PK" ON "SYSTEM"."LECTURERS" ("LOGIN") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
-
---------------------------------------------------------
---  DDL for Table STUDENTANSWER
---------------------------------------------------------
-
-  CREATE TABLE "SYSTEM"."STUDENTANSWER" 
-   (	"TASKNAME" VARCHAR2(20 BYTE), 
-	"AUTHOR" VARCHAR2(20 BYTE), 
-	"COLLOQUIUMNAME" VARCHAR2(20 BYTE), 
-	"ANSWER" VARCHAR2(20 BYTE), 
-	"MARK" NUMBER, 
-	"LECTURER" VARCHAR2(20 BYTE)
-   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
+	  CREATE TABLE "LECTURERS" 
+	   (	"LOGIN" VARCHAR2(20 BYTE), 
+		"PASSWORD" VARCHAR2(32 BYTE), 
+		"EMAIL" VARCHAR2(20 BYTE), 
+		"NAME" VARCHAR2(20 BYTE), 
+		"SURNAME" VARCHAR2(20 BYTE)
+	   ) ;
 
 
---------------------------------------------------------
---  DDL for Index STUDENTANSWER_PK
---------------------------------------------------------
+	--------------------------------------------------------
+	--  DDL for Table STUDENTANSWER
+	--------------------------------------------------------
 
-  CREATE UNIQUE INDEX "SYSTEM"."STUDENTANSWER_PK" ON "SYSTEM"."STUDENTANSWER" ("TASKNAME", "AUTHOR", "COLLOQUIUMNAME", "LECTURER") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
-
---------------------------------------------------------
---  DDL for Table STUDENTS
---------------------------------------------------------
-
-  CREATE TABLE "SYSTEM"."STUDENTS" 
-   (	"LOGIN" VARCHAR2(20 BYTE), 
-	"PASSWORD" VARCHAR2(32 BYTE), 
-	"EMAIL" VARCHAR2(20 BYTE), 
-	"NAME" VARCHAR2(20 BYTE), 
-	"SURNAME" VARCHAR2(20 BYTE)
-   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
+	  CREATE TABLE "STUDENTANSWER" 
+	   (	"TASKNAME" VARCHAR2(20 BYTE), 
+		"AUTHOR" VARCHAR2(20 BYTE), 
+		"COLLOQUIUMNAME" VARCHAR2(20 BYTE), 
+		"ANSWER" VARCHAR2(20 BYTE), 
+		"MARK" NUMBER, 
+		"LECTURER" VARCHAR2(20 BYTE)
+	   );
 
 
---------------------------------------------------------
---  DDL for Index ST_PK
---------------------------------------------------------
+	--------------------------------------------------------
+	--  DDL for Table STUDENTS
+	--------------------------------------------------------
 
-  CREATE UNIQUE INDEX "SYSTEM"."ST_PK" ON "SYSTEM"."STUDENTS" ("LOGIN") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
-
-
---------------------------------------------------------
---  DDL for Table TASK
---------------------------------------------------------
-
-  CREATE TABLE "SYSTEM"."TASK" 
-   (	"TASKNAME" VARCHAR2(20 BYTE), 
-	"QUESTION" VARCHAR2(20 BYTE), 
-	"CORRECTANSWER" VARCHAR2(20 BYTE), 
-	"AUTHOR" VARCHAR2(20 BYTE)
-   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
+	  CREATE TABLE "STUDENTS" 
+	   (	"LOGIN" VARCHAR2(20 BYTE), 
+		"PASSWORD" VARCHAR2(32 BYTE), 
+		"EMAIL" VARCHAR2(20 BYTE), 
+		"NAME" VARCHAR2(20 BYTE), 
+		"SURNAME" VARCHAR2(20 BYTE)
+	   );
 
 
---------------------------------------------------------
---  DDL for Index TASK_PK
---------------------------------------------------------
+	--------------------------------------------------------
+	--  DDL for Table TASK
+	--------------------------------------------------------
 
-  CREATE UNIQUE INDEX "SYSTEM"."TASK_PK" ON "SYSTEM"."TASK" ("TASKNAME", "AUTHOR") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
+	  CREATE TABLE "TASK" 
+	   (	"TASKNAME" VARCHAR2(20 BYTE), 
+		"QUESTION" VARCHAR2(20 BYTE), 
+		"CORRECTANSWER" VARCHAR2(20 BYTE), 
+		"AUTHOR" VARCHAR2(20 BYTE)
+	   );
 
---------------------------------------------------------
---  DDL for Table COLLOQUIUMTASKLIST
---------------------------------------------------------
 
-  CREATE TABLE "SYSTEM"."COLLOQUIUMTASKLIST" 
-   (	"AUTHOR" VARCHAR2(20 BYTE), 
-	"COLLOQUIUMNAME" VARCHAR2(20 BYTE), 
-	"TASKNAME" VARCHAR2(20 BYTE)
-   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM" ;
+	--------------------------------------------------------
+	--  DDL for Table COLLOQUIUMTASKLIST
+	--------------------------------------------------------
 
-  
-  --------------------------------------------------------
---  Constraints for Table COLLOQUIUM
---------------------------------------------------------
-
-  ALTER TABLE "SYSTEM"."COLLOQUIUM" ADD CONSTRAINT "COLLOQUIUM_PK" PRIMARY KEY ("COLLOQUIUMNAME", "AUTHOR")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM"  ENABLE;
-  ALTER TABLE "SYSTEM"."COLLOQUIUM" MODIFY ("COLLOQUIUMNAME" NOT NULL ENABLE);
-  ALTER TABLE "SYSTEM"."COLLOQUIUM" MODIFY ("AUTHOR" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table TASK
---------------------------------------------------------
-
-  ALTER TABLE "SYSTEM"."TASK" MODIFY ("TASKNAME" NOT NULL ENABLE);
-  ALTER TABLE "SYSTEM"."TASK" MODIFY ("AUTHOR" NOT NULL ENABLE);
-  ALTER TABLE "SYSTEM"."TASK" ADD CONSTRAINT "TASK_PK" PRIMARY KEY ("TASKNAME", "AUTHOR")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM"  ENABLE;
+	  CREATE TABLE "COLLOQUIUMTASKLIST" 
+	   (	"AUTHOR" VARCHAR2(20 BYTE), 
+		"COLLOQUIUMNAME" VARCHAR2(20 BYTE), 
+		"TASKNAME" VARCHAR2(20 BYTE)
+	   );
 
 	  
 	  --------------------------------------------------------
---  Constraints for Table LECTURERS
---------------------------------------------------------
+	--  Constraints for Table COLLOQUIUM
+	--------------------------------------------------------
 
-  ALTER TABLE "SYSTEM"."LECTURERS" ADD CONSTRAINT "LEC_PK" PRIMARY KEY ("LOGIN")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM"  ENABLE;
- 
-  ALTER TABLE "SYSTEM"."LECTURERS" MODIFY ("LOGIN" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."LECTURERS" MODIFY ("PASSWORD" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."LECTURERS" MODIFY ("EMAIL" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."LECTURERS" MODIFY ("NAME" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."LECTURERS" MODIFY ("SURNAME" NOT NULL ENABLE);
+	  ALTER table colloquium add constraint colloquium_pk primary key (colloquiumname, author);
 
-  --------------------------------------------------------
---  Constraints for Table STUDENTANSWER
---------------------------------------------------------
+	--------------------------------------------------------
+	--  Constraints for Table TASK
+	--------------------------------------------------------
 
-  ALTER TABLE "SYSTEM"."STUDENTANSWER" ADD CONSTRAINT "STUDENTANSWER_PK" PRIMARY KEY ("TASKNAME", "AUTHOR", "COLLOQUIUMNAME", "LECTURER")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM"  ENABLE;
- 
-  ALTER TABLE "SYSTEM"."STUDENTANSWER" MODIFY ("TASKNAME" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."STUDENTANSWER" MODIFY ("AUTHOR" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."STUDENTANSWER" MODIFY ("COLLOQUIUMNAME" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."STUDENTANSWER" MODIFY ("LECTURER" NOT NULL ENABLE);
-  
-  --------------------------------------------------------
---  Constraints for Table STUDENTS
---------------------------------------------------------
+	  ALTER TABLE TASK ADD CONSTRAINT TASK_PK PRIMARY KEY (TASKNAME, AUTHOR);
 
-  ALTER TABLE "SYSTEM"."STUDENTS" ADD CONSTRAINT "ST_PK" PRIMARY KEY ("LOGIN")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
-  TABLESPACE "SYSTEM"  ENABLE;
- 
-  ALTER TABLE "SYSTEM"."STUDENTS" MODIFY ("LOGIN" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."STUDENTS" MODIFY ("EMAIL" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."STUDENTS" MODIFY ("NAME" NOT NULL ENABLE);
- 
-  ALTER TABLE "SYSTEM"."STUDENTS" MODIFY ("SURNAME" NOT NULL ENABLE);
-  
-  --------------------------------------------------------
---  Ref Constraints for Table TASK
---------------------------------------------------------
+		  
+		  --------------------------------------------------------
+	--  Constraints for Table LECTURERS
+	--------------------------------------------------------
 
-  ALTER TABLE "SYSTEM"."TASK" ADD CONSTRAINT "TASK_LECTURERS_FK1" FOREIGN KEY ("AUTHOR")
-	  REFERENCES "SYSTEM"."LECTURERS" ("LOGIN") ENABLE;
-  --------------------------------------------------------
---  Ref Constraints for Table STUDENTANSWER
---------------------------------------------------------
-
-  ALTER TABLE "SYSTEM"."STUDENTANSWER" ADD CONSTRAINT "STUDENTANSWER_COLLOQUIUM_FK1" FOREIGN KEY ("COLLOQUIUMNAME", "LECTURER")
-	  REFERENCES "SYSTEM"."COLLOQUIUM" ("COLLOQUIUMNAME", "AUTHOR") ENABLE;
- 
-  ALTER TABLE "SYSTEM"."STUDENTANSWER" ADD CONSTRAINT "STUDENTANSWER_TASK_FK1" FOREIGN KEY ("TASKNAME", "LECTURER")
-	  REFERENCES "SYSTEM"."TASK" ("TASKNAME", "AUTHOR") ENABLE;
+	  ALTER TABLE "LECTURERS" ADD CONSTRAINT "LEC_PK" PRIMARY KEY ("LOGIN");
 
 	  --------------------------------------------------------
---  Ref Constraints for Table COLLOQUIUMTASKLIST
---------------------------------------------------------
+	--  Constraints for Table STUDENTANSWER
+	--------------------------------------------------------
 
-  ALTER TABLE "SYSTEM"."COLLOQUIUMTASKLIST" ADD CONSTRAINT "COLLOQUIUMTASKLIST_COLLOQ_FK1" FOREIGN KEY ("COLLOQUIUMNAME", "AUTHOR")
-	  REFERENCES "SYSTEM"."COLLOQUIUM" ("COLLOQUIUMNAME", "AUTHOR") ENABLE;
- 
-  ALTER TABLE "SYSTEM"."COLLOQUIUMTASKLIST" ADD CONSTRAINT "COLLOQUIUMTASKLIST_TASK_FK1" FOREIGN KEY ("TASKNAME", "AUTHOR")
-	  REFERENCES "SYSTEM"."TASK" ("TASKNAME", "AUTHOR") ENABLE;
+	  ALTER TABLE "STUDENTANSWER" ADD CONSTRAINT "STUDENTANSWER_PK" PRIMARY KEY ("TASKNAME", "AUTHOR", "COLLOQUIUMNAME", "LECTURER");
 	  
+	  --------------------------------------------------------
+	--  Constraints for Table STUDENTS
+	--------------------------------------------------------
+
+	  ALTER TABLE "STUDENTS" ADD CONSTRAINT "ST_PK" PRIMARY KEY ("LOGIN");
+	  
+	  --------------------------------------------------------
+	--  Ref Constraints for Table TASK
+	--------------------------------------------------------
+
+	  ALTER TABLE "TASK" ADD CONSTRAINT "TASK_LECTURERS_FK1" FOREIGN KEY ("AUTHOR")
+		  REFERENCES "LECTURERS" ("LOGIN");
+	  --------------------------------------------------------
+	--  Ref Constraints for Table STUDENTANSWER
+	--------------------------------------------------------
+
+	  ALTER TABLE "STUDENTANSWER" ADD CONSTRAINT "STUDENTANSWER_COLLOQUIUM_FK1" FOREIGN KEY ("COLLOQUIUMNAME", "LECTURER")
+		  REFERENCES "COLLOQUIUM" ("COLLOQUIUMNAME", "AUTHOR");
+	 
+	  ALTER TABLE "STUDENTANSWER" ADD CONSTRAINT "STUDENTANSWER_TASK_FK1" FOREIGN KEY ("TASKNAME", "LECTURER")
+		  REFERENCES "TASK" ("TASKNAME", "AUTHOR");
+
+		  --------------------------------------------------------
+	--  Ref Constraints for Table COLLOQUIUMTASKLIST
+	--------------------------------------------------------
+
+	  ALTER TABLE "COLLOQUIUMTASKLIST" ADD CONSTRAINT "COLLOQUIUMTASKLIST_COLLOQ_FK1" FOREIGN KEY ("COLLOQUIUMNAME", "AUTHOR")
+		  REFERENCES "COLLOQUIUM" ("COLLOQUIUMNAME", "AUTHOR");
+	 
+	  ALTER TABLE "COLLOQUIUMTASKLIST" ADD CONSTRAINT "COLLOQUIUMTASKLIST_TASK_FK1" FOREIGN KEY ("TASKNAME", "AUTHOR")
+		  REFERENCES "TASK" ("TASKNAME", "AUTHOR");
+		  
+create view colloquium_view as 
+select * from colloquium;
+create view colloquiumtasklist_view as 
+select * from colloquiumtasklist;
+create view lec_view as 
+select Login, password from lecturers;
+create view stud_view as 
+select Login, password from students;
+create view studentanswer_view as 
+select * from studentanswer;
+create view task_view as 
+select * from task;

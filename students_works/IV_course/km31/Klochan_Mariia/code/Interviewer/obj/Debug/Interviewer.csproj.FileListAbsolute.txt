@@ -47,3 +47,4 @@ F:\Share\Interviewer\Interviewer\bin\Debug\Oracle.ManagedDataAccess.dll
 F:\Share\Interviewer\Interviewer\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
 F:\Share\Interviewer\Interviewer\bin\Debug\EntityFramework.xml
 F:\Share\Interviewer\Interviewer\bin\Debug\EntityFramework.SqlServer.xml
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer.csprojResolveAssemblyReference.cache

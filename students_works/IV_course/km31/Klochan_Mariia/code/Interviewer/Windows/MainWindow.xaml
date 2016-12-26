@@ -34,7 +34,7 @@
 
             <ListView Grid.Row="1" ItemsSource="{Binding Interviews}">
                 <ListView.ItemTemplate>
-                    <DataTemplate DataType="models:Dialog">
+                    <DataTemplate DataType="models:Interview">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>

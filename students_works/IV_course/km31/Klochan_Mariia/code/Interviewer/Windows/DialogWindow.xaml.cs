@@ -176,9 +176,16 @@ namespace Interviewer.Windows
 
         private void DeleteQuestion_Click(object sender, RoutedEventArgs e)
         {
-            var line = (sender as Button)?.Tag as InterviewLine;
-            if (line != null)
-                Interview.Lines.Remove(line);
+            try
+            {
+                var line = (sender as Button)?.Tag as InterviewLine;
+                if (line != null)
+                    Interview.Lines.Remove(line);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Could not delete question");
+            }
         }
         
         private void userSearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -202,11 +209,18 @@ namespace Interviewer.Windows
 
         private void UserList_Click(object sender, RoutedEventArgs e)
         {
-            var user = (sender as Button)?.Tag as User;
-            if (user == null)
-                return;
-            Interview.Respondent = user;
-            dropDownUsers.Visibility = Visibility.Collapsed;
+            try
+            {
+                var user = (sender as Button)?.Tag as User;
+                if (user == null)
+                    return;
+                Interview.Respondent = user;
+                dropDownUsers.Visibility = Visibility.Collapsed;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Could not set the respondent");
+            }
         }
 
         private void RespondentButton_Click(object sender, RoutedEventArgs e)

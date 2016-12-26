@@ -40,12 +40,16 @@ namespace Interviewer.Windows
 
         public string OldPassword { get; set; }
 
-        public SignUpWindow() : this(new User(), SignUpMode.Login)
+        public SignUpWindow() : this(null, SignUpMode.Login)
         { }
 
         public SignUpWindow(User user, SignUpMode mode)
         {
-            User = user;
+            if (user == null)
+                User = new User();
+            else
+                using (var ctx = new InterviewerContext())
+                    User = ctx.Users.Where(u => u.Username == user.Username).SingleOrDefault();
             Mode = mode;
             if (Mode == SignUpMode.Modify)
                 User.Password = "";
@@ -89,7 +93,7 @@ namespace Interviewer.Windows
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             try
-            { 
+            {
                 using (var ctx = new InterviewerContext())
                 {
                     if (ctx.Users.Where(u => u.Username == User.Username).FirstOrDefault() != null)
@@ -112,10 +116,17 @@ namespace Interviewer.Windows
 
         private void OpenMainWindow()
         {
-            this.Hide();
-            var mw = new MainWindow(User);
-            mw.Closed += (o, e2) => this.Close();
-            mw.Show();
+            try
+            {
+                this.Hide();
+                var mw = new MainWindow(User);
+                mw.Closed += (o, e2) => this.Close();
+                mw.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Unable to open main window");
+            }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -129,6 +140,8 @@ namespace Interviewer.Windows
                         MessageBox.Show("Old password is wrong.");
                         return;
                     }
+                    if (string.IsNullOrEmpty(User.Password))
+                        User.Password = OldPassword;
                     ctx.Entry(User).State = System.Data.Entity.EntityState.Modified;
                     ctx.SaveChanges();
                 }

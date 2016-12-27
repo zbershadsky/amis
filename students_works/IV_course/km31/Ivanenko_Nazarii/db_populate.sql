@@ -1,265 +1,134 @@
---------------------------------------------------------
---  File created - Sunday-December-25-2016   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Sequence BOOK_SEQ
---------------------------------------------------------
+---------------------------
+-- Populate Customer table
+---------------------------
 
-   CREATE SEQUENCE  "KPI"."BOOK_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOPARTITION ;
---------------------------------------------------------
---  DDL for Sequence HOTEL_SEQ
---------------------------------------------------------
+INSERT INTO Customers (cust_email, cust_name, cust_country, cust_pass) 
+VALUES ('firstcustomer@gmail.com', 'Tom', 'USA', 'customer');
 
-   CREATE SEQUENCE  "KPI"."HOTEL_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOPARTITION ;
---------------------------------------------------------
---  DDL for Sequence ROOM_SEQ
---------------------------------------------------------
+INSERT INTO Customers (cust_email, cust_name, cust_country, cust_pass) 
+VALUES ('secondcustomer@gmail.com', 'Piotr', 'Poland', 'customer');
 
-   CREATE SEQUENCE  "KPI"."ROOM_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOPARTITION ;
---------------------------------------------------------
---  DDL for Table BOOKINGS
---------------------------------------------------------
+INSERT INTO Customers (cust_email, cust_name, cust_country, cust_pass) 
+VALUES ('firstowner@gmail.com', 'Vladimir', 'Russia', 'owner');
 
-  CREATE TABLE "KPI"."BOOKINGS" 
-   (	"BOOKING_ID" NUMBER(10,0), 
-	"BOOKING_DATE_IN" DATE, 
-	"BOOKING_DATE_OUT" DATE, 
-	"BOOKING_ROOM" NUMBER, 
-	"BOOKING_CUSTOMER" VARCHAR2(20 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Table CUSTOMERS
---------------------------------------------------------
+INSERT INTO Customers (cust_email, cust_name, cust_country, cust_pass) 
+VALUES ('secondowner@gmail.com', 'Nazar', 'Ukraine', 'owner');
 
-  CREATE TABLE "KPI"."CUSTOMERS" 
-   (	"CUST_EMAIL" VARCHAR2(20 BYTE), 
-	"CUST_NAME" VARCHAR2(40 BYTE), 
-	"CUST_COUNTRY" VARCHAR2(20 BYTE), 
-	"CUST_PHONE" VARCHAR2(20 BYTE), 
-	"CUST_PASS" VARCHAR2(40 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Table HOTELS
---------------------------------------------------------
+---------------------------
+-- Populate Owners table
+---------------------------
 
-  CREATE TABLE "KPI"."HOTELS" 
-   (	"HOTEL_ID" NUMBER(10,0), 
-	"HOTEL_DESCRIPTION" VARCHAR2(20 BYTE), 
-	"HOTEL_NAME" VARCHAR2(20 BYTE), 
-	"HOTEL_ADDRESS" VARCHAR2(20 BYTE), 
-	"HOTEL_OWNER" VARCHAR2(20 BYTE), 
-	"HOTEL_CITY" VARCHAR2(15 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Table OWNERS
---------------------------------------------------------
+INSERT INTO Owners (owner_email) VALUES ('firstowner@gmail.com');
+INSERT INTO Owners (owner_email) VALUES ('secondowner@gmail.com');
 
-  CREATE TABLE "KPI"."OWNERS" 
-   (	"OWNER_EMAIL" VARCHAR2(20 BYTE)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Table ROOMS
---------------------------------------------------------
+---------------------------
+-- Populate Hotels table
+---------------------------
 
-  CREATE TABLE "KPI"."ROOMS" 
-   (	"ROOM_ID" NUMBER(10,0), 
-	"ROOM_CAPACITY" NUMBER(10,0), 
-	"ROOM_DESCRIPTION" VARCHAR2(50 BYTE), 
-	"ROOM_HOTEL" NUMBER(10,0), 
-	"ROOM_PRICE" NUMBER(*,0)
-   ) SEGMENT CREATION IMMEDIATE 
-  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
- NOCOMPRESS LOGGING
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
-REM INSERTING into KPI.BOOKINGS
-SET DEFINE OFF;
-Insert into KPI.BOOKINGS (BOOKING_ID,BOOKING_DATE_IN,BOOKING_DATE_OUT,BOOKING_ROOM,BOOKING_CUSTOMER) values (1,to_date('27-DEC-16','DD-MON-RR'),to_date('28-DEC-16','DD-MON-RR'),1,'n@gmail.com');
-REM INSERTING into KPI.CUSTOMERS
-SET DEFINE OFF;
-Insert into KPI.CUSTOMERS (CUST_EMAIL,CUST_NAME,CUST_COUNTRY,CUST_PHONE,CUST_PASS) values ('a@gmail.com','Nick',null,null,'devildevil');
-Insert into KPI.CUSTOMERS (CUST_EMAIL,CUST_NAME,CUST_COUNTRY,CUST_PHONE,CUST_PASS) values ('n@gmail.com','nazar',null,null,'12345');
-REM INSERTING into KPI.HOTELS
-SET DEFINE OFF;
-Insert into KPI.HOTELS (HOTEL_ID,HOTEL_DESCRIPTION,HOTEL_NAME,HOTEL_ADDRESS,HOTEL_OWNER,HOTEL_CITY) values (1,'something','Glory','ul. Pawla','a@gmail.com','Krakow');
-Insert into KPI.HOTELS (HOTEL_ID,HOTEL_DESCRIPTION,HOTEL_NAME,HOTEL_ADDRESS,HOTEL_OWNER,HOTEL_CITY) values (2,'Fabolous','Victory','ul. Dekerta','a@gmail.com','Krakow');
-Insert into KPI.HOTELS (HOTEL_ID,HOTEL_DESCRIPTION,HOTEL_NAME,HOTEL_ADDRESS,HOTEL_OWNER,HOTEL_CITY) values (3,'Great','Papa','ul. Rota','a@gmail.com','Krakow');
-REM INSERTING into KPI.OWNERS
-SET DEFINE OFF;
-Insert into KPI.OWNERS (OWNER_EMAIL) values ('a@gmail.com');
-REM INSERTING into KPI.ROOMS
-SET DEFINE OFF;
-Insert into KPI.ROOMS (ROOM_ID,ROOM_CAPACITY,ROOM_DESCRIPTION,ROOM_HOTEL,ROOM_PRICE) values (1,2,'perfect',1,99);
-Insert into KPI.ROOMS (ROOM_ID,ROOM_CAPACITY,ROOM_DESCRIPTION,ROOM_HOTEL,ROOM_PRICE) values (2,3,'funny',1,78);
-Insert into KPI.ROOMS (ROOM_ID,ROOM_CAPACITY,ROOM_DESCRIPTION,ROOM_HOTEL,ROOM_PRICE) values (3,1,'bad',2,55);
---------------------------------------------------------
---  DDL for Index HOTEL_PK
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (1, 'Well located hotel offers you quiet and clean rooms', 'Krakow Glory',
+ 'NoFantasy street 44', 'firstowner@gmail.com', 'Krakow');
+ 
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (2, 'Well located hotel offers you quiet and clean rooms', 'Astoria',
+ 'NoFantasy street 28', 'firstowner@gmail.com', 'Berlin');
 
-  CREATE UNIQUE INDEX "KPI"."HOTEL_PK" ON "KPI"."HOTELS" ("HOTEL_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index BOOKINGS_PK
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (3, 'Well located hotel offers you something', 'Royal hotel',
+ 'NoFantasy street 57', 'firstowner@gmail.com', 'Warsaw');
 
-  CREATE UNIQUE INDEX "KPI"."BOOKINGS_PK" ON "KPI"."BOOKINGS" ("BOOKING_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index ROOMS_PK
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (4, 'Well located hotel offers you cookies', 'Voyage',
+ 'NoFantasy street 12', 'firstowner@gmail.com', 'Krakow');
 
-  CREATE UNIQUE INDEX "KPI"."ROOMS_PK" ON "KPI"."ROOMS" ("ROOM_ID") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index CUSTOMERS_PK
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (5, 'Welcome, guests!', 'Ukraine',
+ 'NoFantasy street 76', 'firstowner@gmail.com', 'Kiev');
 
-  CREATE UNIQUE INDEX "KPI"."CUSTOMERS_PK" ON "KPI"."CUSTOMERS" ("CUST_EMAIL") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  DDL for Index OWNERS_PK
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (6, 'Well located hotel offers you sweets', 'Elite Hall',
+ 'NoFantasy street 99', 'secondowner@gmail.com', 'Kiev');
 
-  CREATE UNIQUE INDEX "KPI"."OWNERS_PK" ON "KPI"."OWNERS" ("OWNER_EMAIL") 
-  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
---------------------------------------------------------
---  Constraints for Table BOOKINGS
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (7, 'Well located hotel offers you a beer', 'Beer House',
+ 'NoFantasy street 93', 'secondowner@gmail.com', 'Berlin');
 
-  ALTER TABLE "KPI"."BOOKINGS" MODIFY ("BOOKING_ID" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."BOOKINGS" MODIFY ("BOOKING_DATE_IN" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."BOOKINGS" MODIFY ("BOOKING_DATE_OUT" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."BOOKINGS" MODIFY ("BOOKING_ROOM" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."BOOKINGS" MODIFY ("BOOKING_CUSTOMER" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."BOOKINGS" ADD CONSTRAINT "BOOKINGS_PK" PRIMARY KEY ("BOOKING_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table HOTELS
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (8, 'Well located hotel offers you rooms', 'Warsaw Stroy',
+ 'NoFantasy street 11', 'secondowner@gmail.com', 'Warsaw');
 
-  ALTER TABLE "KPI"."HOTELS" MODIFY ("HOTEL_ID" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."HOTELS" MODIFY ("HOTEL_NAME" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."HOTELS" MODIFY ("HOTEL_ADDRESS" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."HOTELS" MODIFY ("HOTEL_OWNER" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."HOTELS" ADD CONSTRAINT "HOTEL_PK" PRIMARY KEY ("HOTEL_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "KPI"."HOTELS" MODIFY ("HOTEL_CITY" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table CUSTOMERS
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (9, 'Well located hotel offers you hookers', 'Prime Hotel',
+ 'NoFantasy street 69', 'secondowner@gmail.com', 'Kiev');
 
-  ALTER TABLE "KPI"."CUSTOMERS" MODIFY ("CUST_EMAIL" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."CUSTOMERS" MODIFY ("CUST_NAME" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."CUSTOMERS" ADD CONSTRAINT "CUSTOMERS_PK" PRIMARY KEY ("CUST_EMAIL")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "KPI"."CUSTOMERS" MODIFY ("CUST_PASS" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table OWNERS
---------------------------------------------------------
+INSERT INTO Hotels (hotel_id, hotel_description, hotel_name, hotel_address, hotel_owner, hotel_city) 
+VALUES (10, 'Go away, you are not welcome!', 'Go to hell',
+ 'NoFantasy street 56', 'secondowner@gmail.com', 'Berlin'); 
+ 
+ 
+---------------------------
+-- Populate Rooms table
+---------------------------
 
-  ALTER TABLE "KPI"."OWNERS" MODIFY ("OWNER_EMAIL" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."OWNERS" ADD CONSTRAINT "OWNERS_PK" PRIMARY KEY ("OWNER_EMAIL")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table ROOMS
---------------------------------------------------------
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (1, 2, 'For couple', 1, 75);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (2, 3, 'For family', 1, 150);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (3, 1, 'Alone', 2, 50);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (4, 2, 'For married', 3, 99);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (5, 2, 'For married', 8, 79);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (6, 4, 'For big family', 3, 199);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (7, 5, 'Very big family', 4, 249);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (8, 2, 'Cozy room', 5, 99);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (9, 2, 'Cozy ', 6, 299);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (10, 1, 'Forever alone', 6, 49);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (11, 3, 'Young family', 7, 99);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (12, 2, 'Couple only', 8, 399);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (13, 2, 'Couple only', 9, 39);
+INSERT INTO Rooms (room_id, room_capacity, room_description, room_hotel, room_price) 
+VALUES (14, 2, 'Couple only', 10, 199);
 
-  ALTER TABLE "KPI"."ROOMS" MODIFY ("ROOM_ID" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."ROOMS" MODIFY ("ROOM_CAPACITY" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."ROOMS" MODIFY ("ROOM_DESCRIPTION" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."ROOMS" MODIFY ("ROOM_HOTEL" NOT NULL ENABLE);
-  ALTER TABLE "KPI"."ROOMS" ADD CONSTRAINT "ROOMS_PK" PRIMARY KEY ("ROOM_ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "KPI"."ROOMS" MODIFY ("ROOM_PRICE" NOT NULL ENABLE);
---------------------------------------------------------
---  Ref Constraints for Table BOOKINGS
---------------------------------------------------------
+---------------------------
+-- Populate Bookings table
+---------------------------
 
-  ALTER TABLE "KPI"."BOOKINGS" ADD CONSTRAINT "BOOKINGS_FK1" FOREIGN KEY ("BOOKING_ROOM")
-	  REFERENCES "KPI"."ROOMS" ("ROOM_ID") ENABLE;
-  ALTER TABLE "KPI"."BOOKINGS" ADD CONSTRAINT "BOOKINGS_FK2" FOREIGN KEY ("BOOKING_CUSTOMER")
-	  REFERENCES "KPI"."CUSTOMERS" ("CUST_EMAIL") ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table HOTELS
---------------------------------------------------------
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (1, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/01/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 1, 'firstcustomer@gmail.com');
 
-  ALTER TABLE "KPI"."HOTELS" ADD CONSTRAINT "HOTEL_FK" FOREIGN KEY ("HOTEL_OWNER")
-	  REFERENCES "KPI"."OWNERS" ("OWNER_EMAIL") ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table OWNERS
---------------------------------------------------------
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (2, TO_DATE('2017/01/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/01/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 2, 'secondcustomer@gmail.com');
 
-  ALTER TABLE "KPI"."OWNERS" ADD CONSTRAINT "OWNERS_FK" FOREIGN KEY ("OWNER_EMAIL")
-	  REFERENCES "KPI"."CUSTOMERS" ("CUST_EMAIL") ENABLE;
---------------------------------------------------------
---  Ref Constraints for Table ROOMS
---------------------------------------------------------
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (3, TO_DATE('2017/02/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/01/07 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 3, 'firstcustomer@gmail.com');
 
-  ALTER TABLE "KPI"."ROOMS" ADD CONSTRAINT "ROOMS_FK" FOREIGN KEY ("ROOM_HOTEL")
-	  REFERENCES "KPI"."HOTELS" ("HOTEL_ID") ENABLE;
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (4, TO_DATE('2017/01/21 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/01/23 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 4, 'secondcustomer@gmail.com');
+
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (5, TO_DATE('2017/01/11 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/01/13 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 4, 'firstcustomer@gmail.com');
+
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (6, TO_DATE('2017/08/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/08/13 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 6, 'secondcustomer@gmail.com');
+
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (7, TO_DATE('2017/07/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/07/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 7, 'firstcustomer@gmail.com');
+
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (8, TO_DATE('2017/06/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/06/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 8, 'secondcustomer@gmail.com');
+
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (9, TO_DATE('2017/05/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/06/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 9, 'firstcustomer@gmail.com');
+
+INSERT INTO Bookings (booking_id, booking_date_in, booking_date_out, booking_room, booking_customer) 
+VALUES (10, TO_DATE('2017/04/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/04/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 10, 'secondcustomer@gmail.com');

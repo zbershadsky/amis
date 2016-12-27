@@ -32,6 +32,12 @@ public class valid {
         return m.matches();  
     }  
     
+    public static boolean checkWBook(String pbookn){  
+        Pattern p = Pattern.compile("^[а-яА-Я]{2}[0-9]{6}$");  
+        Matcher m = p.matcher(pbookn);  
+        return m.matches();  
+    } 
+    
     public static boolean checkLogin(String login){  
         Pattern p = Pattern.compile("^[a-zA-Z0-9_-]{3,15}$");  
         Matcher m = p.matcher(login);  

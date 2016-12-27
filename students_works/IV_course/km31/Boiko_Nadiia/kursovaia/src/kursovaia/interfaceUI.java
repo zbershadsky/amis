@@ -35,7 +35,7 @@ public class interfaceUI extends javax.swing.JFrame {
         jPanel3.setVisible(false);
         jPanel5.setVisible(false);
         jPanel6.setVisible(false);
-        Connection con = null;
+     //   Connection con = null;
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
         } catch (Exception ex) {
@@ -497,6 +497,9 @@ public class interfaceUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String login;
         char[] password;
+        int res = 0;
+        Object[] selValues = { "Студент", "Преподаватель"};
+        res = JOptionPane.showOptionDialog(null,"Для дальнейшей работы укажите свой вид деятельности.", "Переход ко главной странице",DEFAULT_OPTION,QUESTION_MESSAGE,null,selValues, selValues[0]);
         login = jTextField1.getText();
         password = jPasswordField1.getPassword();
         if(valid.checkLogin(login)== false){
@@ -513,7 +516,15 @@ public class interfaceUI extends javax.swing.JFrame {
             else{
                 try{
                     rs = null;
+                    if(res == 0){
+                    mainpage.stpr = 0;
                     rs = st.executeQuery("select passwordst, ladderpoints_book from student where student.loginst = "+"'"+login+"'");
+                    }
+                    else if(res==1)
+                            {
+                                mainpage.stpr = 1;
+                                rs = st.executeQuery("select password, wbookn from professor where professor.login = "+"'"+login+"'");
+                            }
                     if(rs.next())
                     {
                         if(Arrays.equals(password,rs.getString(1).toCharArray()))
@@ -534,18 +545,8 @@ public class interfaceUI extends javax.swing.JFrame {
                         jPasswordField1.setText("");
                     }
                 }catch (Exception ex) {
-            JOptionPane.showMessageDialog(null,"Ya prosto viebyvaus!");
-            jTextField1.setText("");
+            JOptionPane.showMessageDialog(null,"Error:   "+ex.getMessage());  
         }
-                finally{
-                    try{
-                        st.close();
-                        con.close();
-                    }
-                    catch(Exception ex){
-                        JOptionPane.showMessageDialog(null,"Closing error!");
-                    }
-                }
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -631,14 +632,14 @@ public class interfaceUI extends javax.swing.JFrame {
                                         jTextField6.setText("");
                                 }
                                 else{
-                                st.executeUpdate("insert into student values('"+login+"','"+jPasswordField2.getText()+"','"+pbookn+"','"+name+"','"+surname+"',1111111111111111,'"+patronymic+"')");
+                                st.executeUpdate("insert into student values('"+login+"','"+jPasswordField2.getText()+"','"+pbookn+"','"+name+"','"+surname+"','"+patronymic+"','"+groupn+"')");
                                 JOptionPane.showMessageDialog(null,"Поздравляем, Вы успешно зарегистрировались! Авторизируйтесь для дальнейшей работы в системе.");
                                 JFrame fr = new kursovaia.interfaceUI();
                                 fr.setVisible(true);
                                 dispose();
                                 }
                                 }catch (Exception ex) {
-                                   JOptionPane.showMessageDialog(null,"Пользователь с таким логином не найден!");
+                                   JOptionPane.showMessageDialog(null,"Error:   "+ex.getMessage());  
                                 }
                             }
                         }
@@ -668,38 +669,69 @@ public class interfaceUI extends javax.swing.JFrame {
         if(valid.checkFIO(surname)== false||valid.checkFIO(name)==false||valid.checkFIO(patronymic)==false){
 
             JOptionPane.showMessageDialog(null,"Ошибка при вводе ФИО. Попробуйте ещё раз!");
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jTextField3.setText("");
+            jTextField11.setText("");
+            jTextField14.setText("");
+            jTextField15.setText("");
 
         }
         else{
-                if(valid.checkPBook(pbookn)==false){
+                if(valid.checkWBook(pbookn)==false){
 
-                    JOptionPane.showMessageDialog(null,"Ошибка при вводе № зачетной книжки. Попробуйте ещё раз!");
-                    jTextField5.setText("");
+                    JOptionPane.showMessageDialog(null,"Ошибка при вводе № трудовой книжки. Попробуйте ещё раз!");
+                    jTextField17.setText("");
 
                 }
                 else{
                     if(valid.checkLogin(login)== false){
 
                         JOptionPane.showMessageDialog(null,"Некорректный ввод логина. Попробуйте еще раз, ипользуйте только буквы латинского алфавита, цифры, дефис и знак нижнего подчеркивания!");
-                        jTextField1.setText("");
+                        jTextField18.setText("");
 
                     }
                     else{
                         if(password.length>20|password.length<6|passwordconf.length>20|passwordconf.length<6){
                             JOptionPane.showMessageDialog(null,"Пароль должен стостоять из 6-20 символов. Попробуйте ещё раз!");
-                            jPasswordField1.setText("");
-                            jPasswordField2.setText("");
+                            jPasswordField6.setText("");
+                            jPasswordField7.setText("");
                         }
                         else{
                             if(Arrays.equals(password,passwordconf)==false){
                                 JOptionPane.showMessageDialog(null,"Пароли не совпадают. Попробуйте ещё раз!");
-                                jPasswordField1.setText("");
-                                jPasswordField2.setText("");
+                                jPasswordField6.setText("");
+                                jPasswordField7.setText("");
                             }
-                            else{}
+                            else{
+                                try{
+                                rs = st.executeQuery("select login from professor where professor.login = '"+login+"'");
+                        
+                                if(rs.next())
+                                {
+                                   
+                                        JOptionPane.showMessageDialog(null,"Данный логин уже используется другим пользователем!");
+                                        jTextField18.setText("");
+                                }
+                                 
+                                    else
+                                   rs = st.executeQuery("select wbookn from professor where professor.wbookn = '"+pbookn+"'");
+                             //   JOptionPane.showMessageDialog(null,rs.getString(1));
+                                if(rs.next())
+                                {
+                                   
+                                        JOptionPane.showMessageDialog(null,"Пользователь с такой трудовой книжкой уже зарегистрирован!");
+                                        jTextField17.setText("");
+                                }
+                                else{
+                                st.executeUpdate("insert into professor values('"+name+"','"+surname+"','"+patronymic+"','"+pbookn+"','"+login+"','"+jPasswordField6.getText()+"')");
+                                JOptionPane.showMessageDialog(null,"Поздравляем, Вы успешно зарегистрировались! Авторизируйтесь для дальнейшей работы в системе.");
+                                JFrame fr = new kursovaia.interfaceUI();
+                                fr.setVisible(true);
+                                dispose();
+                                }
+                                }catch (Exception ex) {
+                                   JOptionPane.showMessageDialog(null,"Error:   "+ex.getMessage());  
+                                }
+                            
+                            }
                         }
                     }
                 }
@@ -814,9 +846,8 @@ private void init() {
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 
-private Connection con;
+public static Connection con;
   private Statement st;
   private ResultSet rs;
   public String id;
-
 }

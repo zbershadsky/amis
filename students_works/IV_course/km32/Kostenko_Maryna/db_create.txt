@@ -1,0 +1,127 @@
+create table member 
+(
+email  varchar2(50),
+password varchar2(50),
+firstname varchar2(50),
+lastname varchar2(50),
+birthdate varchar2(50),
+admin varchar2(50),
+Primary Key(email),
+);
+
+
+
+create table placesm(
+place varchar2(20),
+pl_id INTEGER,
+pl_price integer,
+PRIMARY KEY(place)
+);
+
+
+create table goalsm(
+goal varchar2(20),
+g_id INTEGER,
+g_price integer,
+PRIMARY KEY(goal)
+);
+
+
+
+create table peoplem(
+people varchar2(20),
+p_id INTEGER,
+p_price integer,
+PRIMARY KEY(people)
+);
+
+create table orrequestsm 
+(
+email varchar2(20),
+totalp integer,
+paidp integer,
+id number,
+Primary Key(id)
+);
+
+create table allorderm 
+(
+usermail varchar2(20),
+userpay integer,
+admin varchar2(20),
+Primary Key(useremail)
+);
+
+create table orderlistm
+(
+place varchar2(20),
+goal varchar2(20),
+people varchar2(20),
+or_id integer,
+Primary Key(or_id),
+FOREIGN KEY(or_id) REFERENCES orrequest(id) ON DELETE CASCADE
+);
+
+
+
+
+
+----------------------
+-- Define proc
+----------------------
+
+
+
+Create or replace PROCEDURE insertinall
+       ( 
+          p_email        IN  varchar2    , 
+          p_pay          IN  number      , 
+          p_admn         IN  varchar2    
+               
+       )
+AS 
+BEGIN 
+
+      INSERT INTO allorderm
+             ( 
+               useremail    , 
+               userpay       , 
+               admin       
+                
+             ) 
+      VALUES 
+             ( 
+               p_email,
+               p_pay,
+               p_admn                    
+             ) ; 
+
+     
+
+
+
+END insertinall; 
+/
+
+
+create or replace 
+PROCEDURE deletefromtmp( userid IN integer)
+is
+BEGIN
+
+	DELETE orrequestm where id = userid;
+
+END deletefromtmp;
+
+/
+
+create or replace 
+PROCEDURE deletefromtmpuser( userid IN integer, userm in varchar2)
+is
+BEGIN
+
+	DELETE orrequestm where id = userid and email = userm;
+
+END deletefromtmpuser;
+/
+

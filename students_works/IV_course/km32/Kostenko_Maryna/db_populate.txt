@@ -1,0 +1,36 @@
+﻿insert into member values('yyy@gmail.com','123456','Marina','Kostenko','16-Jan-96,admin);
+insert into member values('olia@gmail.com','123456','Olia','Arsenych','12-Jul-96,null);	
+insert into member values('jana@gmail.com','123456','Jana','Olijnyk','10-May-96,null);
+insert into member values('nazar@gmail.com','123456','Nazar','Nyznyk','27-Okt-96,null);
+insert into member values('dd@gmail.com','123456','Denis','Dr','28-Feb-96,null);
+insert into member values('ks@gmail.com','123456','Kolian','Sym','18-Dec-95,null);
+
+
+insert into placesm values ('Київ',1,2500);
+insert into placesm values ('Харків',2,2100);
+insert into placesm values ('Одеса',3,2000);
+insert into placesm values ('Львів',4,1800);
+
+
+insert into goalsm values ('Агітація',1,2500);
+insert into goalsm values ('Протест',2,2100);
+insert into goalsm values ('Флешмоб',3,2000);
+insert into goalsm values ('Волонтерство',4,1);
+
+
+insert into peoplem values ('>1000',1,4500);
+insert into peoplem values ('1000-500',2,2100);
+insert into peoplem values ('500-100',3,1300);
+insert into peoplem values ('<100',4,1000);
+
+
+insert into allorderm  values('nazar@gmail.com',1, 'yyy@gmail.com');
+insert into allorderm  values('olia@gmail.com',2, 'yyy@gmail.com');
+
+insert into orrequestm  values('nazar@gmail.com',6200, 6200, 3); 
+insert into orrequestm  values('ks@gmail.com',4200, 4200, 4); 
+insert into orrequestm  values('olia@gmail.com',7200, 7200, 5);
+
+insert into orderlistm  values('Київ','Агітація','>1000',3); 
+insert into orderlistm  values('Харків','Агітація','>1000',4);
+insert into orderlistm  values('Одеса','Мытинг','1000-500',4);

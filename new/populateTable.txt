@@ -1,0 +1,42 @@
+insert into Accounts (USER_NAME, ACTIVE, PASSWORD, USER_ROLE)
+values ('employee1', 1, '123', 'EMPLOYEE');
+ 
+insert into Accounts (USER_NAME, ACTIVE, PASSWORD, USER_ROLE)
+values ('manager1', 1, '123', 'MANAGER');
+ 
+
+
+-----------------
+
+insert into staff (fullname, datework, rate, descr)
+values ('Ланбовська Тетяна', SYSDATE, 5, 'Працьовита та весела' );
+
+insert into staff (fullname, datework, rate, descr)
+values ('Андрієвський Андрій', SYSDATE, 4, 'Відповідальний та комунікабельний' );
+
+insert into staff (fullname, datework, rate, descr)
+values ('Петровська Наталя', SYSDATE, 4, 'Весела та роботяща' );
+
+insert into staff (fullname, datework, rate, descr)
+values ('Чепуренко Василь', SYSDATE, 4, 'Любить поговорити, гарно прибирає' );
+
+----------------
+insert into products (CODE, NAME, PRICE, CREATE_DATE, NameStaff)
+values ('S001', 'Пилепротирання', 100, sysdate,'Ланбовська Тетяна');
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE, NameStaff)
+values ('S002', 'Косметичне прибирання', 50, sysdate,'Андрієвський Андрій' );
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE, NameStaff)
+values ('S003', 'Прибирання сан. вузла', 120, sysdate,'Ланбовська Тетяна');
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE, NameStaff)
+values ('S004', 'Чистка вікон', 120, sysdate,'Чепуренко Василь');
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE, NameStaff)
+values ('S005', 'Поверхневе прибирання', 110, sysdate,'Петровська Наталя');
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE)
+values ('S006', 'Поверхневе прибирання', 110, sysdate);
+
+Commit; 

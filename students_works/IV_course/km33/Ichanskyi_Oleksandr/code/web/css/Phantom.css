@@ -1,0 +1,11 @@
+.phantom{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/rolls-royce-phantom-05.jpg)no-repeat; /* Цвет фона и путь к файлу */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    background-size: 100%;
+
+}

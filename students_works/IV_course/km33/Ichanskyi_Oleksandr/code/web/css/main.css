@@ -1,0 +1,21 @@
+
+.btn
+{
+    margin: 10px;
+
+}
+
+.test{
+    borer: 4px double black;
+    background: #fc3; /* Цвет фона */
+    padding: 10px; /* Поля вокруг текста */
+}
+
+
+.border
+{
+    margin: 1000px;
+    border-size:1px;
+    border-style:solid;
+    border-color:lightgray;
+}

@@ -1,12 +1,12 @@
-create table member 
+create table member
 (
-email  varchar2(50),
-password varchar2(50),
-firstname varchar2(50),
-lastname varchar2(50),
-birthdate varchar2(50),
-admin varchar2(50),
-Primary Key(email),
+email  varchar2(20),
+password varchar2(20),
+firstname varchar2(20),
+lastname varchar2(20),
+birthdate varchar2(20), 
+admin varchar2(20),
+Primary Key(email)
 );
 
 
@@ -35,20 +35,24 @@ p_price integer,
 PRIMARY KEY(people)
 );
 
-create table orrequestsm 
+create table orrequestm 
 (
 email varchar2(20),
 totalp integer,
-paidp integer,
 id number,
 Primary Key(id)
 );
 
 create table allorderm 
 (
-usermail varchar2(20),
+useremail varchar2(20),
 userpay integer,
 admin varchar2(20),
+price integer,
+place varchar2(20),
+goal varchar2(20),
+people varchar2(20),
+
 Primary Key(useremail)
 );
 
@@ -58,8 +62,18 @@ place varchar2(20),
 goal varchar2(20),
 people varchar2(20),
 or_id integer,
-Primary Key(or_id),
-FOREIGN KEY(or_id) REFERENCES orrequest(id) ON DELETE CASCADE
+Primary Key(place),
+FOREIGN KEY(or_id) REFERENCES orrequestm(id) ON DELETE CASCADE
+);
+
+create table paysystem
+(
+
+p_id integer,
+paidp integer,
+email varchar2(20),
+Primary Key(paidp),
+FOREIGN KEY(p_id) REFERENCES orrequestm(id) ON DELETE CASCADE
 );
 
 
@@ -72,11 +86,16 @@ FOREIGN KEY(or_id) REFERENCES orrequest(id) ON DELETE CASCADE
 
 
 
-Create or replace PROCEDURE insertinall
+create or replace 
+PROCEDURE insertinall
        ( 
           p_email        IN  varchar2    , 
           p_pay          IN  number      , 
-          p_admn         IN  varchar2    
+          p_admn         IN  varchar2    ,
+          p_price        IN number,
+          p_place        IN varchar2 ,
+          p_goal         IN varchar2 ,
+          p_people       IN varchar2 
                
        )
 AS 
@@ -86,21 +105,29 @@ BEGIN
              ( 
                useremail    , 
                userpay       , 
-               admin       
+               admin       ,
+               price ,
+               place ,
+               goal ,
+               people
                 
              ) 
       VALUES 
              ( 
                p_email,
                p_pay,
-               p_admn                    
+               p_admn,
+               p_price        ,
+               p_place      ,
+               p_goal         ,
+               p_people       
              ) ; 
 
      
 
 
 
-END insertinall; 
+END insertinall;
 /
 
 

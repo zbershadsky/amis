@@ -1,0 +1,38 @@
+insert into Accounts (USER_NAME, ACTIVE, PASSWORD, USER_ROLE)
+values ('employee1', 1, '123', 'EMPLOYEE');
+ 
+insert into Accounts (USER_NAME, ACTIVE, PASSWORD, USER_ROLE)
+values ('manager1', 1, '123', 'MANAGER');
+ 
+----------------
+insert into products (CODE, NAME, PRICE, CREATE_DATE)
+values ('S001', 'Вологе прибирання', 100, SYSDATETIME() );
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE)
+values ('S002', 'Косметичне прибирання', 50, SYSDATETIME() );
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE)
+values ('S003', 'Генеральне прибирання', 120, SYSDATETIME() );
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE)
+values ('S004', 'Прибирання санвузлів', 120, SYSDATETIME() );
+ 
+insert into products (CODE, NAME, PRICE, CREATE_DATE)
+values ('S005', 'Прибирання після корпоративів', 110, SYSDATETIME() );
+
+-----------------
+
+insert into taff (fullname, datework, rate, descr)
+values ('Ланбовська Тетяна', SYSDATE(), 5, 'Працьовита та весела' );
+
+insert into taff (fullname, datework, rate, descr)
+values ('Андрієвський Андрій', SYSDATE(), 4, 'Відповідальний та комунікабельний' );
+
+insert into taff (fullname, datework, rate, descr)
+values ('S005', SYSDATE(), 4, 'Весела та роботяща' );
+
+insert into taff (fullname, datework, rate, descr)
+values ('S005', SYSDATE(), 4, 'Любить поговорити, гарно прибирає' );
+
+insert into taff (fullname, datework, rate, descr)
+values ('S005', 'Прибирання після корпоративів', 110, SYSDATETIME() );

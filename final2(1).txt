@@ -1,0 +1,8 @@
+CREATE OR REPLACE PROCEDURE FINAL(prodId IN char) AS 
+BEGIN
+    DELETE 
+    from products 
+    WHERE products.code = prodId;
+    END FINAL;
+execute Final('S004');
+set transaction isolation level serializable;

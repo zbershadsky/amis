@@ -1,0 +1,14 @@
+.inp, .btn {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#login_container {
+    margin-top: 6em;
+}
+
+.progress {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+}

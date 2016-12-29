@@ -1,0 +1,9 @@
+.simple_search .input-field {
+    margin-top : 2em;
+}
+
+.progress {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+}

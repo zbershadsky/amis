@@ -1,0 +1,95 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rating
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Этап курсовой', TO_DATE('07.09.2016', 'DD.MM.RR'), '3', 'КМ3101', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Этап курсовой', TO_DATE('07.09.2016', 'DD.MM.RR'), '2', 'КМ3102', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Этап курсовой', TO_DATE('07.09.2016', 'DD.MM.RR'), '3', 'КМ3103', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Этап курсовой', TO_DATE('07.09.2016', 'DD.MM.RR'), '1', 'КМ3104', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Этап курсовой', TO_DATE('07.09.2016', 'DD.MM.RR'), '2', 'КМ3105', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Лаба', TO_DATE('23.10.16', 'DD.MM.RR'), '2', 'КМ3101', 'Математическое моделирование')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Лаба', TO_DATE('23.10.16', 'DD.MM.RR'), '4', 'КМ3102', 'Математическое моделирование')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Лаба', TO_DATE('23.10.16', 'DD.MM.RR'), '4', 'КМ3103', 'Математическое моделирование')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Лаба', TO_DATE('23.10.16', 'DD.MM.RR'), '3', 'КМ3105', 'Математическое моделирование')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Этап курсовой', TO_DATE('07.09.16', 'DD.MM.RR'), '2', 'КМ3106', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Домашняя работа', TO_DATE('30.11.16', 'DD.MM.RR'), '15', 'КМ3101', 'Право')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Домашняя работа', TO_DATE('30.11.16', 'DD.MM.RR'), '18', 'КМ3102', 'Право')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Домашняя работа', TO_DATE('30.11.16', 'DD.MM.RR'), '15', 'КМ3106', 'Право')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Домашняя работа', TO_DATE('30.11.16', 'DD.MM.RR'), '20', 'КМ3107', 'Право')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Домашняя работа', TO_DATE('30.11.2016', 'DD.MM.RR'), '10', 'КМ3105', 'Право')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Коллоквиум', TO_DATE('15.12.16', 'DD.MM.RR'), '10', 'КМ3101', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Коллоквиум', TO_DATE('15.12.16', 'DD.MM.RR'), '10', 'КМ3102', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Коллоквиум', TO_DATE('15.12.16', 'DD.MM.RR'), '10', 'КМ3103', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Коллоквиум', TO_DATE('15.12.16', 'DD.MM.RR'), '10', 'КМ3104', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Коллоквиум', TO_DATE('15.12.16', 'DD.MM.RR'), '10', 'КМ3105', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Коллоквиум', TO_DATE('15.12.16', 'DD.MM.RR'), '10', 'КМ3106', 'БД')
+INSERT INTO "RATING" (TASK_NAME, TASK_DATE, POINTS, LADDERPOINTS_BOOK, SUBJ_NAME) VALUES ('Коллоквиум', TO_DATE('15.12.16', 'DD.MM.RR'), '10', 'КМ3107', 'БД')
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Visiting
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('01.09.16', 'DD.MM.RR'), 'БД', 'КМ3101')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('01.09.16', 'DD.MM.RR'), 'БД', 'КМ3102')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('01.09.16', 'DD.MM.RR'), 'БД', 'КМ3103')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('01.09.16', 'DD.MM.RR'), 'БД', 'КМ3105')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('01.09.16', 'DD.MM.RR'), 'БД', 'КМ3107')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('08.09.16', 'DD.MM.RR'), 'БД', 'КМ3101')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('08.09.16', 'DD.MM.RR'), 'БД', 'КМ3103')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('08.09.16', 'DD.MM.RR'), 'БД', 'КМ3104')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('08.09.16', 'DD.MM.RR'), 'БД', 'КМ3106')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('07.09.16', 'DD.MM.RR'), 'БД', 'КМ3101')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('07.09.16', 'DD.MM.RR'), 'БД', 'КМ3102')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('07.09.16', 'DD.MM.RR'), 'БД', 'КМ3103')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('07.09.16', 'DD.MM.RR'), 'БД', 'КМ3104')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('07.09.16', 'DD.MM.RR'), 'БД', 'КМ3105')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('07.09.16', 'DD.MM.RR'), 'БД', 'КМ3106')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('15.12.16', 'DD.MM.RR'), 'БД', 'КМ3101')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('15.12.16', 'DD.MM.RR'), 'БД', 'КМ3102')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('15.12.16', 'DD.MM.RR'), 'БД', 'КМ3103')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('15.12.16', 'DD.MM.RR'), 'БД', 'КМ3104')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('15.12.16', 'DD.MM.RR'), 'БД', 'КМ3105')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('15.12.16', 'DD.MM.RR'), 'БД', 'КМ3106')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('15.12.16', 'DD.MM.RR'), 'БД', 'КМ3107')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('23.10.16', 'DD.MM.RR'), 'Матмоделирование', 'КМ3101')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('23.10.16', 'DD.MM.RR'), 'Матмоделирование', 'КМ3102')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('23.10.16', 'DD.MM.RR'), 'Матмоделирование', 'КМ3103')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('23.10.16', 'DD.MM.RR'), 'Матмоделирование', 'КМ3105')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('30.11.16', 'DD.MM.RR'), 'Право', 'КМ3101')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('30.11.16', 'DD.MM.RR'), 'Право', 'КМ3102')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('30.11.16', 'DD.MM.RR'), 'Право', 'КМ3105')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('30.11.16', 'DD.MM.RR'), 'Право', 'КМ3106')
+INSERT INTO "VISITING" (VISIT_DATE, SUBJ_NAME, LADDERPOINTS_BOOK) VALUES (TO_DATE('30.11.16', 'DD.MM.RR'), 'Право', 'КМ3107')
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Subject
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO "SUBJECT" (SUBJ_NAME, SUBJ_INFO) VALUES ('БД', 'Базы данных и информационные системы')
+INSERT INTO "SUBJECT" (SUBJ_NAME, SUBJ_INFO) VALUES ('Матмоделирование', 'Предмет про математические модели')
+INSERT INTO "SUBJECT" (SUBJ_NAME, SUBJ_INFO) VALUES ('Право', 'Гуманитарная дисциплина')
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Professor
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO "NADIAADMIN"."PROFESSOR" (NAME, SURNAME, PATRONYMIC, WBOOKN, LOGIN, PASSWORD) VALUES ('Владислава', 'Викторовна', 'Лысенко', 'аа123456')
+INSERT INTO "NADIAADMIN"."PROFESSOR" (NAME, SURNAME, PATRONYMIC, WBOOKN, LOGIN, PASSWORD) VALUES ('Сергей', 'Адамович', 'Вейко', 'бб123456', 'saveiko', 'saveiko')
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Student
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO "STUDENT" (LOGINST, PASSWORDST, LADDERPOINTS_BOOK, NAMEST, SURNAMEST, PATRONYMICST,GROUP#) VALUES ('nadusha', '09101995', 'КМ3103', 'Надежда', 'Бойко', 'Сергеевна', 'КМ-31')
+
+INSERT INTO "STUDENT" (LOGINST, PASSWORDST, LADDERPOINTS_BOOK, NAMEST, SURNAMEST, PATRONYMICST,GROUP#) VALUES ('user1', 'user11', 'КМ3101', 'Юзер', 'Юзеров', 'Юзерович', 'КМ-31')
+
+
+INSERT INTO "STUDENT" (LOGINST, PASSWORDST, LADDERPOINTS_BOOK, NAMEST, SURNAMEST, PATRONYMICST,GROUP#) VALUES ('ivanivanov', 'ivanivanov', 'КМ3102', 'Иван', 'Иванов', 'Иванович', 'КМ-31')
+
+
+INSERT INTO "STUDENT" (LOGINST, PASSWORDST, LADDERPOINTS_BOOK, NAMEST, SURNAMEST, PATRONYMICST,GROUP#) VALUES ('sidrsidorovich', 'sidrsidorovich', 'КМ3104', 'Сидр', 'Сидоров', 'Сидорович', 'КМ-31')
+
+
+INSERT INTO "STUDENT" (LOGINST, PASSWORDST, LADDERPOINTS_BOOK, NAMEST, SURNAMEST, PATRONYMICST,GROUP#) VALUES ('pushkin', 'pushkin', 'КМ3106', 'Александр', 'Пушкин', 'Сергеевич', 'КМ-31')
+
+
+INSERT INTO "STUDENT" (LOGINST, PASSWORDST, LADDERPOINTS_BOOK, NAMEST, SURNAMEST, PATRONYMICST,GROUP#) VALUES ('berlioz', 'berlioz', 'КМ3107', 'Михаил', 'Берлиоз', 'Александрович', 'КМ-31')
+
+
+INSERT INTO "STUDENT" (LOGINST, PASSWORDST, LADDERPOINTS_BOOK, NAMEST, SURNAMEST, PATRONYMICST,GROUP#) VALUES ('petrpetrovich', 'petrpetrovich', 'КМ3105', 'Петр', 'Петров', 'Петрович', 'КМ-31')
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+enum groups_list {
+	KM_51, KM_52, KM_53, KP_51, KP_52, KP_53, KV_51, KV_52, KV_53, IO_51, IO_52, IO_53, IS_51, IS_52, IS_53, IP_51, IP_52, IP_53
+};
+
+enum faculties_list {
+	FAM, FICT
+};
+
+struct lesson {
+    char Name[20];
+	char Day[20];
+	int number of lesson;	
+};
+
+struct teacher {
+    char Name[20];
+	char Surname[20];
+	char qualification;
+};
+
+struct student{
+	char Name[20];
+	char Surname[20];
+	enum groups_list group;
+	enum faculties_list faculty;
+};
+
+struct attandance_book {
+    struct student;
+	struct lesson;
+	char attandance;
+};

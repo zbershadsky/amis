@@ -1,0 +1,50 @@
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\bin\Debug\Interviewer.exe.config
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\bin\Debug\Interviewer.exe
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\bin\Debug\Interviewer.pdb
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer.csprojResolveAssemblyReference.cache
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\App.g.cs
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer_MarkupCompile.cache
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer_MarkupCompile.lref
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer.g.resources
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer.Properties.Resources.resources
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer.csproj.GenerateResource.Cache
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer.exe
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\Interviewer.pdb
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\SignInWindow.g.cs
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\SignUpWindow.g.cs
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\SignInWindow.baml
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\SignUpWindow.baml
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\InterviewPreviewUserControl.g.cs
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\InterviewPreviewUserControl.baml
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\InterviewListWindow.g.cs
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\InterviewListWindow.baml
+F:\education\Visual Studio 2015\Projects\Interviewer\Interviewer\obj\Debug\MyRequestsWindow.g.cs
+F:\Share\Interviewer\Interviewer\bin\Debug\Interviewer.exe.config
+F:\Share\Interviewer\Interviewer\bin\Debug\Interviewer.exe
+F:\Share\Interviewer\Interviewer\bin\Debug\Interviewer.pdb
+F:\Share\Interviewer\Interviewer\obj\Debug\Windows\SignUpWindow.g.cs
+F:\Share\Interviewer\Interviewer\obj\Debug\TestWindow.g.cs
+F:\Share\Interviewer\Interviewer\obj\Debug\App.g.cs
+F:\Share\Interviewer\Interviewer\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer_MarkupCompile.cache
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer_MarkupCompile.lref
+F:\Share\Interviewer\Interviewer\obj\Debug\App.baml
+F:\Share\Interviewer\Interviewer\obj\Debug\Windows\SignUpWindow.baml
+F:\Share\Interviewer\Interviewer\obj\Debug\TestWindow.baml
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer.g.resources
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer.Properties.Resources.resources
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer.csproj.GenerateResource.Cache
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer.exe
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer.pdb
+F:\Share\Interviewer\Interviewer\obj\Debug\Windows\MainWindow.g.cs
+F:\Share\Interviewer\Interviewer\obj\Debug\Windows\MainWindow.baml
+F:\Share\Interviewer\Interviewer\obj\Debug\Windows\DialogWindow.g.cs
+F:\Share\Interviewer\Interviewer\obj\Debug\Windows\DialogWindow.baml
+F:\Share\Interviewer\Interviewer\bin\Debug\EntityFramework.dll
+F:\Share\Interviewer\Interviewer\bin\Debug\EntityFramework.SqlServer.dll
+F:\Share\Interviewer\Interviewer\bin\Debug\Oracle.ManagedDataAccess.dll
+F:\Share\Interviewer\Interviewer\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+F:\Share\Interviewer\Interviewer\bin\Debug\EntityFramework.xml
+F:\Share\Interviewer\Interviewer\bin\Debug\EntityFramework.SqlServer.xml
+F:\Share\Interviewer\Interviewer\obj\Debug\Interviewer.csprojResolveAssemblyReference.cache

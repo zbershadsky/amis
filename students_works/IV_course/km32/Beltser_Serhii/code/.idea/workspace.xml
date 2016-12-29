@@ -30,92 +30,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConnectionProfileDaoOracleImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/ConnectionProfileDaoOracleImpl.java">
+      <file leaf-file-name="CmpController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/CmpController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+            <state relative-caret-position="306">
+              <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#497#498#0" expanded="true" />
-                <element signature="e#554#555#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#896#897#0" expanded="true" />
-                <element signature="e#944#945#0" expanded="true" />
+                <element signature="method#cancel#0;class#CmpController#0" expanded="false" />
+                <element signature="method#save#0;class#CmpController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cmp.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/fxml/cmp.fxml">
+      <file leaf-file-name="FtpConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/FtpConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="179">
+              <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
               <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionProfileDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/ConnectionProfileDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OracleConnector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/OracleConnector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="333" column="30" selection-start-line="333" selection-start-column="30" selection-end-line="333" selection-end-column="30" />
-              <folding>
-                <element signature="method#open#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#createConnection#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#getUser#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#saveUser#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#close#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#getAllUsers#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#getConnection#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#getAllConnections#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#deleteConnection#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#deleteUser#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#deleteConnectionProfile#0;class#OracleConnector#0" expanded="false" />
-                <element signature="method#saveConnection#0;class#OracleConnector#0" expanded="false" />
-                <marker date="1482975021583" expanded="true" signature="1995:2046" ph="SELECT * FRO... users" />
-                <marker date="1482975021583" expanded="true" signature="2678:2823" ph="INSERT INTO users... " />
-                <marker date="1482975021583" expanded="true" signature="3656:3670" ph="SELECT * FRO... users" />
-                <marker date="1482975021583" expanded="true" signature="4469:4722" ph="UPDATE users... " />
-                <marker date="1482975021583" expanded="true" signature="4469:4756" ph="UPDATE users... " />
-                <marker date="1482975021583" expanded="true" signature="5447:5666" ph="SELECT * FRO... users" />
-                <marker date="1482975021583" expanded="true" signature="5447:5680" ph="SELECT * FRO... connection_profile" />
-                <marker date="1482975021583" expanded="true" signature="6605:6618" ph="SELECT * FRO... " />
-                <marker date="1482975021583" expanded="true" signature="6605:6619" ph="SELECT * FRO... users" />
-                <marker date="1482975021583" expanded="true" signature="6605:6641" ph="SELECT * FRO... connection_profile" />
-                <marker date="1482975021583" expanded="true" signature="7600:7647" ph="DELETE FROM " />
-                <marker date="1482975021583" expanded="true" signature="7600:7661" ph="DELETE FROM " />
-                <marker date="1482975021583" expanded="true" signature="7998:8032" ph="DELETE FROM " />
-                <marker date="1482975021583" expanded="true" signature="8365:8416" ph="DELETE FROM " />
-                <marker date="1482975021583" expanded="true" signature="8365:8428" ph="DELETE FROM " />
-                <marker date="1482975021583" expanded="true" signature="8800:9136" ph="INSERT INTO users... " />
-                <marker date="1482975021583" expanded="true" signature="10366:10373" ph="UPDATE \&quot;con... " />
-                <marker date="1482975021583" expanded="true" signature="10366:10393" ph="UPDATE conne... " />
-                <marker date="1482975021583" expanded="true" signature="10366:10872" ph="UPDATE users... " />
-                <marker date="1482975021583" expanded="true" signature="10366:10886" ph="UPDATE conne... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -125,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -142,25 +76,37 @@
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/TestedFtpServer.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/Main.java" />
         <option value="$PROJECT_DIR$/test/belcer/remoteserverconnector/model/utils/UtilsTest.java" />
-        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/AppWindows.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/AdditionalWindow.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_1.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_2.sql" />
-        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/Main.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/utils/Utils.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_3.sql" />
-        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/FrontController.java" />
         <option value="$PROJECT_DIR$/test/belcer/remoteserverconnector/model/entity/UserTest.java" />
-        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/RegistrationController.java" />
-        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/Role.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/ConnectionProfile.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/AppWindows.java" />
+        <option value="$PROJECT_DIR$/resources/fxml/cmp.fxml" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/ConnectionProfileDao.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/ConnectionProfileDaoOracleImpl.java" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/Main.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_4.sql" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/ConnectionProfile.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_5.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_6.sql" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/LoginController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_8.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_9.sql" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/RegistrationController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_10.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_11.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_12.sql" />
+        <option value="$PROJECT_DIR$/test/belcer/remoteserverconnector/model/dao/oracle_impl/OracleConnectorTest.java" />
         <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/OracleConnector.java" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/FrontController.java" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/CmpController.java" />
+        <option value="$PROJECT_DIR$/src/belcer/remoteserverconnector/model/FtpConnection.java" />
       </list>
     </option>
   </component>
@@ -169,6 +115,16 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -275,141 +231,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="remoteserverconnector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="remoteserverconnector" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="remoteserverconnector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="remoteserverconnector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="remoteserverconnector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="remoteserverconnector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="oracle_impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="remoteserverconnector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="remoteserverconnector" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,6 +354,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="belcer.remoteserverconnector.model.dao.oracle_impl" />
       <recent name="belcer.remoteserverconnector.model.utils" />
       <recent name="belcer.remoteserverconnector.model.entity" />
     </key>
@@ -503,6 +374,7 @@
       <recent name="E:\2-Studies\4-DB\CR\amis\students_works\IV_course\km32\Beltser_Serhii\remote_server_connector\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="belcer.remoteserverconnector.controller" />
       <recent name="belcer.remoteserverconnector.model.dao" />
       <recent name="belcer.remoteserverconnector" />
     </key>
@@ -510,7 +382,7 @@
       <recent name="belcer.remoteserverconnector.model.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UserTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -549,6 +421,84 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="remote_server_connector" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="OracleConnectorTest.getAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="belcer.remoteserverconnector.model.dao.oracle_impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="remote_server_connector" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="belcer.remoteserverconnector.model.dao.oracle_impl" />
+      <option name="MAIN_CLASS_NAME" value="belcer.remoteserverconnector.model.dao.oracle_impl.OracleConnectorTest" />
+      <option name="METHOD_NAME" value="getAllUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Duser.country=en -Duser.language=en" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="OracleConnectorTest.getAllUsers2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="belcer.remoteserverconnector.model.dao.oracle_impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="remote_server_connector" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="belcer.remoteserverconnector.model.dao.oracle_impl" />
+      <option name="MAIN_CLASS_NAME" value="belcer.remoteserverconnector.model.dao.oracle_impl.OracleConnectorTest" />
+      <option name="METHOD_NAME" value="getAllUsers2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Duser.country=en -Duser.language=en" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="OracleConnectorTest.getAllUsers3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="belcer.remoteserverconnector.model.dao.oracle_impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="remote_server_connector" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="belcer.remoteserverconnector.model.dao.oracle_impl" />
+      <option name="MAIN_CLASS_NAME" value="belcer.remoteserverconnector.model.dao.oracle_impl.OracleConnectorTest" />
+      <option name="METHOD_NAME" value="getAllUsers3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea -Duser.country=en -Duser.language=en" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -978,14 +928,20 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="2">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Application.UserTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.OracleConnectorTest.getAllUsers" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.OracleConnectorTest.getAllUsers2" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.OracleConnectorTest.getAllUsers3" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.UserTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.OracleConnectorTest.getAllUsers3" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OracleConnectorTest.getAllUsers" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.OracleConnectorTest.getAllUsers2" />
+        <item index="4" class="java.lang.String" itemvalue="Application.UserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1000,16 +956,48 @@
       <option name="presentableId" value="Default" />
       <updated>1482690149173</updated>
       <workItem from="1482690163745" duration="3979000" />
-      <workItem from="1482959837433" duration="13046000" />
+      <workItem from="1482959837433" duration="27723000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="OracleConnectorTest_getAllUsers - 2016.12.29 at 07h 01m 00s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers - 2016.12.29 at 07h 01m 15s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers - 2016.12.29 at 07h 05m 36s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers2 - 2016.12.29 at 07h 01m 10s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers2 - 2016.12.29 at 07h 01m 27s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers3 - 2016.12.29 at 07h 26m 20s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers3 - 2016.12.29 at 07h 26m 29s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers3 - 2016.12.29 at 07h 26m 42s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers3 - 2016.12.29 at 07h 26m 53s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OracleConnectorTest_getAllUsers3 - 2016.12.29 at 07h 28m 08s.xml">
+      <configuration name="OracleConnectorTest.getAllUsers3" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17025000" />
+    <option name="totallyTimeSpent" value="31702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1017,18 +1005,19 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5053305" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3575298" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3575298" sideWeight="0.49573562" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.4946695" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22707888" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22707888" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20788912" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1058,92 +1047,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding>
-            <element signature="e#2675#2676#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <marker date="1482971477282" expanded="true" signature="725:1552" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/ConnectionProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="e#1605#1606#0" expanded="false" />
-            <element signature="e#1627#1628#0" expanded="false" />
-            <element signature="e#1667#1668#0" expanded="false" />
-            <element signature="e#1695#1696#0" expanded="false" />
-            <element signature="e#1724#1725#0" expanded="false" />
-            <element signature="e#1745#1746#0" expanded="false" />
-            <element signature="e#1783#1784#0" expanded="false" />
-            <element signature="e#1809#1810#0" expanded="false" />
-            <element signature="e#1838#1839#0" expanded="false" />
-            <element signature="e#1859#1860#0" expanded="false" />
-            <element signature="e#1897#1898#0" expanded="false" />
-            <element signature="e#1923#1924#0" expanded="false" />
-            <element signature="e#1962#1963#0" expanded="false" />
-            <element signature="e#1993#1994#0" expanded="false" />
-            <element signature="e#2051#2052#0" expanded="false" />
-            <element signature="e#2097#2098#0" expanded="false" />
-            <element signature="e#2136#2137#0" expanded="false" />
-            <element signature="e#2167#2168#0" expanded="false" />
-            <element signature="e#2225#2226#0" expanded="false" />
-            <element signature="e#2271#2272#0" expanded="false" />
-            <element signature="e#2304#2305#0" expanded="false" />
-            <element signature="e#2329#2330#0" expanded="false" />
-            <element signature="e#2375#2376#0" expanded="false" />
-            <element signature="e#2409#2410#0" expanded="false" />
-            <element signature="e#2438#2439#0" expanded="false" />
-            <element signature="e#2463#2464#0" expanded="false" />
-            <element signature="e#2505#2506#0" expanded="false" />
-            <element signature="e#2539#2540#0" expanded="false" />
-            <element signature="e#2573#2574#0" expanded="false" />
-            <element signature="e#2601#2602#0" expanded="false" />
-            <element signature="e#2651#2652#0" expanded="false" />
-            <element signature="e#2691#2692#0" expanded="false" />
-            <element signature="e#2726#2727#0" expanded="false" />
-            <element signature="e#2755#2756#0" expanded="false" />
-            <element signature="e#2807#2808#0" expanded="false" />
-            <element signature="e#2849#2850#0" expanded="false" />
-            <element signature="e#2890#2891#0" expanded="false" />
-            <element signature="e#2925#2926#0" expanded="false" />
-            <element signature="e#2989#2990#0" expanded="false" />
-            <element signature="e#3043#3044#0" expanded="false" />
-            <element signature="e#3075#3076#0" expanded="false" />
-            <element signature="e#3099#3100#0" expanded="false" />
-            <element signature="e#3144#3145#0" expanded="false" />
-            <element signature="e#3176#3177#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/FrontController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1715#1716#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,14 +1117,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/AppWindows.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/fxml/create_connection_profile.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1236,29 +1136,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fxml/main.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="132" selection-start-line="20" selection-start-column="132" selection-end-line="20" selection-end-column="132" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/AdditionalWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/application/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="304" column="25" selection-start-line="304" selection-start-column="25" selection-end-line="304" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1276,28 +1157,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
-          <folding>
-            <element signature="e#2675#2676#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/FrontController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="62" column="3" selection-start-line="62" selection-start-column="3" selection-end-line="62" selection-end-column="3" />
-          <folding>
-            <element signature="e#1692#1693#0" expanded="true" />
-            <element signature="e#1715#1716#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1325,33 +1184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding>
-            <element signature="e#162#163#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/RegistrationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/lang/Enum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1371,97 +1203,248 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/User.java">
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/AppWindows.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        <state relative-caret-position="102">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/javafx-src.zip!/javafx/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="144" column="22" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/fxml/login.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="225" selection-start-line="8" selection-start-column="204" selection-end-line="8" selection-end-column="259" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/ConnectionProfileDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
           <folding>
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
-            <marker date="1482971477282" expanded="true" signature="725:1552" ph="..." />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/UserDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/resources/fxml/main.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="27" column="66" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
-          <folding>
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="287">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/fxml/cmp.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/ojdbc6.jar!/oracle/jdbc/driver/OraclePreparedStatementWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="762" column="0" selection-start-line="762" selection-start-column="0" selection-end-line="762" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_4.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_6.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_7.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/ConnectionProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        <state relative-caret-position="60">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
           <folding>
-            <element signature="e#3212#3213#0" expanded="true" />
-            <element signature="e#3240#3241#0" expanded="true" />
-            <element signature="e#3273#3274#0" expanded="true" />
-            <element signature="e#3298#3299#0" expanded="true" />
+            <marker date="1482980816652" expanded="false" signature="1580:3299" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_8.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_9.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <marker date="1482988172762" expanded="true" signature="819:1646" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="85">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/OracleConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="333" column="30" selection-start-line="333" selection-start-column="30" selection-end-line="333" selection-end-column="30" />
+        <state relative-caret-position="420">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding>
-            <element signature="method#open#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#createConnection#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#getUser#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#saveUser#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#close#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#getAllUsers#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#getConnection#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#getAllConnections#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#deleteConnection#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#deleteUser#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#deleteConnectionProfile#0;class#OracleConnector#0" expanded="false" />
-            <element signature="method#saveConnection#0;class#OracleConnector#0" expanded="false" />
-            <marker date="1482975021583" expanded="true" signature="1995:2046" ph="SELECT * FRO... users" />
-            <marker date="1482975021583" expanded="true" signature="2678:2823" ph="INSERT INTO users... " />
-            <marker date="1482975021583" expanded="true" signature="3656:3670" ph="SELECT * FRO... users" />
-            <marker date="1482975021583" expanded="true" signature="4469:4722" ph="UPDATE users... " />
-            <marker date="1482975021583" expanded="true" signature="4469:4756" ph="UPDATE users... " />
-            <marker date="1482975021583" expanded="true" signature="5447:5666" ph="SELECT * FRO... users" />
-            <marker date="1482975021583" expanded="true" signature="5447:5680" ph="SELECT * FRO... connection_profile" />
-            <marker date="1482975021583" expanded="true" signature="6605:6618" ph="SELECT * FRO... " />
-            <marker date="1482975021583" expanded="true" signature="6605:6619" ph="SELECT * FRO... users" />
-            <marker date="1482975021583" expanded="true" signature="6605:6641" ph="SELECT * FRO... connection_profile" />
-            <marker date="1482975021583" expanded="true" signature="7600:7647" ph="DELETE FROM " />
-            <marker date="1482975021583" expanded="true" signature="7600:7661" ph="DELETE FROM " />
-            <marker date="1482975021583" expanded="true" signature="7998:8032" ph="DELETE FROM " />
-            <marker date="1482975021583" expanded="true" signature="8365:8416" ph="DELETE FROM " />
-            <marker date="1482975021583" expanded="true" signature="8365:8428" ph="DELETE FROM " />
-            <marker date="1482975021583" expanded="true" signature="8800:9136" ph="INSERT INTO users... " />
-            <marker date="1482975021583" expanded="true" signature="10366:10373" ph="UPDATE \&quot;con... " />
-            <marker date="1482975021583" expanded="true" signature="10366:10393" ph="UPDATE conne... " />
-            <marker date="1482975021583" expanded="true" signature="10366:10872" ph="UPDATE users... " />
-            <marker date="1482975021583" expanded="true" signature="10366:10886" ph="UPDATE conne... " />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#378#379#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/ConnectionProfileDao.java">
+    <entry file="dbDummy://dbtable:/7a1bd8e5/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/SYSTEM.connector_app_users">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_10.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_11.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7a1bd8e5/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/SYSTEM.connection_profile">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30fbb4ee-eb03-4180-8829-c2bfa2dac6d5/console_12.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/belcer/remoteserverconnector/model/dao/oracle_impl/OracleConnectorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1470,33 +1453,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/ConnectionProfileDaoOracleImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+        <state relative-caret-position="276">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#497#498#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-            <element signature="e#944#945#0" expanded="true" />
+            <element signature="e#1316#1317#0" expanded="true" />
+            <element signature="e#1367#1368#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/fxml/cmp.fxml">
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/dao/oracle_impl/OracleConnector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="433">
+          <caret line="240" column="46" selection-start-line="240" selection-start-column="41" selection-end-line="240" selection-end-column="46" />
+          <folding>
+            <marker date="1482989931274" expanded="true" signature="2109:2125" ph="SELECT * FRO... " />
+            <marker date="1482989931274" expanded="true" signature="2109:2166" ph="SELECT * FRO... users" />
+            <marker date="1482989931274" expanded="true" signature="2798:2971" ph="INSERT INTO users... " />
+            <marker date="1482989931274" expanded="true" signature="3804:3818" ph="SELECT * FRO... users" />
+            <marker date="1482989931274" expanded="true" signature="3804:3820" ph="SELECT * FRO... " />
+            <marker date="1482989931274" expanded="true" signature="3804:3840" ph="SELECT * FRO... user" />
+            <marker date="1482989931274" expanded="true" signature="4483:4801" ph="UPDATE users... " />
+            <marker date="1482989931274" expanded="true" signature="5566:5583" ph="SELECT \&quot;tit... " />
+            <marker date="1482989931274" expanded="true" signature="5566:5838" ph="SELECT title... connection_profile" />
+            <marker date="1482989931274" expanded="true" signature="5566:5839" ph="SELECT \&quot;tit... " />
+            <marker date="1482989931274" expanded="true" signature="8032:8348" ph="SELECT title... connection_profile" />
+            <marker date="1482989931274" expanded="true" signature="10007:10043" ph="SELECT * FRO... connection_profile" />
+            <marker date="1482989931274" expanded="true" signature="11002:11075" ph="DELETE FROM " />
+            <marker date="1482989931274" expanded="true" signature="11412:11467" ph="DELETE FROM " />
+            <marker date="1482989931274" expanded="true" signature="11800:11871" ph="DELETE FROM " />
+            <marker date="1482989931274" expanded="true" signature="12243:12599" ph="INSERT INTO \&quot;connection_profile\&quot;... " />
+            <marker date="1482989931274" expanded="true" signature="13991:14570" ph="UPDATE \&quot;con... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/FrontController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/model/FtpConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/belcer/remoteserverconnector/controller/CmpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#cancel#0;class#CmpController#0" expanded="false" />
+            <element signature="method#save#0;class#CmpController#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

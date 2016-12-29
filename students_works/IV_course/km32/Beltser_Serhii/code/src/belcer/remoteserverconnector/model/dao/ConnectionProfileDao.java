@@ -18,4 +18,7 @@ public interface ConnectionProfileDao {
 
   boolean isConnectionWithSuchTitleAndUserExist(String title, String username);
 
+  List<ConnectionProfile> getAllForUser(String username);
+
+  void saveOrUpdate(ConnectionProfile connectionProfile);
 }

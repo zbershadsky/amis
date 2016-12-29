@@ -136,4 +136,22 @@ public class ConnectionProfile {
   public String getUsername() {
     return username;
   }
+
+  @Override
+  public String toString() {
+    return "ConnectionProfile{" +
+        "title='" + title + '\'' +
+        ", host='" + host + '\'' +
+        ", port='" + port + '\'' +
+        ", connectionUser='" + connectionUser + '\'' +
+        ", connectionPass='" + connectionPass + '\'' +
+        ", protocol='" + protocol + '\'' +
+        ", dateCreated=" + dateCreated +
+        ", dateModified=" + dateModified +
+        ", lastConnectionDate=" + lastConnectionDate +
+        ", deleted=" + deleted +
+        ", savedByUser=" + savedByUser +
+        ", username='" + username + '\'' +
+        '}';
+  }
 }

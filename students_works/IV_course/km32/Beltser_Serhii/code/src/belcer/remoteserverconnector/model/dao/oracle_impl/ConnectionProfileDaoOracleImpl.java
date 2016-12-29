@@ -41,4 +41,19 @@ public class ConnectionProfileDaoOracleImpl implements ConnectionProfileDao {
     suchConnectionExist = connection != null;
     return suchConnectionExist;
   }
+
+  @Override
+  public List<ConnectionProfile> getAllForUser(String username) {
+    return connector.getConnections(username);
+  }
+
+  @Override
+  public void saveOrUpdate(ConnectionProfile connectionProfile) {
+    ConnectionProfile connection = connector.getConnection(connectionProfile.getTitle(), connectionProfile.getUsername());
+    if (connection == null) {
+      connector.saveConnection(connectionProfile);
+    } else {
+      connector.updateConnection(connectionProfile);
+    }
+  }
 }

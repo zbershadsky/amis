@@ -4,5 +4,5 @@ public enum AppWindows {
   MAIN,
   LOGIN,
   SIGNUP,
-  CREATE_CONNECTION;
+  CREATE_CONNECTION,
 }

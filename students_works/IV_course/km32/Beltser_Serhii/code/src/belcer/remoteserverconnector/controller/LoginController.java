@@ -26,9 +26,10 @@ public class LoginController {
     boolean loginDataCorrect = true;
     if (user == null) {
       loginDataCorrect = false;
+      System.err.println("Wrong username");
     } else if (!Utils.checkPassword(password, user.getPassword())) {
       loginDataCorrect = false;
-
+      System.err.println("Wrong password");
     }
 
     if (loginDataCorrect) {

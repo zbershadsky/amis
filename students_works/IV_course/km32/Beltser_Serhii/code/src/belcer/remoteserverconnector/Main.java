@@ -1,6 +1,7 @@
 package belcer.remoteserverconnector;
 
 import belcer.remoteserverconnector.controller.AppWindows;
+import belcer.remoteserverconnector.controller.CmpController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,10 +23,12 @@ public class Main extends Application {
   private static final String MAIN_WINDOW_RESOURCE = "/fxml/main.fxml";
   private Stage mainStage;
   private Stage stage;
+  private FXMLLoader loader;
 
   @Override
   public void start(Stage primaryStage) throws Exception {
     INSTANCE = this;
+    loader = new FXMLLoader();
     mainStage = primaryStage;
     mainStage.setTitle(MAIN_WINDOW_TITLE);
     mainStage.setScene(new Scene(initWindow(MAIN_WINDOW_RESOURCE)));
@@ -40,13 +43,13 @@ public class Main extends Application {
     String rootResource = null;
     String title = null;
     switch (window) {
-//      case MAIN:
-//        rootResource = "/fxml/main.fxml";
-//        title = "Main window";
+      case MAIN:
+        rootResource = "/fxml/main.fxml";
+        title = "Main window";
 //        if (args.length != 0 && args[0] instanceof User) {
 //
 //        }
-//        break;
+        break;
       case SIGNUP:
         rootResource = "/fxml/signup.fxml";
         title = "Registration";
@@ -56,7 +59,7 @@ public class Main extends Application {
         title = "Login";
         break;
       case CREATE_CONNECTION:
-        rootResource = "/fxml/create_connection_profile.fxml";
+        rootResource = "/fxml/cmp.fxml";
         title = "Create new connection";
         break;
     }
@@ -76,15 +79,27 @@ public class Main extends Application {
         }
         stage = new Stage(StageStyle.DECORATED);
         stage.setTitle(title);
+        System.out.println("rootResource = " + rootResource);
         stage.setScene(new Scene(initWindow(rootResource)));
         stage.show();
+        if(window == AppWindows.CREATE_CONNECTION) {
+          Object controller = loader.getController();
+          if (controller instanceof CmpController) {
+            ((CmpController)controller).init();
+          }
+        }
+
       }
     }
   }
 
   public Parent initWindow(String resource) {
     try {
-      return FXMLLoader.load(Main.class.getResource(resource));
+      loader = new FXMLLoader();
+      System.out.println("loader.getLocation() = " + loader.getLocation());
+      loader.setLocation(Main.class.getResource(resource));
+      System.out.println("loader.getLocation() = " + loader.getLocation());
+      return loader.load();
     } catch (IOException e) {
       e.printStackTrace();
     }

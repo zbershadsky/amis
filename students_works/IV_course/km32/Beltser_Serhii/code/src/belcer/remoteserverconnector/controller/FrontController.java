@@ -33,14 +33,9 @@ public class FrontController {
   @FXML
   private TreeTableView remoteFileList;
 
-  private static User user;
-  //todo: not ConnectionProfile!
+  private static User user;// = new User("dog", "may@may", "$2a$10$pHpXXX8EWK2hQaNxzprAeekm3hnE38LvY4OagB6DOvd/ssm2vGghS", Role.USER);
   private Map<String, ConnectionProfile> connections = new HashMap<>();
   private ConnectionsService connectionsService;
-
-  public void newConnection() {
-    System.out.println("FrontController.newConnection");
-  }
 
   public void localPathChanged() {
 
@@ -48,10 +43,6 @@ public class FrontController {
 
   public void login() {
     Main.INSTANCE.setStage(AppWindows.LOGIN);
-//    System.out.println("FrontController.login");
-//    System.out.println("before. user = " + user);
-//    user = new User("test", "test", "test", new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()), Role.USER);
-//    System.out.println("after. user = " + user);
   }
 
   public void register() {
@@ -74,15 +65,18 @@ public class FrontController {
 
   }
 
-  private void addConnection() {
-    String title = connectionTitle.getText();
-    String host = connectionHost.getText();
-    String port = connectionPort.getText();
-    String connUser = connectionUser.getText();
-    String connPass = connectionPass.getText();
-    String protocol = connectionProtocol.getText();
-    //todo: not ConnectionProfile!
-    connections.put(title, new ConnectionProfile(title, host, port, connUser, connPass, protocol, user));
+  @FXML
+  private void newConnection() {
+    System.out.println("FrontController.newConnection");
+    Main.INSTANCE.setStage(AppWindows.CREATE_CONNECTION);
+//    String title = connectionTitle.getText();
+//    String host = connectionHost.getText();
+//    String port = connectionPort.getText();
+//    String connUser = connectionUser.getText();
+//    String connPass = connectionPass.getText();
+//    String protocol = connectionProtocol.getText();
+//    //todo: not ConnectionProfile!
+//    connections.put(title, new ConnectionProfile(title, host, port, connUser, connPass, protocol, user));
 //    if (title != null && !(title = title.trim()).isEmpty() && connections)
   }
 
@@ -90,5 +84,9 @@ public class FrontController {
     System.out.println("==========");
     System.out.println("User is changed: " + user);
     FrontController.user = user;
+  }
+
+  public static User getUser() {
+    return user;
   }
 }

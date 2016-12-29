@@ -46,7 +46,7 @@ public class FtpConnection {
     this.pass = pass;
   }
 
-  private void init() {
+  public void init() {
     ftpClient = new FTPClient();
     try {
       ftpClient.connect(host, port);

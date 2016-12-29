@@ -6,6 +6,7 @@ import belcer.remoteserverconnector.model.entity.User;
 
 import javax.naming.NamingException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,19 +20,14 @@ public enum OracleConnector {
   private final static String HOST = "localhost";
   private final static String PORT = "1521";
   private final static String SCHEMA = "xe";
-  private final static String URL = "jdbc:oracle:thin:@%1$s:%2$s/%3$s";
+  private final static String URL_SCHEMA = "jdbc:oracle:thin:@%1$s:%2$s/%3$s";
   private final static String USER_LOGIN = "system";
   private final static String USER_PASS = "root";
   private Connection conn;
 
-  private static final String usersTable = "users";
+  private static final String usersTable = "connector_app_users";
   private static final String connectionsTable = "connection_profile";
   private List<ConnectionProfile> allConnections;
-
-
-  OracleConnector() {
-    open();
-  }
 
   public Connection open() {
     System.out.println("Oracle DB connection is open");
@@ -53,7 +49,8 @@ public enum OracleConnector {
   public Connection createConnection() throws SQLException, ClassNotFoundException, NamingException {
     System.out.println("Oracle DB connection is created");
     DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-    return DriverManager.getConnection(String.format(URL, HOST, PORT, SCHEMA), USER_LOGIN, USER_PASS);
+//    return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", USER_LOGIN, USER_PASS);
+    return DriverManager.getConnection(String.format(URL_SCHEMA, HOST, PORT, SCHEMA), USER_LOGIN, USER_PASS);
   }
 
   // Users
@@ -62,14 +59,14 @@ public enum OracleConnector {
     PreparedStatement ins = null;
     User user = null;
     try {
-      ins = conn.prepareStatement("SELECT * FROM " + usersTable + " WHERE username = ?");
+      ins = conn.prepareStatement("SELECT * FROM \"" + usersTable + "\" WHERE \"username\"=?");
       ins.setString(1, username);
       ResultSet resultSet = ins.executeQuery();
       if (!resultSet.isBeforeFirst()) {
         return null;
       }
       resultSet.next();
-      user = new User(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getDate(4),
+      user = new User(resultSet.getString(1), resultSet.getString(3), resultSet.getString(2), resultSet.getDate(4),
           resultSet.getDate(5), Role.parseString(resultSet.getString(6)));
     } catch (SQLException e) {
       e.printStackTrace();
@@ -84,7 +81,7 @@ public enum OracleConnector {
     PreparedStatement ins = null;
     try {
       ins = conn.prepareStatement(
-          "INSERT INTO " + usersTable + " (username, email, password, registration_date, last_login_date, role) " +
+          "INSERT INTO \"" + usersTable + "\" (\"username\", \"email\", \"password\", \"registration_date\", \"last_login_date\", \"role\") " +
               "VALUES (?, ?, ?, ?, ?, ?)");
       ins.setString(1, user.getUsername());
       ins.setString(2, user.getEmail());
@@ -117,13 +114,12 @@ public enum OracleConnector {
     User user = null;
     List<User> users = new ArrayList<User>();
     try {
-      ins = conn.prepareStatement("SELECT * FROM " + usersTable);
+      ins = conn.prepareStatement("SELECT * FROM \"" + usersTable + "\"");
       ResultSet resultSet = ins.executeQuery();
       if (!resultSet.isBeforeFirst()) {
         return null;
       }
       while (resultSet.next()) {
-//        user = new User(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getDate(4), resultSet.getDate(5));
         users.add(new User(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getDate(4),
             resultSet.getDate(5), Role.parseString(resultSet.getString(6))));
       }
@@ -140,15 +136,15 @@ public enum OracleConnector {
     PreparedStatement ins = null;
     try {
       ins = conn.prepareStatement(
-          "UPDATE " + usersTable + " " +
+          "UPDATE \"" + usersTable + "\" " +
               " SET" +
-              " username=?, " +
-              " email=?, " +
-              " password=?, " +
-              " registration_date=?, " +
-              " last_login_date=?, " +
-              " role=? " +
-              " WHERE username = ?"
+              " \"username\"=?, " +
+              " \"email\"=?, " +
+              " \"password\"=?, " +
+              " \"registration_date\"=?, " +
+              " \"last_login_date\"=?, " +
+              " \"role\"=? " +
+              " WHERE \"username\"= ?"
       );
       ins.setString(1, user.getUsername());
       ins.setString(2, user.getEmail());
@@ -167,13 +163,62 @@ public enum OracleConnector {
   }
 
   // Connections
+  public List<ConnectionProfile> getConnections(String username) {
+    System.out.println("---OracleConnector.getConnections");
+    conn = open();
+    PreparedStatement ins = null;
+    List<ConnectionProfile> connections = new ArrayList<>();
+    try {
+      ins = conn.prepareStatement("SELECT \"title\", \"connection_password\", \"connection_user\", \"port\", \"host\", \"protocol\", " +
+          " \"date_modified\", \"last_connection_date\", \"deleted\", \"saved_by_user\", \"username\", \"created_date\" FROM \"connection_profile\" WHERE \"username\" = ? ");
+      ins.setString(1, username);
+      ResultSet resultSet = ins.executeQuery();
+      System.out.println("resultSet = " + resultSet);
+      if (resultSet == null) {
+        return connections;
+      }
+      while (resultSet.next()) {
+        System.out.println("NEXT:");
+        String title = resultSet.getString(1);
+        String pass = resultSet.getString(2);
+        String user = resultSet.getString(3);
+        String port = resultSet.getString(4);
+        String host = resultSet.getString(5);
+        String protocol = resultSet.getString(6);
+        Date data_mod = resultSet.getDate(7);
+        Date date_last_con = resultSet.getDate(8);
+        boolean deleted = resultSet.getBoolean(9);
+        boolean saved_by_user = resultSet.getBoolean(10);
+        String usernameT = resultSet.getString(11);
+        Date created_date = resultSet.getDate(12);
+        connections.add(new ConnectionProfile(title, host, port, user, pass, protocol, created_date, data_mod, date_last_con, deleted, saved_by_user, usernameT));
+//        System.out.println(new ConnectionProfile(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4),
+//            resultSet.getString(5), resultSet.getString(6),
+//            resultSet.getDate(7), resultSet.getDate(8), resultSet.getDate(9), resultSet.getBoolean(10),
+//            resultSet.getBoolean(11), resultSet.getString(12)));
+//        connections.add(new ConnectionProfile(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4),
+//            resultSet.getString(5), resultSet.getString(6),
+//            resultSet.getDate(7), resultSet.getDate(8), resultSet.getDate(9), resultSet.getBoolean(10),
+//            resultSet.getBoolean(11), resultSet.getString(12)
+
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    } finally {
+      close();
+    }
+    System.out.println("---connections = " + connections);
+    return connections;
+  }
+
   public ConnectionProfile getConnection(String title, String username) {
     conn = open();
     PreparedStatement ins = null;
     ConnectionProfile connection = null;
     try {
-      ins = conn.prepareStatement("SELECT title, connection_password, connection_user, port, host, protocol, " +
-          " date_modified, last_connection_date, deleted, saved_by_user, username, created_date FROM connection_profile WHERE username_fk = ? AND title = ?");
+      ins = conn.prepareStatement("SELECT \"title\" , \"connection_password\" , \"connection_user\" , \"port\" , \"host\" , \"protocol\" , " +
+          " \"date_modified\" , \"last_connection_date\" , \"deleted\" , \"saved_by_user\" , \"username\" , \"created_date\" FROM \"connection_profile\" " +
+          "WHERE \"username\" = ? AND \"title\" = ?");
       ins.setString(1, username);
       ins.setString(2, title);
       ResultSet resultSet = ins.executeQuery();
@@ -181,10 +226,24 @@ public enum OracleConnector {
         return null;
       }
       resultSet.next();
-      connection = new ConnectionProfile(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4),
-          resultSet.getString(5), resultSet.getString(6), resultSet.getDate(7), resultSet.getDate(8), resultSet.getDate(9), resultSet.getBoolean(10),
-          resultSet.getBoolean(11), resultSet.getString(12)
-      );
+      String titleT = resultSet.getString(1);
+      String pass = resultSet.getString(2);
+      String user = resultSet.getString(3);
+      String port = resultSet.getString(4);
+      String host = resultSet.getString(5);
+      String protocol = resultSet.getString(6);
+      Date data_mod = resultSet.getDate(7);
+      Date date_last_con = resultSet.getDate(8);
+      boolean deleted = resultSet.getBoolean(9);
+      boolean saved_by_user = resultSet.getBoolean(10);
+      String usernameT = resultSet.getString(11);
+      Date created_date = resultSet.getDate(12);
+      connection = new ConnectionProfile(titleT, host, port, user, pass, protocol, created_date, data_mod, date_last_con, deleted, saved_by_user, usernameT);
+
+//      connection = new ConnectionProfile(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4),
+//          resultSet.getString(5), resultSet.getString(6), resultSet.getDate(7), resultSet.getDate(8), resultSet.getDate(9), resultSet.getBoolean(10),
+//          resultSet.getBoolean(11), resultSet.getString(12)
+//      );
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
@@ -223,7 +282,7 @@ public enum OracleConnector {
     conn = open();
     PreparedStatement ins = null;
     try {
-      ins = conn.prepareStatement("DELETE FROM connection_profile WHERE username=? AND title = ?");
+      ins = conn.prepareStatement("DELETE FROM \"connection_profile\" WHERE \"username\"=? AND \"title\" = ?");
       ins.setString(1, username);
       ins.setString(2, title);
       ins.executeQuery();
@@ -238,7 +297,7 @@ public enum OracleConnector {
     conn = open();
     PreparedStatement ins = null;
     try {
-      ins = conn.prepareStatement("DELETE FROM users WHERE username=?");
+      ins = conn.prepareStatement("DELETE FROM \"" + usersTable + "\" WHERE \"username\"=?");
       ins.setString(1, username);
       ins.executeQuery();
     } catch (SQLException e) {
@@ -252,7 +311,7 @@ public enum OracleConnector {
     conn = open();
     PreparedStatement ins = null;
     try {
-      ins = conn.prepareStatement("DELETE FROM \"connection_profile\" WHERE username=? AND title=?");
+      ins = conn.prepareStatement("DELETE FROM \"connection_profile\" WHERE \"username\"=? AND \"title\"=?");
       ins.setString(1, username);
       ins.setString(2, title);
       ins.executeQuery();
@@ -270,8 +329,9 @@ public enum OracleConnector {
       ins = conn.prepareStatement(
           "INSERT INTO \"connection_profile\" (\"title\", \"connection_password\", \"connection_user\", \"port\", \"host\", \"protocol\", " +
               "\"date_modified\", \"last_connection_date\", " +
-              "\"deleted\", \"saved_by_user\", \"username\", \"created_date\") " +
-              "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+              "\"deleted\", \"saved_by_user\", \"username\", \"username_fk\", \"created_date\") " +
+              "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+      System.out.println("ins: " + ins.toString());
       ins.setString(1, connectionProfile.getTitle());
       ins.setString(2, connectionProfile.getConnectionPass());
       ins.setString(3, connectionProfile.getConnectionUser());
@@ -283,7 +343,9 @@ public enum OracleConnector {
       ins.setBoolean(9, connectionProfile.isDeleted());
       ins.setBoolean(10, connectionProfile.isSavedByUser());
       ins.setString(11, connectionProfile.getUsername());
-      ins.setDate(12, connectionProfile.getDateCreated());
+      ins.setString(12, connectionProfile.getUsername());
+      ins.setDate(13, connectionProfile.getDateCreated());
+      System.out.println("ins: " + ins.toString());
       ins.executeQuery();
     } catch (SQLException e) {
       e.printStackTrace();
@@ -302,19 +364,19 @@ public enum OracleConnector {
       ins = conn.prepareStatement(
           "UPDATE \"connection_profile\" " +
               " SET" +
-              " title=?, " +
-              " connection_password=?, " +
-              " connection_user=?, " +
-              " port=?, " +
-              " host=?, " +
-              " protocol=?, " +
-              " date_modified=?, " +
-              " last_connection_date=?, " +
-              " deleted=?, " +
-              " saved_by_user=?, " +
-              " username=?, " +
-              " created_date=? " +
-              " WHERE username = ? AND title = ?"
+              " \"title\"=?, " +
+              " \"connection_password\"=?, " +
+              " \"connection_user\"=?, " +
+              " \"port\"=?, " +
+              " \"host\"=?, " +
+              " \"protocol\"=?, " +
+              " \"date_modified\"=?, " +
+              " \"last_connection_date\"=?, " +
+              " \"deleted\"=?, " +
+              " \"saved_by_user\"=?, " +
+              " \"username_fk\"=?, " +
+              " \"created_date\"=? " +
+              " WHERE \"username\" = ? AND \"title\" = ?"
       );
       ins.setString(1, connectionProfile.getTitle());
       ins.setString(2, connectionProfile.getConnectionPass());
@@ -337,20 +399,5 @@ public enum OracleConnector {
       close();
     }
   }
-
-//  public UserDAO getUserDAO() {
-//
-//    // CloudscapeCustomerDAO implements CustomerDAO
-//    return new OracleUserDAO();
-//  }
-//  public PaymentDAO getPaymentDAO() {
-//    // CloudscapeAccountDAO implements AccountDAO
-//    return new OraclePaymentDAO();
-//  }
-//  public CardDAO getCardDAO() {
-//    // CloudscapeOrderDAO implements OrderDAO
-//    return new OracleCardDAO();
-//  }
-
 
 }

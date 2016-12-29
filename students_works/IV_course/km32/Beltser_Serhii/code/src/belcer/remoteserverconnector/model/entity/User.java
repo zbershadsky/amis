@@ -17,6 +17,8 @@ public class User {
 
   public User(String username, String email, String password, Date registrationDate, Date lastLogin, Role role) {
     this.username = username;
+    System.out.println("email = " + email);
+    System.out.println("password = " + password);
     this.email = email;
     this.password = password;
     this.registrationDate = registrationDate;

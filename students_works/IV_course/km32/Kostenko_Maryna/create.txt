@@ -1,0 +1,121 @@
+create table member 
+(
+email  char(50),
+password char(50),
+firstname char(50),
+lastname char(50),
+birthdate varchar2(50),
+id Integer,
+Primary Key(email),
+
+);
+
+
+
+create table placesm(
+place varchar2(20),
+pl_id INTEGER,
+pl_price integer,
+PRIMARY KEY(pl_id, pl_price)
+);
+
+
+
+create table goalsm(
+goal varchar2(20),
+g_id INTEGER,
+g_price integer,
+PRIMARY KEY(g_id, g_price)
+);
+
+
+
+create table peoplem(
+people varchar2(20),
+p_id INTEGER,
+p_price integer,
+PRIMARY KEY(p_id, p_price)
+);
+
+
+
+create table orrequestm(email varchar2(50),totalp integer, paidp integer, datemeet varchar2(20), Primary Key(email, totalp, datemeet));
+
+create table posts_comment
+(
+pid INTEGER,
+text char(200),
+mid varchar2(50),
+datetime char(50),
+FOREIGN KEY(pid) REFERENCES post(id) ON DELETE CASCADE);
+
+
+
+create table post
+(
+id  INTEGER,
+note char(500),
+sender  varchar2(100),
+privacy INTEGER,
+datetime char(50),
+PRIMARY KEY(id)
+);
+
+
+create table allorderm 
+(
+useremail varchar2(20),
+userpay integer,
+datemeet char(20),
+Primary Key(useremail,datemeet)
+);
+
+
+
+
+CREATE OR REPLACE PROCEDURE placeprice( chpl IN varchar2)
+IS
+
+in_price integer;
+
+BEGIN
+
+	SELECT pl_price INTO in_price FROM placesm
+	WHERE placesm.place = chpl;
+
+	DBMS_OUTPUT.enable;
+    DBMS_OUTPUT.put_line(in_price);
+
+END placeprice;
+/
+create or replace 
+create or replace 
+PROCEDURE insertinall
+       ( 
+          p_email        IN  varchar2    , 
+          p_pay          IN  number      , 
+          p_admn         IN  varchar2    
+               
+       )
+AS 
+BEGIN 
+
+      INSERT INTO allorderm
+             ( 
+               useremail    , 
+               userpay       , 
+               admin       
+                
+             ) 
+      VALUES 
+             ( 
+               p_email,
+               p_pay,
+               p_admn                    
+             ) ; 
+
+      COMMIT ; 
+
+
+
+END insertinall; 

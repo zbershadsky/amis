@@ -1,0 +1,154 @@
+create table member
+(
+email  varchar2(20),
+password varchar2(20),
+firstname varchar2(20),
+lastname varchar2(20),
+birthdate varchar2(20), 
+admin varchar2(20),
+Primary Key(email)
+);
+
+
+
+create table placesm(
+place varchar2(20),
+pl_id INTEGER,
+pl_price integer,
+PRIMARY KEY(place)
+);
+
+
+create table goalsm(
+goal varchar2(20),
+g_id INTEGER,
+g_price integer,
+PRIMARY KEY(goal)
+);
+
+
+
+create table peoplem(
+people varchar2(20),
+p_id INTEGER,
+p_price integer,
+PRIMARY KEY(people)
+);
+
+create table orrequestm 
+(
+email varchar2(20),
+totalp integer,
+id number,
+Primary Key(id)
+);
+
+create table allorderm 
+(
+useremail varchar2(20),
+userpay integer,
+admin varchar2(20),
+price integer,
+place varchar2(20),
+goal varchar2(20),
+people varchar2(20),
+
+Primary Key(useremail)
+);
+
+create table orderlistm
+(
+place varchar2(20),
+goal varchar2(20),
+people varchar2(20),
+or_id integer,
+Primary Key(place),
+FOREIGN KEY(or_id) REFERENCES orrequestm(id) ON DELETE CASCADE
+);
+
+create table paysystem
+(
+
+p_id integer,
+paidp integer,
+email varchar2(20),
+Primary Key(paidp),
+FOREIGN KEY(p_id) REFERENCES orrequestm(id) ON DELETE CASCADE
+);
+
+
+
+
+
+----------------------
+-- Define proc
+----------------------
+
+
+
+create or replace 
+PROCEDURE insertinall
+       ( 
+          p_email        IN  varchar2    , 
+          p_pay          IN  number      , 
+          p_admn         IN  varchar2    ,
+          p_price        IN number,
+          p_place        IN varchar2 ,
+          p_goal         IN varchar2 ,
+          p_people       IN varchar2 
+               
+       )
+AS 
+BEGIN 
+
+      INSERT INTO allorderm
+             ( 
+               useremail    , 
+               userpay       , 
+               admin       ,
+               price ,
+               place ,
+               goal ,
+               people
+                
+             ) 
+      VALUES 
+             ( 
+               p_email,
+               p_pay,
+               p_admn,
+               p_price        ,
+               p_place      ,
+               p_goal         ,
+               p_people       
+             ) ; 
+
+     
+
+
+
+END insertinall;
+/
+
+
+create or replace 
+PROCEDURE deletefromtmp( userid IN integer)
+is
+BEGIN
+
+	DELETE orrequestm where id = userid;
+
+END deletefromtmp;
+
+/
+
+create or replace 
+PROCEDURE deletefromtmpuser( userid IN integer, userm in varchar2)
+is
+BEGIN
+
+	DELETE orrequestm where id = userid and email = userm;
+
+END deletefromtmpuser;
+/
+

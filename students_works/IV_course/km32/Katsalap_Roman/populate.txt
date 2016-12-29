@@ -1,0 +1,17 @@
+INSERT INTO ROMA.Account statuses (status_name, status_description) VALUES ('UNCONFIRMED', 'please, confirm you registration by link on your email');
+INSERT INTO ROMA.Account statuses (status_name) VALUES ('CONFIRMED');
+INSERT INTO ROMA.Account statuses (status_name, status_description) VALUES ('BANNED', 'you are banned');
+INSERT INTO ROMA.Account statuses (status_name, status_description) VALUES ('RESTORE', 'please, confirm or denay restoring password in mail we have sent you');
+INSERT INTO ROMA.Account statuses (status_name) VALUES ('ACTIVE');
+
+
+INSERT INTO ROMA.Users (login, email, hash, salt) VALUES ('Login123', 'Email@ex.com', 'jbhdklfhgkldfhgkdfhgkdf', 'dfgdfsgdfg');
+INSERT INTO ROMA.Users (login, email, hash, salt) VALUES ('Login234', 'Email2@ex2.eu', 'sagg346456h45h34h365h36h3', '345354');
+INSERT INTO ROMA.User_account_statuses (status_name, login, date_of_status) VALUES ('CONFIRMED', 'Login123', TO_TIMESTAMP('2016-12-29 02:51:06.971000000', 'YYYY-MM-DD HH24:MI:SS.FF'));
+INSERT INTO ROMA.User_account_statuses (status_name, login, date_of_status) VALUES ('UNCONFIRMED', 'Login234', TO_TIMESTAMP('2016-12-29 02:51:06.971000000', 'YYYY-MM-DD HH24:MI:SS.FF'));
+
+INSERT INTO ROMA.User_Phones (login, phone_number, phone_name) VALUES ('Login123', '0505678989', 'GrandMa''s Number');
+INSERT INTO ROMA.Cards (CardNo, login, Token, CardName) VALUES ('1234098756784567', 'Login123', '546h4l5kh64k5h6l3456', 'Universal');
+
+
+INSERT INTO ROMA.Payment (payment_id, CardNo, login, phone_number, paydate, amount) VALUES ('1', '1234098756784567', 'Login123', '0505678989', TO_TIMESTAMP('2016-12-29 02:55:31.525000000', 'YYYY-MM-DD HH24:MI:SS.FF'), '12,456');

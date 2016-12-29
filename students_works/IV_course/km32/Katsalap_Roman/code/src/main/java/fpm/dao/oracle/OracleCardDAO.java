@@ -28,7 +28,7 @@ public class OracleCardDAO implements
 
         try {
 
-            PreparedStatement select = con.prepareStatement("Select cardno,cardname from Cards where login = ?");
+            PreparedStatement select = con.prepareStatement("Select CardNo,CardName from Cards where login = ?");
             select.setString(1,login);
             ResultSet rs = select.executeQuery();
             if (!rs.isBeforeFirst()) {
@@ -54,7 +54,10 @@ public class OracleCardDAO implements
     }
 
     @Override
-    public boolean insertCard(Card card) {
+    public boolean insertCard(Card card, String login) {
+
+
+
         return false;
     }
 

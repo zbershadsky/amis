@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class OracleDAOFactory  {
 
-    final static String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+    final static String URL = "jdbc:oracle:thin:@localhost:1521:orcl2";
     final static String USER_LOGIN = "Roma";
     final static String USER_PASS = "orcl";
 
@@ -75,6 +75,10 @@ public class OracleDAOFactory  {
     public CardDAO getCardDAO() {
         // CloudscapeOrderDAO implements OrderDAO
         return new OracleCardDAO();
+    }
+
+    public PhoneDAO getPhoneDAO() {
+        return new OraclePhoneDAO();
     }
 
 

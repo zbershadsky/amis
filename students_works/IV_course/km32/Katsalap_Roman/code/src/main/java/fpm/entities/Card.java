@@ -12,6 +12,7 @@ public class Card {
     public Card(String cardNo, String cardName, String token) {
         this.cardNo=cardNo;
         this.cardName=cardName;
+        this.token = token;
     }
 
 
@@ -27,6 +28,10 @@ public class Card {
 
     public String getName() {
         return cardName;
+    }
+
+    public String getToken() {
+        return token;
     }
 
 }

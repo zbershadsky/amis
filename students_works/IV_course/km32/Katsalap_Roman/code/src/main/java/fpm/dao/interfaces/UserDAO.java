@@ -11,6 +11,6 @@ public interface UserDAO {
     public boolean deleteUser(User user);
     public boolean updateUser(User user);
     public User getUserByLogin(String login);
-    public boolean isAlreadyExists(String login);
+    public boolean isAlreadyExists(String login, boolean bylogin);
 
 }

@@ -46,7 +46,7 @@
             <artifactId>ojdbc14</artifactId>
             <version>11.2.0.3.0</version>
             <scope>system</scope>
-            <systemPath>C:/project/src/lib/ojdbc6.jar</systemPath>
+            <systemPath>C:/project/amis/students_works/IV_course/km32/Katsalap_Roman/code/src/lib/ojdbc6.jar</systemPath>
         </dependency>
 
         <dependency>

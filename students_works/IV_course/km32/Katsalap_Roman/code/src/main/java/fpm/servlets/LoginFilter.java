@@ -28,7 +28,7 @@ public class LoginFilter implements Filter {
 
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("loggedInUser") == null) {
-            response.sendRedirect(request.getContextPath() + "/");
+            response.sendRedirect(request.getContextPath() + "/start");
         } else {
             chain.doFilter(request, response);
         }

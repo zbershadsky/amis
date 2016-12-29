@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ROMA">
+      <ObjectId>91</ObjectId>
+      <IntrospectionTimestamp>2016-12-29.07:36:33</IntrospectionTimestamp>
+      <CreatedTimestamp>2016-12-29.04:08:33</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.07:36:15</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="APPQOSSYS">
+      <ObjectId>31</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="WMSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="EXFSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="CTXSYS">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="XDB">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="ANONYMOUS">
+      <ObjectId>46</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="ORDSYS">
+      <ObjectId>53</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="ORDDATA">
+      <ObjectId>54</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="ORDPLUGINS">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="SI_INFORMTN_SCHEMA">
+      <ObjectId>56</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="MDSYS">
+      <ObjectId>57</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="OLAPSYS">
+      <ObjectId>61</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="MDDATA">
+      <ObjectId>65</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="SPATIAL_WFS_ADMIN_USR">
+      <ObjectId>67</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="SPATIAL_CSW_ADMIN_USR">
+      <ObjectId>70</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="SYSMAN">
+      <ObjectId>72</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="MGMT_VIEW">
+      <ObjectId>74</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="FLOWS_FILES">
+      <ObjectId>75</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>76</ObjectId>
+    </schema>
+    <schema id="29" parent="1" name="APEX_030200">
+      <ObjectId>78</ObjectId>
+    </schema>
+    <schema id="30" parent="1" name="OWBSYS">
+      <ObjectId>79</ObjectId>
+    </schema>
+    <schema id="31" parent="1" name="OWBSYS_AUDIT">
+      <ObjectId>83</ObjectId>
+    </schema>
+    <schema id="32" parent="1" name="SCOTT">
+      <ObjectId>84</ObjectId>
+    </schema>
+    <schema id="33" parent="1" name="HR">
+      <ObjectId>85</ObjectId>
+    </schema>
+    <schema id="34" parent="1" name="OE">
+      <ObjectId>86</ObjectId>
+    </schema>
+    <schema id="35" parent="1" name="IX">
+      <ObjectId>87</ObjectId>
+    </schema>
+    <schema id="36" parent="1" name="SH">
+      <ObjectId>88</ObjectId>
+    </schema>
+    <schema id="37" parent="1" name="PM">
+      <ObjectId>89</ObjectId>
+    </schema>
+    <schema id="38" parent="1" name="BI">
+      <ObjectId>90</ObjectId>
+    </schema>
+    <schema id="39" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <table id="40" parent="2" name="Account statuses">
+      <ObjectId>74637</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:43:24</ModifiedTimestamp>
+    </table>
+    <table id="41" parent="2" name="Cards">
+      <ObjectId>74641</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+    </table>
+    <table id="42" parent="2" name="Payment">
+      <ObjectId>74644</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+    </table>
+    <table id="43" parent="2" name="USERS">
+      <ObjectId>74648</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.07:36:15</ModifiedTimestamp>
+    </table>
+    <table id="44" parent="2" name="User_Phones">
+      <ObjectId>74650</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+    </table>
+    <table id="45" parent="2" name="User_account_statuses">
+      <ObjectId>74653</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+    </table>
+    <view id="46" parent="2" name="CARDSPAYMENTS">
+      <ObjectId>74657</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:31:29</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:31:29</ModifiedTimestamp>
+      <Modifiable>1</Modifiable>
+    </view>
+    <column id="47" parent="40" name="status_name">
+      <Position>1</Position>
+      <DataType>VARCHAR2(12)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="40" name="status_description">
+      <Position>2</Position>
+      <DataType>CLOB|0</DataType>
+    </column>
+    <index id="49" parent="40" name="PK_ACCOUNT STATUSES">
+      <ObjectId>74640</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>status_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="40" name="PK_ACCOUNT STATUSES">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>status_name</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PK_ACCOUNT STATUSES</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="41" name="CardNo">
+      <Position>1</Position>
+      <DataType>VARCHAR2(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="41" name="login">
+      <Position>2</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="41" name="Token">
+      <Position>3</Position>
+      <DataType>VARCHAR2(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="41" name="CardName">
+      <Position>4</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+    </column>
+    <index id="55" parent="41" name="PK_CARDS">
+      <ObjectId>74642</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>CardNo</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="56" parent="41" name="has card_FK">
+      <ObjectId>74643</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>login</ColNames>
+    </index>
+    <key id="57" parent="41" name="PK_CARDS">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>CardNo</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PK_CARDS</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="58" parent="41" name="FK_CARDS_HAS CARD_USER">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>login</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>PK_USER</RefKeyName>
+    </foreign-key>
+    <column id="59" parent="42" name="payment_id">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="42" name="CardNo">
+      <Position>2</Position>
+      <DataType>VARCHAR2(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="42" name="login">
+      <Position>3</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="42" name="phone_number">
+      <Position>4</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="42" name="paydate">
+      <Position>5</Position>
+      <DataType>TIMESTAMP(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="42" name="amount">
+      <Position>6</Position>
+      <DataType>NUMBER(4,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="65" parent="42" name="PK_PAYMENT">
+      <ObjectId>74645</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>payment_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="66" parent="42" name="pay with_FK">
+      <ObjectId>74647</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>CardNo</ColNames>
+    </index>
+    <index id="67" parent="42" name="fill phone_FK">
+      <ObjectId>74646</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>login
+phone_number</ColNames>
+    </index>
+    <key id="68" parent="42" name="PK_PAYMENT">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>payment_id</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PK_PAYMENT</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="69" parent="42" name="FK_PAYMENT_PAY WITH_CARDS">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>CardNo</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>Cards</RefTableName>
+      <RefKeyName>PK_CARDS</RefKeyName>
+    </foreign-key>
+    <foreign-key id="70" parent="42" name="FK_PAYMENT_FILL PHON_USER_PHO">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>login
+phone_number</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>User_Phones</RefTableName>
+      <RefKeyName>PK_USER_PHONES</RefKeyName>
+    </foreign-key>
+    <column id="71" parent="43" name="LOGIN">
+      <Position>1</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="43" name="EMAIL">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="43" name="HASH">
+      <Position>3</Position>
+      <DataType>VARCHAR2(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="43" name="SALT">
+      <Position>4</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="43" name="USER_ROLE">
+      <Position>5</Position>
+      <DataType>VARCHAR2(12)|0</DataType>
+      <DefaultExpression>NULL</DefaultExpression>
+    </column>
+    <index id="76" parent="43" name="PK_USER">
+      <ObjectId>74649</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>login</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="43" name="PK_USER">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>LOGIN</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PK_USER</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="78" parent="44" name="login">
+      <Position>1</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="44" name="phone_number">
+      <Position>2</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="44" name="phone_name">
+      <Position>3</Position>
+      <DataType>VARCHAR2(40)|0</DataType>
+    </column>
+    <index id="81" parent="44" name="PK_USER_PHONES">
+      <ObjectId>74651</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>login
+phone_number</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="82" parent="44" name="has phone_FK">
+      <ObjectId>74652</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>login</ColNames>
+    </index>
+    <key id="83" parent="44" name="PK_USER_PHONES">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>login
+phone_number</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PK_USER_PHONES</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="84" parent="44" name="FK_USER_PHO_HAS PHONE_USER">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>login</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>PK_USER</RefKeyName>
+    </foreign-key>
+    <column id="85" parent="45" name="status_name">
+      <Position>1</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="45" name="login">
+      <Position>2</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="45" name="date_of_status">
+      <Position>3</Position>
+      <DataType>TIMESTAMP(6)|0</DataType>
+    </column>
+    <index id="88" parent="45" name="PK_USER_ACCOUNT_STATUSES">
+      <ObjectId>74654</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>login
+status_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="89" parent="45" name="accounts has statuses_FK">
+      <ObjectId>74655</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>status_name</ColNames>
+    </index>
+    <index id="90" parent="45" name="account had statuses_FK">
+      <ObjectId>74656</ObjectId>
+      <CreatedTimestamp>2016-12-29.04:16:41</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>login</ColNames>
+    </index>
+    <key id="91" parent="45" name="PK_USER_ACCOUNT_STATUSES">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>login
+status_name</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PK_USER_ACCOUNT_STATUSES</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="92" parent="45" name="FK_USER_ACC_ACCOUNTS _ACCOUNT">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>status_name</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>Account statuses</RefTableName>
+      <RefKeyName>PK_ACCOUNT STATUSES</RefKeyName>
+    </foreign-key>
+    <foreign-key id="93" parent="45" name="FK_USER_ACC_ACCOUNT H_USER">
+      <ModifiedTimestamp>2016-12-29.04:16:41</ModifiedTimestamp>
+      <ColNames>login</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>PK_USER</RefKeyName>
+    </foreign-key>
+    <column id="94" parent="46" name="PAYMENT_ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="46" name="PAYDATE">
+      <Position>2</Position>
+      <DataType>TIMESTAMP(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="96" parent="46" name="AMOUNT">
+      <Position>3</Position>
+      <DataType>NUMBER(4,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="97" parent="46" name="PHONE_NUMBER">
+      <Position>4</Position>
+      <DataType>VARCHAR2(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="46" name="CARDNO">
+      <Position>5</Position>
+      <DataType>VARCHAR2(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="46" name="TOKEN">
+      <Position>6</Position>
+      <DataType>VARCHAR2(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="46" name="CARDNAME">
+      <Position>7</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+    </column>
+    <column id="101" parent="46" name="LOGIN">
+      <Position>8</Position>
+      <DataType>VARCHAR2(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+  </database-model>
+</dataSource>

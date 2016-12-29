@@ -15,8 +15,8 @@ import java.sql.SQLException;
 public class OracleUserDAO implements UserDAO {
 
 
-    private final static String SQL_INSERT = "insert into users (login,email,hash,salt,status) values (?,?,?,?,?)";
-    private final static String SQL_UPDATE = "update users set email=?, password=?,status=? where login = ?";
+    private final static String SQL_INSERT = "insert into USERS (login,email,hash,salt,user_role) values (?,?,?,?,?)";
+    private final static String SQL_UPDATE = "update USERS set email=?, password=?,user_role=? where ROMA.USERS.login = ?";
     private Connection con;
 
     public OracleUserDAO() {
@@ -31,6 +31,7 @@ public class OracleUserDAO implements UserDAO {
 
         this.con = OracleDAOFactory.open();
         PreparedStatement ins = null;
+        int num = 0;
         try {
             ins = con.prepareStatement(SQL_INSERT);
             ins.setString(1,user.getLogin());
@@ -38,12 +39,12 @@ public class OracleUserDAO implements UserDAO {
             ins.setString(3,user.getHash());
             ins.setString(4,user.getSalt());
             ins.setObject(5,user.getStatus().toString());       //  SQL TARGET TYPE ?
-            int num = ins.executeUpdate();
+            num = ins.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         OracleDAOFactory.close(con);
-        return 0;
+        return num;
     }
 
     @Override
@@ -60,7 +61,7 @@ public class OracleUserDAO implements UserDAO {
         User user;
         this.con = OracleDAOFactory.open();
         try {
-            PreparedStatement select = con.prepareStatement("select * from users where login = ?");
+            PreparedStatement select = con.prepareStatement("select * from USERS where login = ?");
             select.setString(1,login);
             ResultSet rs = select.executeQuery();
             if (!rs.isBeforeFirst()) {
@@ -79,12 +80,20 @@ public class OracleUserDAO implements UserDAO {
 
 
     @Override
-    public boolean isAlreadyExists(String login) {
+    public boolean isAlreadyExists(String field, boolean bylogin) {
         boolean exist = false;
         this.con = OracleDAOFactory.open();
+        PreparedStatement select = null;
         try {
-            PreparedStatement select = con.prepareStatement("select login from users where login = ?");
-            select.setString(1,login);
+            if (bylogin) {
+                select = con.prepareStatement("select login from USERS where login = ?");
+
+            }
+            else {
+                select = con.prepareStatement("select login from USERS where email = ?");
+
+            }
+            select.setString(1,field);
             ResultSet rs = select.executeQuery();
             if (!rs.isBeforeFirst()) {
                 exist = false;

@@ -13,6 +13,7 @@ public class Payment {
     private float amount;
     private String phone;
     private Card card;
+    private int id;
 
     public Payment(OffsetDateTime paydate,float amount,String phone,Card card) {
         this.paydate=paydate;
@@ -20,6 +21,20 @@ public class Payment {
         this.phone=phone;
         this.card=card;
     }
+
+    public Payment(OffsetDateTime paydate,float amount,String phone,Card card, int id) {
+        this.paydate=paydate;
+        this.amount=amount;
+        this.phone=phone;
+        this.card=card;
+        this.id = id;
+    }
+
+
+    public int getID() {
+        return this.id;
+    }
+
 
     public String getPhone() {
         return phone;

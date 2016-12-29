@@ -10,13 +10,19 @@
 <html>
 <head>
     <title>User page</title>
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/services.js"></script>
+    <script src="resources/js/forms.js"></script>
 </head>
 <body>
+    <div id="top">
+        <span id="logged_as">Logged as ${login}</span><button id="logout">Log out</button>
+    </div>
     <div id="menubar">
-        <div class="menu_item" id="payments_menu">Payments</div>
-        <div class="menu_item" id="cards_menu">Cards</div>
-        <div class="menu_item" id="phones_menu">Phones</div>
-        <div class="menu_item" id="settings_menu">Settings</div>
+        <div class="menu_item" id="payments_menu" action="payments">Payments</div>
+        <div class="menu_item" id="cards_menu" action="cards">Cards</div>
+        <div class="menu_item" id="phones_menu" action="phones">Phones</div>
+        <div class="menu_item" id="settings_menu" action="settings">Settings</div>
     </div>
     <div id="content">
         <c:choose>

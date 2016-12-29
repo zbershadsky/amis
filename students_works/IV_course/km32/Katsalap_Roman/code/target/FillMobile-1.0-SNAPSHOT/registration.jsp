@@ -6,46 +6,42 @@
 <body>
 
 <div></div>
-<div>
+<div id="reg">
     <h2>Registration Form</h2>
     <br>
     <form action="/reg" method="post">
 
-        <div class="form-group">
+        <div class="form-group ${requestScope.isValidLogin}">
             <label for="inputLogin">Enter login</label>
-            <input type="text" class=form-control" name="login" id="inputLogin" maxlength="30" required>
+            <input type="text" class="form-control" name="login" id="inputLogin" maxlength="30" required>
+            <span id="login_msg" class="form-msg">from 4 to 30 English characters including '.', '-', '_'</span>
+
         </div>
 
-        <div class="form-group">
+        <div class="form-group ${requestScope.isValidEmail}">
             <label for="inputEmail">Enter email address:</label>
             <input type="email" class="form-control" name = "email" id="inputEmail"  maxlenght="30" required>
-            <small id="emailHelp" class="form-text text-muted">Create your email</small>
+            <span id="email_msg" class="form-msg">Enter valid email adress of maximum 50 characters</span>
+
         </div>
 
-        <div class="form-group">
+        <div class="form-group ${requestScope.isValidPass}" >
             <label for="inputPass">Create password:</label>
             <input type="password" class="form-control" id="inputPass" maxlength="25" name="password" required>
-            <small id="passHelp" pattern="^[A-Za-z0-9]+$" class="form-text text-muted">You have to come up with a strong password</small>
+            <span id="pass_msg"  class="form-msg">Any non-space characters of minimum length 5</span>
+            <span id="pass_help">Advice: choose strong password</span>
         </div>
 
         <div class="form-group">
             <label for="inputRePass">Repeat password:</label>
             <input type="password" class="form-control" pattern="^[A-Za-z0-9]+$" id="inputRePass" name="re_password"  maxlength="25"  required>
+            <span id="repass_msg"></span>
         </div>
         <br />
         <div class="text-right">
-            <button type="submit" onClick="check_pass()" class="btn btn-primary">Send</button>
+            <input type="submit" class="btn btn-primary" value = "Send"></input>
         </div>
     </form>
 </div>
-<script>
-    function check_pass(){
-        var pass = document.getElementById("inputPass").value();
-        var repass = document.getElementById("inputRePass").value();
-        if(pass != repass){
-            alert("Passwords is not equals");
-        }
-    }
-</script>
 </body>
 </html>

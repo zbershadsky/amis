@@ -41,7 +41,7 @@ public class OraclePaymentDAO implements
                 return null;
                 }
                 while(rs.next()) {
-                    paymentsList.add(new Payment(OffsetDateTime.ofInstant(rs.getTimestamp(2).toInstant(), ZoneId.of("Europe/Paris")),rs.getFloat(3),rs.getString(4),new Card(rs.getString(6),rs.getString(8))));
+                    paymentsList.add(new Payment(OffsetDateTime.ofInstant(rs.getTimestamp(2).toInstant(), ZoneId.of("Europe/Paris")),rs.getFloat(3),rs.getString(4),new Card(rs.getString(6),rs.getString(8)), rs.getInt(1)));
                 }
 
 
@@ -60,7 +60,7 @@ public class OraclePaymentDAO implements
         PreparedStatement ins = null;
         int id = -1;
         try {
-            ins = con.prepareStatement("insert into payments (paydate,amount,phone,cardno) values (?,?,?,?)");
+            ins = con.prepareStatement("insert into payment (paydate,amount,phone_number,CardNo) values (?,?,?,?)");
             ins.setTimestamp(1,payment.getSqlDate());
             ins.setFloat(2,payment.getAmount());
             ins.setString(3,payment.getPhone());
@@ -74,6 +74,8 @@ public class OraclePaymentDAO implements
 
 
     }
+
+
 
 
 

@@ -7,7 +7,7 @@ import fpm.entities.Card;
  */
 public interface CardDAO {
 
-    public boolean insertCard(Card card);
+    public boolean insertCard(Card card, String login);
     public boolean updateCard(Card card);
     public boolean deleteCard(Card card);
     public Card selectBy();

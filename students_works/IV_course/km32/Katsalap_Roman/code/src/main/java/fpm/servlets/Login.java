@@ -4,6 +4,8 @@ import fpm.crypt.Crypt;
 import fpm.dao.interfaces.UserDAO;
 import fpm.dao.oracle.OracleDAOFactory;
 import fpm.entities.User;
+import fpm.util.Validation;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,16 +30,22 @@ public class Login extends HttpServlet {
         String login = req.getParameter("login");
         String pass = req.getParameter("password");
 
-        OracleDAOFactory oracleDaoFactory = new OracleDAOFactory();
-        UserDAO userDao = oracleDaoFactory.getUserDAO();
-        User user = userDao.getUserByLogin(login);
-        if (user.getHash().equals(Crypt.getHash(pass,user.getSalt()))) {
-            req.getSession().setAttribute("loggedInUser", user.getLogin());
-            resp.sendRedirect("/services?action=payments");
-            return;
-        }else {
-            resp.getWriter().print("Invalid login/password");
+        if (!Validation.isValidLogin(login)) {
+            req.setAttribute("showErrorMsg",true);
         }
+        else {
+            OracleDAOFactory oracleDaoFactory = new OracleDAOFactory();
+            UserDAO userDao = oracleDaoFactory.getUserDAO();
+            User user = userDao.getUserByLogin(login);
+            if (user.getHash().equals(Crypt.getHash(pass,user.getSalt()))) {
+                req.getSession().setAttribute("loggedInUser", user.getLogin());
+                resp.sendRedirect("/services?action=payments");
+                return;
+            }else {
+                req.setAttribute("showErrorMsg",true);
+            }
+        }
+
         req.getRequestDispatcher("start.jsp").forward(req, resp);
 
     }

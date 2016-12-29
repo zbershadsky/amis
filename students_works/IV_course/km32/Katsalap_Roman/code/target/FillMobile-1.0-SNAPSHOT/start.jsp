@@ -3,24 +3,33 @@
 <html>
 <head>
     <title>Fill ME!</title>
-
+    <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/forms.js"></script>
+    <link rel="stylesheet" href="resources/css/start.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
 </head>
 <body>
-    <div id="page_top">
+<div id="wrapper">
+    <div id="page-top">
 
         <c:if test="${logged eq 'false'}">
-            <jsp:include page="login.jsp"></jsp:include>
+            <c:set var="showErrorMsg" value="${showErrorMsg}" scope="request" />
+            <jsp:include page="login.jsp"/>
         </c:if>
     </div>
     <div id="content">
 
         <c:if test="${logged eq 'false'}">
-            <jsp:include page="registration.jsp"></jsp:include>
+            <c:set var="isValidLogin" value="${isValidLogin}" scope="request" />
+            <c:set var="isValidPass" value="${isValidPass}" scope="request" />
+            <c:set var="isValidEmail" value="${isValidEmail}" scope="request" />
+            <jsp:include page="registration.jsp"/>
         </c:if>
         <!--include register form-->
 
 
 
     </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,9 @@
+com\devcolibri\servlet\Blank.class
+com\devcolibri\servlet\Payment.class
+com\devcolibri\servlet\Registration.class
+com\devcolibri\servlet\Login.class
+com\devcolibri\servlet\MainServlet.class
+com\devcolibri\servlet\Servletdemo.class
+database\DBWorker.class
+database\DBConnector.class
+database\DBConnectorConsts.class

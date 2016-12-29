@@ -1,5 +1,6 @@
 package belcer.remoteserverconnector.controller;
 
+import belcer.remoteserverconnector.Main;
 import belcer.remoteserverconnector.model.entity.ConnectionProfile;
 import belcer.remoteserverconnector.model.entity.User;
 import belcer.remoteserverconnector.model.service.ConnectionsService;
@@ -8,7 +9,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableView;
 
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +33,7 @@ public class FrontController {
   @FXML
   private TreeTableView remoteFileList;
 
-  private User user;
+  private static User user;
   //todo: not ConnectionProfile!
   private Map<String, ConnectionProfile> connections = new HashMap<>();
   private ConnectionsService connectionsService;
@@ -47,16 +47,19 @@ public class FrontController {
   }
 
   public void login() {
-    //todo
-    user = new User("test", "test", "test", new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()));
+    Main.INSTANCE.setStage(AppWindows.LOGIN);
+//    System.out.println("FrontController.login");
+//    System.out.println("before. user = " + user);
+//    user = new User("test", "test", "test", new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()), Role.USER);
+//    System.out.println("after. user = " + user);
   }
 
   public void register() {
-
+    Main.INSTANCE.setStage(AppWindows.SIGNUP);
   }
 
   public void logout() {
-
+    setUser(null);
   }
 
   public void closeConnection() {
@@ -81,5 +84,11 @@ public class FrontController {
     //todo: not ConnectionProfile!
     connections.put(title, new ConnectionProfile(title, host, port, connUser, connPass, protocol, user));
 //    if (title != null && !(title = title.trim()).isEmpty() && connections)
+  }
+
+  public static void setUser(User user) {
+    System.out.println("==========");
+    System.out.println("User is changed: " + user);
+    FrontController.user = user;
   }
 }

@@ -11,7 +11,9 @@ public interface UserDao {
 
   void delete(String username);
 
-  User save(User user);
+  void save(User user);
 
-  void update(User user);
+  User update(User user);
+
+  boolean isUserWithSuchUsernameExist(String username);
 }

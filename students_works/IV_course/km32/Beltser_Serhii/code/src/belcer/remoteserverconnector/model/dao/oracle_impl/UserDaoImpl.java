@@ -17,14 +17,23 @@ public class UserDaoImpl implements UserDao {
   }
 
   public void delete(String username) {
-
+    connector.deleteUser(username);
   }
 
-  public User save(User user) {
-    return connector.saveUser(user);
+  public void save(User user) {
+    connector.saveUser(user);
   }
 
-  public void update(User user) {
+  public User update(User user) {
+    User updated = connector.updateUser(user.getUsername(), user);
+    return updated;
+  }
 
+  @Override
+  public boolean isUserWithSuchUsernameExist(String username) {
+    boolean userExist;
+    User user = connector.getUser(username);
+    userExist = user != null;
+    return userExist;
   }
 }

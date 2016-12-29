@@ -10,20 +10,35 @@ public class ConnectionProfile {
   private String connectionUser;
   private String connectionPass;
   private String protocol;
-  private User user;
   private Date dateCreated;
   private Date dateModified;
   private Date lastConnectionDate;
   private boolean deleted;
+  private boolean savedByUser;
+  private String username;
 
-  public ConnectionProfile(String title, String host, String port, String connectionUser, String connectionPass, String protocol, User user) {
+  public ConnectionProfile(String title, String host, String port, String connectionUser, String connectionPass, String protocol, boolean savedByUser, String username) {
+    this(title, host, port, connectionUser, connectionPass, protocol, new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()), null,
+        false, savedByUser, username);
+  }
+
+  public ConnectionProfile(String title,
+                           String host, String port, String connectionUser, String connectionPass, String protocol,
+                           Date dateCreated, Date dateModified, Date lastConnectionDate,
+                           boolean deleted,
+                           boolean savedByUser, String username) {
     this.title = title;
     this.host = host;
     this.port = port;
     this.connectionUser = connectionUser;
     this.connectionPass = connectionPass;
     this.protocol = protocol;
-    this.user = user;
+    this.dateCreated = dateCreated;
+    this.dateModified = dateModified;
+    this.lastConnectionDate = lastConnectionDate;
+    this.deleted = deleted;
+    this.savedByUser = savedByUser;
+    this.username = username;
   }
 
   public String getTitle() {
@@ -74,12 +89,12 @@ public class ConnectionProfile {
     this.protocol = protocol;
   }
 
-  public User getUser() {
-    return user;
+  public String getUser() {
+    return username;
   }
 
-  public void setUser(User user) {
-    this.user = user;
+  public void setUser(String username) {
+    this.username = username;
   }
 
   public Date getDateCreated() {
@@ -112,5 +127,13 @@ public class ConnectionProfile {
 
   public void setDeleted(boolean deleted) {
     this.deleted = deleted;
+  }
+
+  public boolean isSavedByUser() {
+    return savedByUser;
+  }
+
+  public String getUsername() {
+    return username;
   }
 }

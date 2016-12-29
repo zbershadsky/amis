@@ -9,14 +9,28 @@ public class User {
   private String password;
   private Date registrationDate;
   private Date lastLogin;
-//  private AccountStatus status;
+  private Role role;
 
-  public User(String username, String email, String password, Date registrationDate, Date lastLogin) {
+  public User(String username, String email, String password, Role role) {
+    this(username, email, password, new Date(System.currentTimeMillis()), null, role);
+  }
+
+  public User(String username, String email, String password, Date registrationDate, Date lastLogin, Role role) {
     this.username = username;
     this.email = email;
     this.password = password;
     this.registrationDate = registrationDate;
     this.lastLogin = lastLogin;
+    this.role = role;
+  }
+
+
+  public Role getRole() {
+    return role;
+  }
+
+  public void setRole(Role role) {
+    this.role = role;
   }
 
   public String getUsername() {

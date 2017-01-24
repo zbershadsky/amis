@@ -1,0 +1,607 @@
+--------------------------------------------------------
+--  DDL for Table CATEGORIES
+--------------------------------------------------------
+
+  CREATE TABLE "CATEGORIES" 
+   (	"CATEGORY_NAME" VARCHAR2(20 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table COMMENTS
+--------------------------------------------------------
+
+  CREATE TABLE "COMMENTS" 
+   (	"COMMENTS_DATE" VARCHAR2(20 BYTE), 
+	"COMMENTS_TEXT" VARCHAR2(300 BYTE), 
+	"USER_LOGIN" VARCHAR2(20 BYTE), 
+	"NEWS_HEADER" VARCHAR2(400 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table GROUPS
+--------------------------------------------------------
+
+  CREATE TABLE "GROUPS" 
+   (	"GROUPS_NAME" VARCHAR2(20 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table NEWS
+--------------------------------------------------------
+
+  CREATE TABLE "NEWS" 
+   (	"NEWS_HEADER" VARCHAR2(400 BYTE), 
+	"NEWS_DATE" DATE, 
+	"NEWS_RATE" NUMBER DEFAULT 0, 
+	"USER_LOGIN" VARCHAR2(20 BYTE), 
+	"NEWS_TEXT" CLOB, 
+	"NEWS_ABOUT" VARCHAR2(500 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table NEWSCATEGORY
+--------------------------------------------------------
+
+  CREATE TABLE "NEWSCATEGORY" 
+   (	"CATEGORY_NAME" VARCHAR2(20 BYTE), 
+	"NEWS_HEADER" VARCHAR2(400 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table TESTS
+--------------------------------------------------------
+
+  CREATE TABLE "TESTS" 
+   (	"NEWS_HEADER" VARCHAR2(400 BYTE), 
+	"TEST_ASK" VARCHAR2(400 BYTE), 
+	"TEST_OPTION_FIRST" VARCHAR2(300 BYTE), 
+	"TEST_OPTION_SECOND" VARCHAR2(300 BYTE), 
+	"TEST_OPTION_THIRD" VARCHAR2(300 BYTE), 
+	"TEST_OPTION_FOURTH" VARCHAR2(300 BYTE), 
+	"TEST_ANSWER" VARCHAR2(300 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table USERGROUPS
+--------------------------------------------------------
+
+  CREATE TABLE "USERGROUPS" 
+   (	"USER_LOGIN" VARCHAR2(20 BYTE), 
+	"GROUPS_NAME" VARCHAR2(20 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table USERS
+--------------------------------------------------------
+
+  CREATE TABLE "USERS" 
+   (	"USER_LOGIN" VARCHAR2(20 BYTE), 
+	"USER_PASSWORD" VARCHAR2(32 BYTE), 
+	"USER_NAME" VARCHAR2(160 BYTE), 
+	"USER_EMAIL" VARCHAR2(30 BYTE), 
+	"USER_PHOTO" VARCHAR2(400 BYTE), 
+	"USER_STATUS" VARCHAR2(20 BYTE), 
+	"USER_ABOUT" VARCHAR2(400 BYTE), 
+	"USER_FACEBOOK" VARCHAR2(50 BYTE), 
+	"USER_TWITTER" VARCHAR2(50 BYTE), 
+	"USER_LINKEDIN" VARCHAR2(200 BYTE)
+   );
+--------------------------------------------------------
+--  DDL for Table USERSTESTS
+--------------------------------------------------------
+
+  CREATE TABLE "USERSTESTS" 
+   (	"NEWS_HEADER" VARCHAR2(400 BYTE), 
+	"USER_LOGIN" VARCHAR2(20 BYTE), 
+	"USERTEST_RESULT" NUMBER
+   );
+--------------------------------------------------------
+--  DDL for View CMMNTS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "CMMNTS" ("COMMENTS_DATE", "TEXT", "COM_AUTHOR", "NEWS_HEADER", "USER_PHOTO") AS 
+  SELECT 
+    	c.comments_date comments_date,
+	c.comments_text text,
+	c.user_login com_author,
+	c.news_header,
+	u.user_photo
+FROM
+comments c join users u on c.user_login=u.user_login;
+--------------------------------------------------------
+--  DDL for View NWS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "NWS" ("NHEADER", "TEXT", "PREVIEW", "TIME", "RATE", "AUTHOR", "CATEGORY") AS 
+  SELECT 
+    n.NEWS_HEADER nheader, 
+    n.NEWS_TEXT text,
+    n.NEWS_ABOUT preview,
+    n.NEWS_DATE time, 
+    n.NEWS_RATE rate, 
+    n.USER_LOGIN author, 
+    nc.CATEGORY_NAME category 
+FROM 
+    NEWS n JOIN NEWSCATEGORY nc ON nc.NEWS_HEADER = n.NEWS_HEADER;
+--------------------------------------------------------
+--  DDL for View TSTS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "TSTS" ("NEWS_HEADER", "TEST_ASK", "TEST_OPTION_FIRST", "TEST_OPTION_SECOND", "TEST_OPTION_THIRD", "TEST_OPTION_FOURTH", "TEST_ANSWER") AS 
+  SELECT 
+    "NEWS_HEADER","TEST_ASK","TEST_OPTION_FIRST","TEST_OPTION_SECOND","TEST_OPTION_THIRD","TEST_OPTION_FOURTH","TEST_ANSWER"
+FROM 
+    tests;
+--------------------------------------------------------
+--  DDL for View USRS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "USRS" ("USER_LOGIN", "USER_PASSWORD", "USER_NAME", "USER_EMAIL", "USER_ABOUT", "USER_PHOTO", "GROUP_NAME", "USER_FACEBOOK", "USER_TWITTER", "USER_LINKEDIN") AS 
+  (
+select u.user_login user_login, u.user_password user_password, u.user_name user_name, u.user_email user_email,
+u.user_about user_about, u.user_photo user_photo, ug.groups_name group_name, u.user_facebook user_facebook, u.user_twitter user_twitter, u.user_linkedin user_linkedin from users u join usergroups ug on u.user_login=ug.user_login
+join groups g on ug.groups_name=g.groups_name
+);
+--------------------------------------------------------
+--  DDL for View USRTST
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "USRTST" ("NEWS_HEADER", "USER_LOGIN", "USERTEST_RESULT") AS 
+  SELECT "NEWS_HEADER","USER_LOGIN","USERTEST_RESULT"
+    
+FROM 
+    userstests;
+--------------------------------------------------------
+--  DDL for Index USERS_UK1
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "USERS_UK1" ON "USERS" ("USER_LOGIN", "USER_EMAIL");
+--------------------------------------------------------
+--  DDL for Index TESTS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TESTS_PK" ON "TESTS" ("TEST_ASK");
+--------------------------------------------------------
+--  DDL for Index USERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "USERS_PK" ON "USERS" ("USER_LOGIN");
+--------------------------------------------------------
+--  DDL for Index COMMENTS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "COMMENTS_PK" ON "COMMENTS" ("COMMENTS_DATE");
+--------------------------------------------------------
+--  DDL for Index NEWS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "NEWS_PK" ON "NEWS" ("NEWS_HEADER");
+--------------------------------------------------------
+--  DDL for Index USERGROUP_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "USERGROUP_PK" ON "GROUPS" ("GROUPS_NAME");
+--------------------------------------------------------
+--  DDL for Index CATEGORY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "CATEGORY_PK" ON "CATEGORIES" ("CATEGORY_NAME");
+--------------------------------------------------------
+--  DDL for Procedure ADDARTICLE
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "ADDARTICLE" 
+(news_header_in in char, news_text_in in clob, news_about_in in char, news_category_in in char,
+news_date_in in date, user_login_in in char, res out char)
+IS
+header_tmp char(400);
+BEGIN
+begin
+res:='0';
+select nheader into header_tmp from nws where nheader=news_header_in;
+EXCEPTION
+when no_data_found then
+res:='1';
+insert into news (news_header, news_text, news_about, news_date, user_login) values
+(news_header_in,news_text_in, news_about_in, news_date_in, user_login_in);
+insert into newscategory (category_name, news_header) values
+(news_category_in,news_header_in);
+end;
+end addArticle;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ADDCOMMENT
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "ADDCOMMENT" 
+(comments_text_in in char, user_login_in in char,
+news_header_in in char)
+IS
+BEGIN
+insert into comments (comments_date, comments_text, user_login, news_header) values
+(TO_CHAR(sysdate,'DD/MM/YYYY HH24:MI:SS'),comments_text_in, user_login_in, news_header_in);
+end addComment;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ADDTEST
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "ADDTEST" 
+(nheader_in IN char, ask_in IN char, foption_in IN char, soption_in IN char, toption_in IN char,
+    fooption_in IN char, answer_in IN char, res OUT char) 
+  IS
+    tmp_ask char(400);
+BEGIN
+begin
+res:='0';
+  select test_ask into tmp_ask from tsts where test_ask=ask_in;
+EXCEPTION
+when no_data_found then
+res:='1';
+insert into tests (NEWS_HEADER,TEST_ASK,test_option_first,test_option_second,test_option_third,test_option_fourth,test_answer) 
+values (nheader_in,ask_in,foption_in,soption_in,toption_in,fooption_in,answer_in);
+end;
+end addTest;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure DELARTICLE
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "DELARTICLE" 
+(news_header_in in char, res out char)
+IS
+header_tmp char(400);
+BEGIN
+begin
+res:='1';
+select nheader into header_tmp from nws where nheader=news_header_in;
+  if(header_tmp=news_header_in) then
+    delete from newscategory where news_header=news_header_in;
+    delete from userstests where news_header=news_header_in;
+    delete from tests where news_header=news_header_in;
+    delete from comments where news_header=news_header_in;
+    delete from news where news_header=news_header_in;
+  end if;
+EXCEPTION
+when no_data_found then
+res:='0';
+end;
+end delArticle;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure DELCOMM
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "DELCOMM" 
+(com_date_in in char)
+IS
+BEGIN
+delete from comments where comments_date=com_date_in;
+end delComm;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure EDITARTICLE
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "EDITARTICLE" 
+(news_header_in in char, news_text_in in clob, news_about_in in char, news_category_in in char, res out char)
+IS
+header_tmp char(400);
+BEGIN
+begin
+res:='0';
+select nheader into header_tmp from nws where nheader=news_header_in;
+if (header_tmp=news_header_in) then
+update newscategory set  
+        category_name=NVL(news_category_in,category_name)
+        where news_header=news_header_in;
+update news set
+        news_text=NVL(news_text_in,news_text), 
+        news_about=NVL(news_about_in,news_about)
+        where news_header=news_header_in;
+end if;
+EXCEPTION
+when no_data_found then
+res:='1';
+end;
+end editArticle;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure EDITUSERINFO
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "EDITUSERINFO" 
+(user_login_in in char, user_name_in in char, user_email_in in char, user_about_in in char, res out char)
+IS
+name_tmp char(40);
+user_tname char(40);
+BEGIN
+  res:='0';
+  begin
+    select user_name into name_tmp from usrs where user_name=user_name_in;
+      begin
+      select user_name into user_tname from usrs where user_login=user_login_in;
+      if (user_tname = user_name_in) then
+        begin
+        update users set 
+        user_name=NVL(user_name_in,user_name), 
+        user_email=NVL(user_email_in,user_email),
+        user_about=NVL(user_about_in,user_about)
+        where user_login=user_login_in;
+        end;
+      end if;
+    end;
+    EXCEPTION
+    when no_data_found then
+      begin
+      update users set 
+      user_name=NVL(user_name_in,user_name),
+      user_email=NVL(user_email_in,user_email),
+      user_about=NVL(user_about_in,user_about) 
+      where user_login=user_login_in;
+      res:='1';
+      end;
+    end;
+end editUserInfo;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure EDITUSERINFOPASSWORD
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "EDITUSERINFOPASSWORD" 
+(user_login_in in char, user_password_in in char, res out char)
+IS
+tmp char(20);
+BEGIN
+  res:='1';
+  begin
+    select user_login into tmp from usrs where user_login=user_login_in;
+      begin
+      if (tmp = user_login_in) then
+        begin
+        update users set user_password=user_password_in
+        where user_login=user_login_in;
+        end;
+      end if;
+    end;
+    EXCEPTION
+    when no_data_found then
+      res:='0';
+    end;
+end editUserInfoPassword;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure EDITUSERINFOPHOTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "EDITUSERINFOPHOTO" 
+(user_login_in in char, user_photo_in in char, res out char)
+IS
+tmp char(20);
+BEGIN
+  res:='1';
+  begin
+    select user_login into tmp from usrs where user_login=user_login_in;
+      begin
+      if (tmp = user_login_in) then
+        begin
+        update users set user_photo=user_photo_in
+        where user_login=user_login_in;
+        end;
+      end if;
+    end;
+    EXCEPTION
+    when no_data_found then
+      res:='0';
+    end;
+end editUserInfoPhoto;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure EDITUSERINFOSOCIALS
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "EDITUSERINFOSOCIALS" 
+(user_login_in in char, user_facebook_in in char, user_twitter_in in char, user_linkedin_in in char, res out char)
+IS
+tmp char(20);
+BEGIN
+  res:='1';
+  begin
+    select user_login into tmp from usrs where user_login=user_login_in;
+      if (tmp = user_login_in) then
+        update users set 
+        user_facebook=NVL(user_facebook_in,user_facebook), 
+        user_twitter=NVL(user_twitter_in,user_twitter), 
+        user_linkedin=NVL(user_linkedin_in,user_linkedin)
+        where user_login=user_login_in;
+      end if;
+    EXCEPTION
+    when no_data_found then
+      res:='0';
+      end;
+end editUserInfoSocials;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure LOGINUSER
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "LOGINUSER" 
+(user_login_in in char, user_password_in in char, res out char)
+IS
+  tmp char(20);
+BEGIN
+  res:='1';
+  begin
+    select user_login into tmp from usrs where user_login=user_login_in and user_password=user_password_in;
+    EXCEPTION
+      when no_data_found then
+        res:='0';
+      end;
+end loginUser;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure REGISTERUSER
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "REGISTERUSER" 
+(user_login_in in char, user_password_in in char, user_name_in in char, user_email_in in char, res out char)
+IS
+user_login_tmp char(20);
+BEGIN
+res:='0';
+  begin
+    select user_login into user_login_tmp from users where user_login=user_login_in;
+    EXCEPTION
+      when no_data_found then
+
+          res:='1';
+      insert into users (user_login, user_password, user_name, user_email,user_photo) 
+      values (user_login_in, user_password_in, user_name_in, user_email_in, '/bd/assets/img/clients/client-1.png');
+      insert into usergroups (user_login, groups_name) values
+      (user_login_in, 'User');
+      end;
+      END registerUser;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure USERTEST
+--------------------------------------------------------
+
+  CREATE OR REPLACE PROCEDURE "USERTEST" 
+(news_header_in IN char, user_login_in IN char, usertest_result_in IN number) 
+IS
+tmp_header char(400);
+tmp_login char(20);
+BEGIN
+select news_header into tmp_header from usrtst where news_header=news_header_in and user_login=user_login_in;
+if (tmp_header = news_header_in) then
+begin
+update usrtst set 
+        news_header=NVL(news_header_in,news_header), 
+        user_login=NVL(user_login_in,user_login),
+        usertest_result=NVL(usertest_result_in,usertest_result)
+        where user_login=user_login_in and news_header=news_header_in;
+end;
+end if;
+EXCEPTION 
+when no_data_found then
+insert into usrtst (news_header,user_login,usertest_result) values (news_header_in,user_login_in,usertest_result_in);
+end userTest;
+
+/
+--------------------------------------------------------
+--  Constraints for Table NEWS
+--------------------------------------------------------
+
+  ALTER TABLE "NEWS" ADD CONSTRAINT "NEWS_PK" PRIMARY KEY ("NEWS_HEADER");
+  ALTER TABLE "NEWS" MODIFY ("USER_LOGIN" NOT NULL ENABLE);
+  ALTER TABLE "NEWS" MODIFY ("NEWS_ABOUT" NOT NULL ENABLE);
+  ALTER TABLE "NEWS" MODIFY ("NEWS_HEADER" NOT NULL ENABLE);
+  ALTER TABLE "NEWS" MODIFY ("NEWS_TEXT" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table CATEGORIES
+--------------------------------------------------------
+
+  ALTER TABLE "CATEGORIES" ADD CONSTRAINT "CATEGORY_PK" PRIMARY KEY ("CATEGORY_NAME");
+  ALTER TABLE "CATEGORIES" MODIFY ("CATEGORY_NAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table NEWSCATEGORY
+--------------------------------------------------------
+
+  ALTER TABLE "NEWSCATEGORY" MODIFY ("NEWS_HEADER" NOT NULL ENABLE);
+  ALTER TABLE "NEWSCATEGORY" MODIFY ("CATEGORY_NAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table USERGROUPS
+--------------------------------------------------------
+
+  ALTER TABLE "USERGROUPS" MODIFY ("GROUPS_NAME" NOT NULL ENABLE);
+  ALTER TABLE "USERGROUPS" MODIFY ("USER_LOGIN" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table GROUPS
+--------------------------------------------------------
+
+  ALTER TABLE "GROUPS" ADD CONSTRAINT "USERGROUP_PK" PRIMARY KEY ("GROUPS_NAME");
+  ALTER TABLE "GROUPS" MODIFY ("GROUPS_NAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table COMMENTS
+--------------------------------------------------------
+
+  ALTER TABLE "COMMENTS" MODIFY ("NEWS_HEADER" NOT NULL ENABLE);
+  ALTER TABLE "COMMENTS" MODIFY ("USER_LOGIN" NOT NULL ENABLE);
+  ALTER TABLE "COMMENTS" MODIFY ("COMMENTS_TEXT" NOT NULL ENABLE);
+  ALTER TABLE "COMMENTS" MODIFY ("COMMENTS_DATE" NOT NULL ENABLE);
+  ALTER TABLE "COMMENTS" ADD CONSTRAINT "COMMENTS_PK" PRIMARY KEY ("COMMENTS_DATE");
+--------------------------------------------------------
+--  Constraints for Table USERSTESTS
+--------------------------------------------------------
+
+  ALTER TABLE "USERSTESTS" MODIFY ("USERTEST_RESULT" NOT NULL ENABLE);
+  ALTER TABLE "USERSTESTS" MODIFY ("USER_LOGIN" NOT NULL ENABLE);
+  ALTER TABLE "USERSTESTS" MODIFY ("NEWS_HEADER" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table USERS
+--------------------------------------------------------
+
+  ALTER TABLE "USERS" ADD CONSTRAINT "USERS_UK1" UNIQUE ("USER_LOGIN", "USER_EMAIL");
+  ALTER TABLE "USERS" ADD CONSTRAINT "USERS_PK" PRIMARY KEY ("USER_LOGIN");
+  ALTER TABLE "USERS" MODIFY ("USER_EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "USERS" MODIFY ("USER_PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "USERS" MODIFY ("USER_LOGIN" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TESTS
+--------------------------------------------------------
+
+  ALTER TABLE "TESTS" ADD CONSTRAINT "TESTS_PK" PRIMARY KEY ("TEST_ASK");
+  ALTER TABLE "TESTS" MODIFY ("TEST_ANSWER" NOT NULL ENABLE);
+  ALTER TABLE "TESTS" MODIFY ("TEST_OPTION_FOURTH" NOT NULL ENABLE);
+  ALTER TABLE "TESTS" MODIFY ("TEST_OPTION_THIRD" NOT NULL ENABLE);
+  ALTER TABLE "TESTS" MODIFY ("TEST_OPTION_SECOND" NOT NULL ENABLE);
+  ALTER TABLE "TESTS" MODIFY ("TEST_OPTION_FIRST" NOT NULL ENABLE);
+  ALTER TABLE "TESTS" MODIFY ("TEST_ASK" NOT NULL ENABLE);
+  ALTER TABLE "TESTS" MODIFY ("NEWS_HEADER" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table COMMENTS
+--------------------------------------------------------
+
+  ALTER TABLE "COMMENTS" ADD CONSTRAINT "COMMENTS_NEWS" FOREIGN KEY ("NEWS_HEADER")
+	  REFERENCES "NEWS" ("NEWS_HEADER") ENABLE;
+  ALTER TABLE "COMMENTS" ADD CONSTRAINT "COMMENTS_USERS" FOREIGN KEY ("USER_LOGIN")
+	  REFERENCES "USERS" ("USER_LOGIN") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table NEWS
+--------------------------------------------------------
+
+  ALTER TABLE "NEWS" ADD CONSTRAINT "NEWS_USERS" FOREIGN KEY ("USER_LOGIN")
+	  REFERENCES "USERS" ("USER_LOGIN") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table NEWSCATEGORY
+--------------------------------------------------------
+
+  ALTER TABLE "NEWSCATEGORY" ADD CONSTRAINT "NEWSCATEGORY_CATEGORY" FOREIGN KEY ("CATEGORY_NAME")
+	  REFERENCES "CATEGORIES" ("CATEGORY_NAME") ENABLE;
+  ALTER TABLE "NEWSCATEGORY" ADD CONSTRAINT "NEWSCATEGORY_NEWS" FOREIGN KEY ("NEWS_HEADER")
+	  REFERENCES "NEWS" ("NEWS_HEADER") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table TESTS
+--------------------------------------------------------
+
+  ALTER TABLE "TESTS" ADD CONSTRAINT "TESTS_FK1" FOREIGN KEY ("NEWS_HEADER")
+	  REFERENCES "NEWS" ("NEWS_HEADER") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table USERGROUPS
+--------------------------------------------------------
+
+  ALTER TABLE "USERGROUPS" ADD CONSTRAINT "USERGROUPS_GROUPS" FOREIGN KEY ("GROUPS_NAME")
+	  REFERENCES "GROUPS" ("GROUPS_NAME") ENABLE;
+  ALTER TABLE "USERGROUPS" ADD CONSTRAINT "USERGROUPS_USERS" FOREIGN KEY ("USER_LOGIN")
+	  REFERENCES "USERS" ("USER_LOGIN") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table USERSTESTS
+--------------------------------------------------------
+
+  ALTER TABLE "USERSTESTS" ADD CONSTRAINT "USERSTESTS_FK2" FOREIGN KEY ("USER_LOGIN")
+	  REFERENCES "USERS" ("USER_LOGIN") ENABLE;
